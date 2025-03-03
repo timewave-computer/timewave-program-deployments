@@ -20,12 +20,3 @@
 
 # manager configs
 manager_configs/**
-
-# ignore programs except the template
-programs/**
-!programs/program_template
-
-# program outputs
-# Remove if you want to save them to your github
-programs/**/output/*
-!programs/**/output/README.md

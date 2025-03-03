@@ -97,6 +97,5 @@ fn clone_config_from_repo(env_path: &str, config_path: &PathBuf) -> Result<(), B
         rm -rf ${tmp_dir};
     )?;
 
-    Err(format!("Done").into())
-    // Ok(())
+    Ok(())
 }
