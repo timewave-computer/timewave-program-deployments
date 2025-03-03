@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+.env
+
+# Build results
+/artifacts
+/target
+
+# Cargo+Git helper file (https://github.com/rust-lang/cargo/blob/0.44.1/src/cargo/sources/git/utils.rs#L320-L327)
+.cargo-ok
+
+# Text file backups
+**/*.rs.bk
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+**/.editorconfig
+
+# manager configs
+manager_configs/**
+
+# ignore programs except the template
+programs/**
+!programs/program_template
+
+# program outputs
+# Remove if you want to save them to your github
+programs/**/output/*
+!programs/**/output/README.md

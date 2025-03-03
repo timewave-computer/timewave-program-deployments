@@ -1,0 +1,46 @@
+[package]
+name       = "program-template"
+authors    = ["Timewave Labs"]
+edition    = "2021"
+license    = "Apache-2.0"
+version    = "0.1.0"
+repository = "https://github.com/timewave-computer/program_deployer"
+
+[dependencies]
+deployer-lib            = { workspace = true }
+valence-program-manager = { workspace = true }
+serde_json              = { workspace = true }
+clap                    = { workspace = true }
+tokio                   = { workspace = true }
+
+# Libraries
+valence-authorization                = { workspace = true }
+valence-base-account                 = { workspace = true }
+valence-storage-account              = { workspace = true }
+valence-processor                    = { workspace = true }
+valence-splitter-library             = { workspace = true }
+valence-astroport-lper               = { workspace = true }
+valence-forwarder-library            = { workspace = true }
+valence-astroport-withdrawer         = { workspace = true }
+valence-generic-ibc-transfer-library = { workspace = true }
+valence-neutron-ibc-transfer-library = { workspace = true }
+valence-reverse-splitter-library     = { workspace = true }
+valence-osmosis-gamm-lper            = { workspace = true }
+valence-osmosis-gamm-withdrawer      = { workspace = true }
+valence-osmosis-cl-lper              = { workspace = true }
+valence-osmosis-cl-withdrawer        = { workspace = true }
+valence-encoder-broker               = { workspace = true }
+valence-neutron-ic-querier           = { workspace = true }
+valence-drop-liquid-staker           = { workspace = true }
+valence-program-registry             = { workspace = true }
+
+# utils
+valence-account-utils       = { workspace = true }
+valence-astroport-utils     = { workspace = true }
+valence-osmosis-utils       = { workspace = true }
+valence-authorization-utils = { workspace = true }
+valence-ibc-utils           = { workspace = true }
+valence-macros              = { workspace = true }
+valence-processor-utils     = { workspace = true }
+valence-library-base        = { workspace = true }
+valence-library-utils       = { workspace = true }

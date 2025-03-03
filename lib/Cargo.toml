@@ -1,0 +1,17 @@
+[package]
+name       = "deployer-lib"
+authors    = ["Timewave Labs"]
+edition    = "2021"
+license    = "Apache-2.0"
+version    = "0.1.0"
+repository = "https://github.com/timewave-computer/program_deployer"
+
+[dependencies]
+valence-program-manager = { workspace = true }
+serde_json              = { workspace = true }
+clap                    = { workspace = true }
+config                  = { workspace = true }
+glob                    = { workspace = true }
+chrono                  = { workspace = true }
+dotenvy                 = { workspace = true }
+cmd_lib                 = { workspace = true }
