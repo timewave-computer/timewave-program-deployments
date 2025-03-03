@@ -310,11 +310,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let subroutine = AtomicSubroutineBuilder::new()
         .with_function(withdraw_function)
         .build();
-    let authorization: valence_authorization_utils::authorization::AuthorizationInfo =
-        AuthorizationBuilder::new()
-            .with_label("withdraw")
-            .with_subroutine(subroutine)
-            .build();
+    let authorization = AuthorizationBuilder::new()
+        .with_label("withdraw")
+        .with_subroutine(subroutine)
+        .build();
 
     builder.add_authorization(authorization);
 
@@ -336,12 +335,14 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let subroutine = AtomicSubroutineBuilder::new()
         .with_function(update_split_config_function)
         .build();
-    let authorization: valence_authorization_utils::authorization::AuthorizationInfo = AuthorizationBuilder::new()
-        .with_mode(valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
-            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                vec![neutron_dao_addr.clone()],
+    let authorization = AuthorizationBuilder::new()
+        .with_mode(
+            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                    vec![neutron_dao_addr.clone()],
+                ),
             ),
-        ))
+        )
         .with_label("update_split_config")
         .with_subroutine(subroutine)
         .build();
@@ -363,12 +364,14 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let subroutine = AtomicSubroutineBuilder::new()
         .with_function(update_forward_config_function)
         .build();
-    let authorization: valence_authorization_utils::authorization::AuthorizationInfo = AuthorizationBuilder::new()
-        .with_mode(valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
-            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                vec![neutron_dao_addr.clone()],
+    let authorization = AuthorizationBuilder::new()
+        .with_mode(
+            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                    vec![neutron_dao_addr.clone()],
+                ),
             ),
-        ))
+        )
         .with_label("update_forward_config")
         .with_subroutine(subroutine)
         .build();
