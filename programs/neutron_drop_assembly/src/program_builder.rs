@@ -256,7 +256,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr, security_dao_addr],
+                    vec![neutron_dao_addr.clone(), security_dao_addr],
                 ),
             ),
         )
@@ -310,8 +310,66 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let subroutine = AtomicSubroutineBuilder::new()
         .with_function(withdraw_function)
         .build();
-    let authorization = AuthorizationBuilder::new()
-        .with_label("withdraw")
+    let authorization: valence_authorization_utils::authorization::AuthorizationInfo =
+        AuthorizationBuilder::new()
+            .with_label("withdraw")
+            .with_subroutine(subroutine)
+            .build();
+
+    builder.add_authorization(authorization);
+
+    // Update split config
+    let update_split_config_function = AtomicFunctionBuilder::new()
+        .with_contract_address(split_ls_token_library.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "update_config".to_string(),
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "splits".to_string(),
+                ])]),
+            },
+        })
+        .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(update_split_config_function)
+        .build();
+    let authorization: valence_authorization_utils::authorization::AuthorizationInfo = AuthorizationBuilder::new()
+        .with_mode(valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                vec![neutron_dao_addr.clone()],
+            ),
+        ))
+        .with_label("update_split_config")
+        .with_subroutine(subroutine)
+        .build();
+
+    builder.add_authorization(authorization);
+
+    // Update forward config
+    let update_forward_config_function = AtomicFunctionBuilder::new()
+        .with_contract_address(drip_forwarder_library.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "update_config".to_string(),
+                params_restrictions: None,
+            },
+        })
+        .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(update_forward_config_function)
+        .build();
+    let authorization: valence_authorization_utils::authorization::AuthorizationInfo = AuthorizationBuilder::new()
+        .with_mode(valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                vec![neutron_dao_addr.clone()],
+            ),
+        ))
+        .with_label("update_forward_config")
         .with_subroutine(subroutine)
         .build();
 
