@@ -15,8 +15,8 @@ use valence_program_manager::{
 pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // program params
     let owner = params.get("owner");
-    let atom_denom = params.get("atom_denom");
-    let datom_denom = params.get("datom_denom");
+    let ntrn_denom = params.get("ntrn_denom");
+    let dntrn_denom = params.get("dntrn_denom");
     let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
     let drop_liquid_unstaker_addr = params.get("drop_liquid_unstaker_addr");
     let drop_withdrawal_manager_addr = params.get("drop_withdrawal_manager_addr");
@@ -63,7 +63,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         input_addr: acc_drip.clone(),
         output_addr: acc_ls.clone(),
         forwarding_configs: vec![(
-            cw_denom::UncheckedDenom::Native(atom_denom.clone()),
+            cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
             1_000_000_u128,
         )
             .into()],
@@ -85,7 +85,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         input_addr: acc_ls.clone(),
         output_addr: acc_interim.clone(),
         liquid_staker_addr: drop_liquid_staker_addr,
-        denom: atom_denom,
+        denom: ntrn_denom,
     };
 
     let drop_liquid_staker_library = builder.add_library(LibraryInfo::new(
@@ -104,7 +104,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let split_ls_token_config = valence_splitter_library::msg::LibraryConfig {
         input_addr: acc_interim.clone(),
         splits: vec![valence_splitter_library::msg::UncheckedSplitConfig::new(
-            cw_denom::UncheckedDenom::Native(datom_denom.clone()),
+            cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
             acc_stake_holder.clone(),
             valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::one()),
         )],
@@ -127,7 +127,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         input_addr: acc_stake_holder.clone(),
         output_addr: acc_unstake.clone(),
         forwarding_configs: vec![(
-            cw_denom::UncheckedDenom::Native(datom_denom.clone()),
+            cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
             1_000_000_u128,
         )
             .into()],
@@ -153,7 +153,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         liquid_unstaker_addr: drop_liquid_unstaker_addr,
         withdrawal_manager_addr: drop_withdrawal_manager_addr,
         voucher_addr,
-        denom: datom_denom,
+        denom: dntrn_denom,
     };
 
     let drop_unstake_library = builder.add_library(LibraryInfo::new(

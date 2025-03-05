@@ -11,6 +11,11 @@ pub fn get_program_params(
     let params_path_str = params_path
         .to_str()
         .expect("Params path should be a string");
+    let params_env_path = params_path.join(format!("{}.toml", env));
+
+    if !params_env_path.exists() {
+        return Err(format!("Program params file not found: {}.toml", env).into());
+    }
 
     let params = match ConfigHelper::builder()
         .add_source(config::File::with_name(&format!(
