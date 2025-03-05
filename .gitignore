@@ -20,3 +20,6 @@
 
 # manager configs
 manager_configs/**
+# add ntrn devnet to our repo for easy access and not making it public
+!manager_configs/ntrn-devnet/
+!manager_configs/ntrn-devnet/**/*
