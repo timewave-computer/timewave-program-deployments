@@ -1,5 +1,5 @@
 [package]
-name       = "neutron-stake-drop"
+name       = "ntrn-migrate-usdc"
 authors    = ["Timewave Labs"]
 edition    = "2021"
 license    = "Apache-2.0"
@@ -12,11 +12,6 @@ valence-program-manager = { workspace = true }
 serde_json              = { workspace = true }
 clap                    = { workspace = true }
 tokio                   = { workspace = true }
-
-#CW
-cosmwasm-std = { workspace = true }
-cw-utils     = { workspace = true }
-cw-denom     = { workspace = true }
 
 # Libraries
 valence-authorization                = { workspace = true }
@@ -37,7 +32,6 @@ valence-osmosis-cl-withdrawer        = { workspace = true }
 valence-encoder-broker               = { workspace = true }
 valence-neutron-ic-querier           = { workspace = true }
 valence-drop-liquid-staker           = { workspace = true }
-valence-drop-liquid-unstaker         = { workspace = true }
 valence-program-registry             = { workspace = true }
 
 # utils

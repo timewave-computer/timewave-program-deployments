@@ -2824,7 +2824,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "neutron_stake_drop"
+name = "neutron-stake-drop"
 version = "0.1.0"
 dependencies = [
  "clap",
@@ -2874,6 +2874,45 @@ checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
 dependencies = [
  "memchr",
  "minimal-lexical",
+]
+
+[[package]]
+name = "ntrn-migrate-usdc"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "deployer-lib",
+ "serde_json",
+ "tokio",
+ "valence-account-utils",
+ "valence-astroport-lper",
+ "valence-astroport-utils",
+ "valence-astroport-withdrawer",
+ "valence-authorization",
+ "valence-authorization-utils",
+ "valence-base-account",
+ "valence-drop-liquid-staker",
+ "valence-encoder-broker",
+ "valence-forwarder-library",
+ "valence-generic-ibc-transfer-library",
+ "valence-ibc-utils",
+ "valence-library-base",
+ "valence-library-utils",
+ "valence-macros",
+ "valence-neutron-ibc-transfer-library",
+ "valence-neutron-ic-querier",
+ "valence-osmosis-cl-lper",
+ "valence-osmosis-cl-withdrawer",
+ "valence-osmosis-gamm-lper",
+ "valence-osmosis-gamm-withdrawer",
+ "valence-osmosis-utils",
+ "valence-processor",
+ "valence-processor-utils",
+ "valence-program-manager",
+ "valence-program-registry",
+ "valence-reverse-splitter-library",
+ "valence-splitter-library",
+ "valence-storage-account",
 ]
 
 [[package]]

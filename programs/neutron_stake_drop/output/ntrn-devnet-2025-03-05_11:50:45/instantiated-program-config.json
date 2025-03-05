@@ -1,6 +1,6 @@
 {
-  "id": 5,
-  "owner": "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68",
+  "id": 6,
+  "owner": "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
   "links": {
     "0": {"input_accounts_id": [0], "output_accounts_id": [1], "library_id": 0},
     "1": {"input_accounts_id": [1], "output_accounts_id": [2], "library_id": 1},
@@ -13,51 +13,51 @@
       "name": "drip_acc",
       "ty": {
         "Addr": {
-          "addr": "neutron1e5k8kszyxznf7yttuftnvj5c2atwapqhv4gsngz4232k4r0a4xrskzh9mq"
+          "addr": "neutron18e3eurjpr9z46yp46hhlgz4frappksx6ztxsgjxkzp4q6vss2mmsxh4dac"
         }
       },
       "domain": {"CosmosCosmwasm": "neutron"},
-      "addr": "neutron1e5k8kszyxznf7yttuftnvj5c2atwapqhv4gsngz4232k4r0a4xrskzh9mq"
+      "addr": "neutron18e3eurjpr9z46yp46hhlgz4frappksx6ztxsgjxkzp4q6vss2mmsxh4dac"
     },
     "1": {
       "name": "ls_acc",
       "ty": {
         "Addr": {
-          "addr": "neutron1hwwe9a4uwf48styysyk39c65cs73e397ssdjh2vmneq6lwx5f7zsg5dej0"
+          "addr": "neutron1tfy9v9k4wyuszkur8lphth7uxv4s8euytlaqkn6vlr4s6r5gr66q67wdwp"
         }
       },
       "domain": {"CosmosCosmwasm": "neutron"},
-      "addr": "neutron1hwwe9a4uwf48styysyk39c65cs73e397ssdjh2vmneq6lwx5f7zsg5dej0"
+      "addr": "neutron1tfy9v9k4wyuszkur8lphth7uxv4s8euytlaqkn6vlr4s6r5gr66q67wdwp"
     },
     "2": {
       "name": "interim_acc",
       "ty": {
         "Addr": {
-          "addr": "neutron1c3pemzyqas2z7sdezxdjp0kfhy75gukd3aleah8nuw2wqdqvgy3qshrnvg"
+          "addr": "neutron164xfvenjcqq3dfyp4pghpuha0gluj5hcmlg2tjshh9rgfgyqyadq606y52"
         }
       },
       "domain": {"CosmosCosmwasm": "neutron"},
-      "addr": "neutron1c3pemzyqas2z7sdezxdjp0kfhy75gukd3aleah8nuw2wqdqvgy3qshrnvg"
+      "addr": "neutron164xfvenjcqq3dfyp4pghpuha0gluj5hcmlg2tjshh9rgfgyqyadq606y52"
     },
     "3": {
       "name": "stake_holder_acc",
       "ty": {
         "Addr": {
-          "addr": "neutron1sk5mxaxkejzs4aftnymrdewtpzmvetsda0nrwwcdncq8twurrsjsxm29rj"
+          "addr": "neutron1vk64n9qratt7xulh2vcxscus47zkm902c5mrl8w2zrx35lyu7pksvxl4z4"
         }
       },
       "domain": {"CosmosCosmwasm": "neutron"},
-      "addr": "neutron1sk5mxaxkejzs4aftnymrdewtpzmvetsda0nrwwcdncq8twurrsjsxm29rj"
+      "addr": "neutron1vk64n9qratt7xulh2vcxscus47zkm902c5mrl8w2zrx35lyu7pksvxl4z4"
     },
     "4": {
       "name": "unstake_acc",
       "ty": {
         "Addr": {
-          "addr": "neutron1n22yr3wwxh27u3wwvcr5p0mxmj4p7xjwlwvlhcqx2wztcjqh9hfs7rvcd2"
+          "addr": "neutron1u2fu67mlan9ljcs4h80n8ywe6356nyzraml36z7wjly9yem8knrsjcut7u"
         }
       },
       "domain": {"CosmosCosmwasm": "neutron"},
-      "addr": "neutron1n22yr3wwxh27u3wwvcr5p0mxmj4p7xjwlwvlhcqx2wztcjqh9hfs7rvcd2"
+      "addr": "neutron1u2fu67mlan9ljcs4h80n8ywe6356nyzraml36z7wjly9yem8knrsjcut7u"
     }
   },
   "libraries": {
@@ -67,23 +67,18 @@
       "config": {
         "ValenceForwarderLibrary": {
           "input_addr": {
-            "|library_account_addr|": "neutron1e5k8kszyxznf7yttuftnvj5c2atwapqhv4gsngz4232k4r0a4xrskzh9mq"
+            "|library_account_addr|": "neutron18e3eurjpr9z46yp46hhlgz4frappksx6ztxsgjxkzp4q6vss2mmsxh4dac"
           },
           "output_addr": {
-            "|library_account_addr|": "neutron1hwwe9a4uwf48styysyk39c65cs73e397ssdjh2vmneq6lwx5f7zsg5dej0"
+            "|library_account_addr|": "neutron1tfy9v9k4wyuszkur8lphth7uxv4s8euytlaqkn6vlr4s6r5gr66q67wdwp"
           },
           "forwarding_configs": [
-            {
-              "denom": {
-                "native": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
-              },
-              "max_amount": "1000000"
-            }
+            {"denom": {"native": "untrn"}, "max_amount": "1000000"}
           ],
           "forwarding_constraints": {"min_interval": {"time": 3600}}
         }
       },
-      "addr": "neutron1xqch2tvfu3j44mdunj502ujg9evg6fz50wgck5yw4kvjqz33y8zqj4y7l4"
+      "addr": "neutron1n3h7dvsmx05hqknkewnvpn6qkaa5tlw3yja0cengnjrw85cevcvsrj0y2a"
     },
     "1": {
       "name": "drop_liquid_staker",
@@ -91,16 +86,16 @@
       "config": {
         "ValenceDropLiquidStaker": {
           "input_addr": {
-            "|library_account_addr|": "neutron1hwwe9a4uwf48styysyk39c65cs73e397ssdjh2vmneq6lwx5f7zsg5dej0"
+            "|library_account_addr|": "neutron1tfy9v9k4wyuszkur8lphth7uxv4s8euytlaqkn6vlr4s6r5gr66q67wdwp"
           },
           "output_addr": {
-            "|library_account_addr|": "neutron1c3pemzyqas2z7sdezxdjp0kfhy75gukd3aleah8nuw2wqdqvgy3qshrnvg"
+            "|library_account_addr|": "neutron164xfvenjcqq3dfyp4pghpuha0gluj5hcmlg2tjshh9rgfgyqyadq606y52"
           },
-          "liquid_staker_addr": "neutron16m3hjh7l04kap086jgwthduma0r5l0wh8kc6kaqk92ge9n5aqvys9q6lxr",
-          "denom": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+          "liquid_staker_addr": "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq",
+          "denom": "untrn"
         }
       },
-      "addr": "neutron1pfdwmxpdm6y29735vljkpcymhfvt9qzjuauxgl0rpfps7pp2x3mqu8zny3"
+      "addr": "neutron142ugr6ngryp4f02ektln9kt7rthewzjal6nqmkvn9gxm0p9vesxsp79kp6"
     },
     "2": {
       "name": "liquid_staked_splitter",
@@ -108,22 +103,31 @@
       "config": {
         "ValenceSplitterLibrary": {
           "input_addr": {
-            "|library_account_addr|": "neutron1c3pemzyqas2z7sdezxdjp0kfhy75gukd3aleah8nuw2wqdqvgy3qshrnvg"
+            "|library_account_addr|": "neutron164xfvenjcqq3dfyp4pghpuha0gluj5hcmlg2tjshh9rgfgyqyadq606y52"
           },
           "splits": [
             {
               "denom": {
-                "native": "factory/neutron1k6hr0f83e7un2wjf29cspk7j69jrnskk65k3ek2nj9dztrlzpj6q00rtsa/udatom"
+                "native": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
               },
               "account": {
-                "|library_account_addr|": "neutron1sk5mxaxkejzs4aftnymrdewtpzmvetsda0nrwwcdncq8twurrsjsxm29rj"
+                "|library_account_addr|": "neutron1vk64n9qratt7xulh2vcxscus47zkm902c5mrl8w2zrx35lyu7pksvxl4z4"
               },
-              "amount": {"fixed_ratio": "1"}
+              "amount": {"fixed_ratio": "0.5"}
+            },
+            {
+              "denom": {
+                "native": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
+              },
+              "account": {
+                "|library_account_addr|": "neutron1mjexzk2fh92dz60mrm5cdcls23xm3s5yvs0u4vaz9685av3sfepqn04ap9"
+              },
+              "amount": {"fixed_ratio": "0.5"}
             }
           ]
         }
       },
-      "addr": "neutron1t8zrlxwax6n4r5j4m54utycehwnslage3y4dxv8sppags997zsxsj2h99q"
+      "addr": "neutron13s2ps4e2d32ycem57lmzk0cx93skhrh9kqsuv0ygmkezc9gfrsps92aaqj"
     },
     "3": {
       "name": "liquid_staked_forwarder",
@@ -131,15 +135,15 @@
       "config": {
         "ValenceForwarderLibrary": {
           "input_addr": {
-            "|library_account_addr|": "neutron1sk5mxaxkejzs4aftnymrdewtpzmvetsda0nrwwcdncq8twurrsjsxm29rj"
+            "|library_account_addr|": "neutron1vk64n9qratt7xulh2vcxscus47zkm902c5mrl8w2zrx35lyu7pksvxl4z4"
           },
           "output_addr": {
-            "|library_account_addr|": "neutron1n22yr3wwxh27u3wwvcr5p0mxmj4p7xjwlwvlhcqx2wztcjqh9hfs7rvcd2"
+            "|library_account_addr|": "neutron1u2fu67mlan9ljcs4h80n8ywe6356nyzraml36z7wjly9yem8knrsjcut7u"
           },
           "forwarding_configs": [
             {
               "denom": {
-                "native": "factory/neutron1k6hr0f83e7un2wjf29cspk7j69jrnskk65k3ek2nj9dztrlzpj6q00rtsa/udatom"
+                "native": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
               },
               "max_amount": "1000000"
             }
@@ -147,7 +151,7 @@
           "forwarding_constraints": {"min_interval": null}
         }
       },
-      "addr": "neutron1t2k9nmraq52pfq0j3vf8dzxq5px7l2tkx45dqxxjz00664c6vy0sh9r524"
+      "addr": "neutron1eaucpndv6kuqw43elzgd9td3prp6r793tnmqrx4n7rfehehqc04s8mg8d9"
     },
     "4": {
       "name": "drop_unstaker",
@@ -155,18 +159,18 @@
       "config": {
         "ValenceDropLiquidUnstaker": {
           "input_addr": {
-            "|library_account_addr|": "neutron1n22yr3wwxh27u3wwvcr5p0mxmj4p7xjwlwvlhcqx2wztcjqh9hfs7rvcd2"
+            "|library_account_addr|": "neutron1u2fu67mlan9ljcs4h80n8ywe6356nyzraml36z7wjly9yem8knrsjcut7u"
           },
           "output_addr": {
-            "|library_account_addr|": "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68"
+            "|library_account_addr|": "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
           },
-          "liquid_unstaker_addr": "neutron16m3hjh7l04kap086jgwthduma0r5l0wh8kc6kaqk92ge9n5aqvys9q6lxr",
-          "withdrawal_manager_addr": "neutron1gcklauurx4ckyp0t8a6axl0500vy3n09y5utpspjg8ruxnln8erq2uumck",
-          "voucher_addr": "neutron1f4c2l9u8yekp99mexyhf7wxgrq3gjtuzgrqe90xaq75v7quulptqzef6up",
-          "denom": "factory/neutron1k6hr0f83e7un2wjf29cspk7j69jrnskk65k3ek2nj9dztrlzpj6q00rtsa/udatom"
+          "liquid_unstaker_addr": "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq",
+          "withdrawal_manager_addr": "neutron15x6m8kxvufgzfy74c4kunrkh6y7hwxgnnc4tfc4hwt3cy0j6zs2skk07xn",
+          "voucher_addr": "neutron1hdedwnjwk8r22hrujdh79966hu50zthgvatu4ju075lyt5sa9lvq5yd3fs",
+          "denom": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
         }
       },
-      "addr": "neutron187gax6ktyqlehdcr7x66qm9ezlyg0nsknlq0h87ahtajzj0yp8zsx5hxwu"
+      "addr": "neutron1jcq2gze6cnkazkhcypl2s4khrqp3y8vququtq3j0ehdp6clgcv3qkfzs0x"
     }
   },
   "authorizations": [
@@ -191,7 +195,7 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron1xqch2tvfu3j44mdunj502ujg9evg6fz50wgck5yw4kvjqz33y8zqj4y7l4"
+                "|library_account_addr|": "neutron1n3h7dvsmx05hqknkewnvpn6qkaa5tlw3yja0cengnjrw85cevcvsrj0y2a"
               }
             }
           ],
@@ -222,7 +226,7 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron1pfdwmxpdm6y29735vljkpcymhfvt9qzjuauxgl0rpfps7pp2x3mqu8zny3"
+                "|library_account_addr|": "neutron142ugr6ngryp4f02ektln9kt7rthewzjal6nqmkvn9gxm0p9vesxsp79kp6"
               }
             },
             {
@@ -237,7 +241,7 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron1t8zrlxwax6n4r5j4m54utycehwnslage3y4dxv8sppags997zsxsj2h99q"
+                "|library_account_addr|": "neutron13s2ps4e2d32ycem57lmzk0cx93skhrh9kqsuv0ygmkezc9gfrsps92aaqj"
               }
             }
           ],
@@ -252,8 +256,8 @@
       "mode": {
         "permissioned": {
           "without_call_limit": [
-            "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68",
-            "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68"
+            "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+            "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
           ]
         }
       },
@@ -275,7 +279,7 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron1t2k9nmraq52pfq0j3vf8dzxq5px7l2tkx45dqxxjz00664c6vy0sh9r524"
+                "|library_account_addr|": "neutron1eaucpndv6kuqw43elzgd9td3prp6r793tnmqrx4n7rfehehqc04s8mg8d9"
               }
             }
           ],
@@ -306,7 +310,7 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron187gax6ktyqlehdcr7x66qm9ezlyg0nsknlq0h87ahtajzj0yp8zsx5hxwu"
+                "|library_account_addr|": "neutron1jcq2gze6cnkazkhcypl2s4khrqp3y8vququtq3j0ehdp6clgcv3qkfzs0x"
               }
             }
           ],
@@ -343,7 +347,79 @@
                 }
               },
               "contract_address": {
-                "|library_account_addr|": "neutron187gax6ktyqlehdcr7x66qm9ezlyg0nsknlq0h87ahtajzj0yp8zsx5hxwu"
+                "|library_account_addr|": "neutron1jcq2gze6cnkazkhcypl2s4khrqp3y8vququtq3j0ehdp6clgcv3qkfzs0x"
+              }
+            }
+          ],
+          "retry_logic": null,
+          "expiration_time": null
+        }
+      },
+      "priority": null
+    },
+    {
+      "label": "update_split_config",
+      "mode": {
+        "permissioned": {
+          "without_call_limit": [
+            "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+          ]
+        }
+      },
+      "not_before": {"never": {}},
+      "duration": "forever",
+      "max_concurrent_executions": null,
+      "subroutine": {
+        "atomic": {
+          "functions": [
+            {
+              "domain": "main",
+              "message_details": {
+                "message_type": "cosmwasm_execute_msg",
+                "message": {
+                  "name": "update_config",
+                  "params_restrictions": [
+                    {"must_be_included": ["update_config", "splits"]}
+                  ]
+                }
+              },
+              "contract_address": {
+                "|library_account_addr|": "neutron13s2ps4e2d32ycem57lmzk0cx93skhrh9kqsuv0ygmkezc9gfrsps92aaqj"
+              }
+            }
+          ],
+          "retry_logic": null,
+          "expiration_time": null
+        }
+      },
+      "priority": null
+    },
+    {
+      "label": "update_forward_config",
+      "mode": {
+        "permissioned": {
+          "without_call_limit": [
+            "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+          ]
+        }
+      },
+      "not_before": {"never": {}},
+      "duration": "forever",
+      "max_concurrent_executions": null,
+      "subroutine": {
+        "atomic": {
+          "functions": [
+            {
+              "domain": "main",
+              "message_details": {
+                "message_type": "cosmwasm_execute_msg",
+                "message": {
+                  "name": "update_config",
+                  "params_restrictions": null
+                }
+              },
+              "contract_address": {
+                "|library_account_addr|": "neutron1n3h7dvsmx05hqknkewnvpn6qkaa5tlw3yja0cengnjrw85cevcvsrj0y2a"
               }
             }
           ],
@@ -355,9 +431,9 @@
     }
   ],
   "authorization_data": {
-    "authorization_addr": "neutron1tyz2f5g954yy477vypatd3keqcvrnap8rptsnwkhxzuft5862nqqd8xy2p",
+    "authorization_addr": "neutron12j6n7mawgcaarvh6k2ykm0axp836d787nkg0c6kv5cp7ppcjt37s5h89na",
     "processor_addrs": {
-      "CosmosCosmwasm:neutron": "neutron17dspsm45j2vhxmlkspymk88w289mjyhky9xaa8d86aut4xjk3qzq5jcreu"
+      "CosmosCosmwasm:neutron": "neutron1n3qa080k3s7z80etuh8tkq3f8nagru8qgeqn3wswxsg8ul63d3xsy47em4"
     },
     "authorization_bridge_addrs": {},
     "processor_bridge_addrs": []

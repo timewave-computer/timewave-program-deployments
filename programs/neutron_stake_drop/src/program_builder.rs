@@ -1,3 +1,5 @@
+use std::str::FromStr;
+
 use cosmwasm_std::Decimal;
 use valence_authorization_utils::{
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
@@ -17,6 +19,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let owner = params.get("owner");
     let ntrn_denom = params.get("ntrn_denom");
     let dntrn_denom = params.get("dntrn_denom");
+    let bootstrap_ntrn_dntrn_receive_addr = params.get("bootstrap_ntrn_dntrn_receive_addr");
     let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
     let drop_liquid_unstaker_addr = params.get("drop_liquid_unstaker_addr");
     let drop_withdrawal_manager_addr = params.get("drop_withdrawal_manager_addr");
@@ -103,11 +106,18 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // Liquid staked token splitter
     let split_ls_token_config = valence_splitter_library::msg::LibraryConfig {
         input_addr: acc_interim.clone(),
-        splits: vec![valence_splitter_library::msg::UncheckedSplitConfig::new(
-            cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
-            acc_stake_holder.clone(),
-            valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::one()),
-        )],
+        splits: vec![
+            valence_splitter_library::msg::UncheckedSplitConfig::new(
+                cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
+                acc_stake_holder.clone(),
+                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::from_str("0.5").expect("Decimal::from_str failed")),
+            ),
+            valence_splitter_library::msg::UncheckedSplitConfig::new(
+                cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
+                bootstrap_ntrn_dntrn_receive_addr.as_str(),
+                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::from_str("0.5").expect("Decimal::from_str failed")),
+            ),
+        ],
     };
 
     let split_ls_token_library = builder.add_library(LibraryInfo::new(

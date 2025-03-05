@@ -4,7 +4,7 @@ authors    = ["Timewave Labs"]
 edition    = "2021"
 license    = "Apache-2.0"
 version    = "0.1.0"
-repository = "https://github.com/timewave-computer/program_deployer"
+repository = "https://github.com/timewave-computer/timewave-program-deployments"
 
 [dependencies]
 deployer-lib            = { workspace = true }
