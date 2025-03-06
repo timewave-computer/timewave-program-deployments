@@ -1,7 +1,8 @@
 use config::Config as ConfigHelper;
-use std::{error::Error, path::PathBuf};
+use std::{error::Error, path::Path};
 
-const MANAGER_CONFIGS_REPO_URL: &str = "https://github.com/timewave-computer/valence-program-manager-config.git";
+const MANAGER_CONFIGS_REPO_URL: &str =
+    "https://github.com/timewave-computer/valence-program-manager-config.git";
 
 pub fn get_manager_config(
     path: &str,
@@ -18,16 +19,14 @@ pub fn get_manager_config(
         return Err(format!("Manager config for {} environment does not exist", path).into());
     }
 
-    // Try to parse to manager config from a single config.json file (for local)
-    match ConfigHelper::builder()
+    if let Ok(cfg) = ConfigHelper::builder()
         .add_source(config::File::with_name(&format!(
             "{}/config.json",
             config_path_str
         )))
         .build()
     {
-        Ok(cfg) => return cfg.try_deserialize().map_err(|e| e.into()),
-        Err(_) => (),
+        return cfg.try_deserialize().map_err(|e| e.into());
     };
 
     ConfigHelper::builder()
@@ -64,7 +63,7 @@ pub fn get_manager_config(
     // .map_err(|_| "Failed to parse config".into())
 }
 
-pub(crate) async fn set_manager_config(path: &str) -> Result<(), Box<dyn Error>>{
+pub(crate) async fn set_manager_config(path: &str) -> Result<(), Box<dyn Error>> {
     // Read the config
     let config = get_manager_config(path)?;
 
@@ -74,7 +73,7 @@ pub(crate) async fn set_manager_config(path: &str) -> Result<(), Box<dyn Error>>
     Ok(())
 }
 
-fn clone_config_from_repo(env_path: &str, config_path: &PathBuf) -> Result<(), Box<dyn Error>> {
+fn clone_config_from_repo(env_path: &str, config_path: &Path) -> Result<(), Box<dyn Error>> {
     // DO NOT CHANGE THIS
     let tmp_dir = std::env::current_dir()?.join("tmp");
 

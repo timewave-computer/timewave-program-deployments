@@ -13,6 +13,11 @@ serde_json              = { workspace = true }
 clap                    = { workspace = true }
 tokio                   = { workspace = true }
 
+#CW
+cosmwasm-std = { workspace = true }
+cw-utils     = { workspace = true }
+cw-denom     = { workspace = true }
+
 # Libraries
 valence-authorization                = { workspace = true }
 valence-base-account                 = { workspace = true }

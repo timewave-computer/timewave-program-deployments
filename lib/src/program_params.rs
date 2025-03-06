@@ -1,5 +1,5 @@
 use config::Config as ConfigHelper;
-use std::{collections::HashMap, error::Error, path::PathBuf};
+use std::{error::Error, path::PathBuf};
 
 pub fn get_program_params(
     program_path: &PathBuf,
@@ -17,30 +17,38 @@ pub fn get_program_params(
         return Err(format!("Program params file not found: {}.toml", env).into());
     }
 
-    let params = match ConfigHelper::builder()
+    let params = ConfigHelper::builder()
         .add_source(config::File::with_name(&format!(
             "{}/{}.toml",
             params_path_str, env
         )))
-        .build()
-    {
-        Ok(cfg) => cfg
-            .try_deserialize::<HashMap<String, String>>()
-            .map_err(|e| format!("Failed to parse program params : {}", e)),
-        Err(_) => Err("Failed to parse program params".to_string()),
-    }?;
+        .build()?;
 
-    Ok(ProgramParams(params))
+    Ok(ProgramParams::new(params))
 }
 
 #[derive(Debug)]
-pub struct ProgramParams(HashMap<String, String>);
+pub struct ProgramParams {
+    cfg: ConfigHelper,
+}
 
 impl ProgramParams {
+    pub fn new(cfg: ConfigHelper) -> Self {
+        ProgramParams { cfg }
+    }
+
     pub fn get(&self, key: &str) -> String {
-        self.0
-            .get(key)
-            .expect(format!("Key {} not found", key).as_str())
-            .to_string()
+        self.cfg
+            .get::<String>(key)
+            .unwrap_or_else(|_| panic!("Key {} not found", key))
+    }
+
+    pub fn get_array(&self, key: &str) -> Vec<String> {
+        self.cfg
+            .get_array(key)
+            .unwrap_or_else(|_| panic!("Key {} not found", key))
+            .iter()
+            .map(|v| v.to_string())
+            .collect()
     }
 }

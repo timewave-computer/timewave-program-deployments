@@ -1,4 +1,8 @@
 use std::{error::Error, path::PathBuf};
+use valence_library_utils::LibraryAccountType;
+
+/// empty vec that implements GetId trait for links
+pub const EMPTY_VEC: Vec<&LibraryAccountType> = vec![];
 
 // Verify the program path exists and everything was called from the right place
 pub(crate) fn verify_path(path: PathBuf) -> Result<(), Box<dyn Error>> {

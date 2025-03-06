@@ -15,3 +15,5 @@ glob                    = { workspace = true }
 chrono                  = { workspace = true }
 dotenvy                 = { workspace = true }
 cmd_lib                 = { workspace = true }
+
+valence-library-utils = { workspace = true }

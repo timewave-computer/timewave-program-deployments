@@ -3,7 +3,11 @@ mod manager_config;
 mod program_config;
 mod program_params;
 
-use std::{error::Error, io::Write, path::PathBuf};
+use std::{
+    error::Error,
+    io::Write,
+    path::{Path, PathBuf},
+};
 
 use chrono::Utc;
 use clap::{command, Parser};
@@ -14,7 +18,8 @@ use program_config::read_program_config_from_json;
 use program_params::get_program_params;
 use valence_program_manager::program_config::ProgramConfig;
 
-// Reexport params to programs
+// Re-export params to programs
+pub use helpers::EMPTY_VEC;
 pub use program_params::ProgramParams;
 
 // |X| - Read or get the manager config
@@ -96,7 +101,7 @@ where
 
 fn write_to_output(
     program_config: ProgramConfig,
-    program_path: &PathBuf,
+    program_path: &Path,
     time: &str,
     env: &str,
     prefix: &str,

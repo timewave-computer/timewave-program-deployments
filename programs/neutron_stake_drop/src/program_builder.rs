@@ -1,11 +1,11 @@
 use std::str::FromStr;
 
 use cosmwasm_std::Decimal;
+use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
 };
-use valence_library_utils::LibraryAccountType;
 use valence_program_manager::{
     account::{AccountInfo, AccountType},
     library::{LibraryConfig, LibraryInfo},
@@ -110,12 +110,16 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             valence_splitter_library::msg::UncheckedSplitConfig::new(
                 cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
                 acc_stake_holder.clone(),
-                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::from_str("0.5").expect("Decimal::from_str failed")),
+                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
+                    Decimal::from_str("0.5").expect("Decimal::from_str failed"),
+                ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
                 cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
                 bootstrap_ntrn_dntrn_receive_addr.as_str(),
-                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::from_str("0.5").expect("Decimal::from_str failed")),
+                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
+                    Decimal::from_str("0.5").expect("Decimal::from_str failed"),
+                ),
             ),
         ],
     };
@@ -172,8 +176,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceDropLiquidUnstaker(drop_unstake_config.clone()),
     ));
 
-    let empty_vec: Vec<&LibraryAccountType> = vec![];
-    builder.add_link(&drop_unstake_library, vec![&acc_unstake], empty_vec);
+    builder.add_link(&drop_unstake_library, vec![&acc_unstake], EMPTY_VEC);
 
     // Authorizations
 

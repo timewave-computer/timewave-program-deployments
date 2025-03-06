@@ -17,7 +17,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let owner = params.get("owner");
 
     // Domains
-    let neutron_domain = valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
+    let neutron_domain =
+        valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
     // Write your program
     let swap_amount: u128 = 1_000_000_000;
@@ -34,7 +35,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         &neutron_domain,
         AccountType::default(),
     ));
-    
+
     let library_config = valence_splitter_library::msg::LibraryConfig {
         input_addr: account_1.clone(),
         splits: vec![UncheckedSplitConfig {

@@ -1,6 +1,7 @@
 use std::str::FromStr;
 
 use cosmwasm_std::{to_json_binary, Decimal};
+use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
@@ -164,11 +165,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceForwarderLibrary(lp_token_forwarder_config.clone()),
     ));
 
-    let empty_vec: Vec<&LibraryAccountType> = vec![];
     builder.add_link(
         &lib_lp_token_forwarder,
         vec![&acc_lp_token_holder],
-        empty_vec,
+        EMPTY_VEC,
     );
 
     // unlock forwarder
@@ -219,8 +219,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceAstroportWithdrawer(astropo_withdrawer_config.clone()),
     ));
 
-    let empty_vec: Vec<&LibraryAccountType> = vec![];
-    builder.add_link(&lib_astrport_withdrawer, vec![&acc_unlock], empty_vec);
+    builder.add_link(&lib_astrport_withdrawer, vec![&acc_unlock], EMPTY_VEC);
 
     // Authorizations
 

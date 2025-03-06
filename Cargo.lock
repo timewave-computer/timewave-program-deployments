@@ -1526,6 +1526,7 @@ dependencies = [
  "dotenvy",
  "glob",
  "serde_json",
+ "valence-library-utils",
  "valence-program-manager",
 ]
 
@@ -2881,6 +2882,9 @@ name = "ntrn-migrate-usdc"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "cosmwasm-std 2.2.1",
+ "cw-denom",
+ "cw-utils 2.0.0",
  "deployer-lib",
  "serde_json",
  "tokio",
