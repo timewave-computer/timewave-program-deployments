@@ -25,7 +25,7 @@ incremental      = false
 overflow-checks  = true
 
 [workspace.dependencies]
-valence-program-manager = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-manager", branch = "art3mix/manager-env-admin" }
+valence-program-manager = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-manager" }
 deployer-lib            = { path = "lib" }
 serde_json              = "1.0.125"
 clap                    = { version = "4.5.13", features = ["derive"] }
@@ -42,34 +42,34 @@ cw-utils     = "2.0.0"
 cw-denom     = { package = "cw-denom", git = "https://github.com/DA0-DA0/dao-contracts", branch = "cw-std-2" }
 
 # Libraries
-valence-authorization                = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-base-account                 = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-base-account", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-storage-account              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-storage-account", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-processor                    = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-splitter-library             = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-splitter-library", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-astroport-lper               = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-lper", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-forwarder-library            = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-forwarder-library", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-astroport-withdrawer         = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-withdrawer", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-generic-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-generic-ibc-transfer-library", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-neutron-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ibc-transfer-library", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-reverse-splitter-library     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-reverse-splitter-library", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-osmosis-gamm-lper            = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-lper", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-osmosis-gamm-withdrawer      = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-withdrawer", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-osmosis-cl-lper              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-lper", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-osmosis-cl-withdrawer        = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-withdrawer", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-encoder-broker               = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-encoder-broker", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-neutron-ic-querier           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ic-querier", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-drop-liquid-staker           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-staker", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-drop-liquid-unstaker         = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-unstaker", features = ["library"], branch = "art3mix/manager-env-admin" }
-valence-program-registry             = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-registry", features = ["library"], branch = "art3mix/manager-env-admin" }
+valence-authorization                = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization", features = ["library"] }
+valence-base-account                 = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-base-account", features = ["library"] }
+valence-storage-account              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-storage-account", features = ["library"] }
+valence-processor                    = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor", features = ["library"] }
+valence-splitter-library             = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-splitter-library", features = ["library"] }
+valence-astroport-lper               = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-lper", features = ["library"] }
+valence-forwarder-library            = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-forwarder-library", features = ["library"] }
+valence-astroport-withdrawer         = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-withdrawer", features = ["library"] }
+valence-generic-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-generic-ibc-transfer-library", features = ["library"] }
+valence-neutron-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ibc-transfer-library", features = ["library"] }
+valence-reverse-splitter-library     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-reverse-splitter-library", features = ["library"] }
+valence-osmosis-gamm-lper            = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-lper", features = ["library"] }
+valence-osmosis-gamm-withdrawer      = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-withdrawer", features = ["library"] }
+valence-osmosis-cl-lper              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-lper", features = ["library"] }
+valence-osmosis-cl-withdrawer        = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-withdrawer", features = ["library"] }
+valence-encoder-broker               = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-encoder-broker", features = ["library"] }
+valence-neutron-ic-querier           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ic-querier", features = ["library"] }
+valence-drop-liquid-staker           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-staker", features = ["library"] }
+valence-drop-liquid-unstaker         = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-unstaker", features = ["library"] }
+valence-program-registry             = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-registry", features = ["library"] }
 
 # utils
-valence-account-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-account-utils", branch = "art3mix/manager-env-admin" }
-valence-astroport-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-utils", branch = "art3mix/manager-env-admin" }
-valence-osmosis-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-utils", branch = "art3mix/manager-env-admin" }
-valence-authorization-utils = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization-utils", branch = "art3mix/manager-env-admin" }
-valence-ibc-utils           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-ibc-utils", branch = "art3mix/manager-env-admin" }
-valence-macros              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-macros", branch = "art3mix/manager-env-admin" }
-valence-processor-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor-utils", branch = "art3mix/manager-env-admin" }
-valence-library-base        = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-base", branch = "art3mix/manager-env-admin" }
-valence-library-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-utils", branch = "art3mix/manager-env-admin" }
+valence-account-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-account-utils" }
+valence-astroport-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-utils" }
+valence-osmosis-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-utils" }
+valence-authorization-utils = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization-utils" }
+valence-ibc-utils           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-ibc-utils" }
+valence-macros              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-macros" }
+valence-processor-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor-utils" }
+valence-library-base        = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-base" }
+valence-library-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-utils" }

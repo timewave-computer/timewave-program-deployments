@@ -27,6 +27,14 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let security_dao_addr = params.get("security_dao_addr");
     let double_sided_min = params.get("double_sided_min");
     let double_sided_max = params.get("double_sided_max");
+    let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
+
+    let permissioned_all_mode =
+        valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                authorizations_allowed_list,
+            ),
+        );
 
     let mut builder = ProgramConfigBuilder::new(owner);
 
@@ -243,6 +251,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("forward_ntrn")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -268,6 +277,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("forward_dntrn")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -305,6 +315,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("double_sided_lp")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 

@@ -25,7 +25,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let ntrn_denom = params.get("ntrn_denom");
     let dntrn_denom = params.get("dntrn_denom");
     let usdc_denom = params.get("usdc_denom");
-    let drop_liquid_staker_addr = params.get("usdc_denom");
+    let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
     let pool_max_spread = params.get("pool_max_spread");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
@@ -309,7 +309,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     builder.add_link(
         &lib_usdc_dntrn_withdrawer,
-        vec![&acc_lp_withdraw],
+        vec![&acc_unlock],
         EMPTY_VEC,
     );
 

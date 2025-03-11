@@ -26,6 +26,14 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let voucher_addr = params.get("voucher_addr");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
+    let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
+
+    let permissioned_all_mode =
+        valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+            valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                authorizations_allowed_list,
+            ),
+        );
 
     // Domains
     let neutron_domain =
@@ -200,6 +208,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("drip_forward")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -242,6 +251,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("liquid_stake_and_split")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -266,6 +276,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(staked_token_forward_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("staked_token_forward")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -273,7 +284,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("staked_token_forward")
         .with_subroutine(subroutine)
         .build();
 
@@ -299,6 +309,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("unstake")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -325,6 +336,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("withdraw")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -349,6 +361,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_split_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("update_split_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -356,7 +369,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_split_config")
         .with_subroutine(subroutine)
         .build();
 
@@ -378,6 +390,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_forward_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("update_forward_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -385,7 +398,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_forward_config")
         .with_subroutine(subroutine)
         .build();
 

@@ -22,16 +22,18 @@ use valence_program_manager::program_config::ProgramConfig;
 pub use helpers::EMPTY_VEC;
 pub use program_params::ProgramParams;
 
-// |X| - Read or get the manager config
-// |X| - read program parameters into a map
-// |X| - helper function to read a parameter from the map
-// |X| - call the program builder with the parameters
-// deploy the program using the manager
-// save program json files (Raw and instantiated)
+#[derive(clap::ValueEnum, Clone, Debug, PartialEq)]
+enum Mode {
+    Deploy,
+    Debug,
+}
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
+    /// Allows printing debug program config
+    #[arg(short, long, default_value = "deploy")]
+    mode: Mode,
     /// Enviroment config to use Ex: mainnet, testnet, local
     #[arg(short, long, default_value = "mainnet")]
     target_env: String,
@@ -85,7 +87,15 @@ where
     )?;
 
     // Use program manager to deploy the program
-    valence_program_manager::init_program(&mut program_config).await?;
+    match valence_program_manager::init_program(&mut program_config).await {
+        Ok(_) => (),
+        Err(e) => {
+            if args.mode == Mode::Debug {
+                write_to_output(program_config, &program_path, &timestamp, &args.target_env, "debug")?;
+            }
+            return Err(Box::new(e));
+        },
+    };
 
     // Write instantiated program to file
     write_to_output(

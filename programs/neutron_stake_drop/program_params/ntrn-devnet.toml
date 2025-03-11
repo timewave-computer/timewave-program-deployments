@@ -8,3 +8,8 @@ drop_withdrawal_manager_addr = "neutron15x6m8kxvufgzfy74c4kunrkh6y7hwxgnnc4tfc4h
 voucher_addr = "neutron1hdedwnjwk8r22hrujdh79966hu50zthgvatu4ju075lyt5sa9lvq5yd3fs"
 neutron_dao_addr = "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
 security_dao_addr = "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+authorizations_allowed_list = [
+    "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
+    "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+    "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+]
