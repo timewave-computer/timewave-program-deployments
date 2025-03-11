@@ -387,7 +387,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_mode(permissioned_all_mode.clone())
-        .with_label("forward_usdc_read_to_lp")
+        .with_label("forward_usdc_ready_to_lp")
         .with_subroutine(subroutine)
         .build();
 
@@ -588,7 +588,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "update_config".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "update_config".to_string(),
-                    "forwarding_configs".to_string(),
                 ])]),
             },
         })

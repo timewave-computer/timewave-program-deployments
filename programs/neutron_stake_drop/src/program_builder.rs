@@ -351,7 +351,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "update_config".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "update_config".to_string(),
-                    "splits".to_string(),
                 ])]),
             },
         })
