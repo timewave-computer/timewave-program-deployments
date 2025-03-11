@@ -8,12 +8,11 @@ dntrn_denom = "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y
 usdc_denom = "factory/neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2/test-usdc"
 drop_liquid_staker_addr = "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq"
 pool_max_spread = "0.5"
-neutron_dao_addr = "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+neutron_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
 security_dao_addr = "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
 double_sided_min = "0.5"
 double_sided_max = "2"
 authorizations_allowed_list = [
-    "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
-    "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
     "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+    "neutron1hl9vrr0k0l2pz62v343f50v0djm87dzhvxjtca",
 ]
