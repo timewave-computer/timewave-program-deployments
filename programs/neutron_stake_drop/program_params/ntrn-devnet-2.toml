@@ -1,0 +1,14 @@
+owner = "neutron1r3ur0g2ymhax7v79sdyhnts6tqakeey3z6jwjt" # Updated
+ntrn_denom = "untrn" # Unchanged
+dntrn_denom = "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn" # Unchanged 
+bootstrap_ntrn_dntrn_receive_addr = "neutron1h8xegrahgfpzhw5jt6qwchzsjcaxuvcf5kmct4x9rd0xa0g89uqsgku2a2" # TODO
+drop_liquid_staker_addr = "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq" # Unchanged
+drop_liquid_unstaker_addr = "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq" # Unchanged
+drop_withdrawal_manager_addr = "neutron15x6m8kxvufgzfy74c4kunrkh6y7hwxgnnc4tfc4hwt3cy0j6zs2skk07xn" # Unchangeed
+voucher_addr = "neutron1hdedwnjwk8r22hrujdh79966hu50zthgvatu4ju075lyt5sa9lvq5yd3fs" # Unchanged
+neutron_dao_addr = "neutron1yw4xvtc43me9scqfr2jr2gzvcxd3a9y4eq7gaukreugw2yd2f8ts8g30fq" # Neutron Main DAO
+security_dao_addr = "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+authorizations_allowed_list = [
+    "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+    "neutron1hl9vrr0k0l2pz62v343f50v0djm87dzhvxjtca",
+]
