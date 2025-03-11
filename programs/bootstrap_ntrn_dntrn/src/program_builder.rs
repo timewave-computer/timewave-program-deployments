@@ -428,7 +428,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "update_config".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "update_config".to_string(),
-                    "forwarding_configs".to_string(),
+                    "new_config".to_string(),
                 ])]),
             },
         })
@@ -486,7 +486,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: None,
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "new_config".to_string(),
+                ])]),
             },
         })
         .build();
@@ -515,7 +518,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: None,
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "new_config".to_string(),
+                ])]),
             },
         })
         .build();

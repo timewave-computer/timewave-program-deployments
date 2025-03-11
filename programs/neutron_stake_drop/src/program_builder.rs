@@ -280,7 +280,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone(), security_dao_addr],
+                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
                 ),
             ),
         )
@@ -351,6 +351,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "update_config".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "update_config".to_string(),
+                    "new_config".to_string(),
                 ])]),
             },
         })
@@ -364,7 +365,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone()],
+                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
                 ),
             ),
         )
@@ -380,7 +381,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: None,
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "new_config".to_string(),
+                ])]),
             },
         })
         .build();
@@ -393,7 +397,39 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone()],
+                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
+                ),
+            ),
+        )
+        .with_subroutine(subroutine)
+        .build();
+
+    builder.add_authorization(authorization);
+
+    // Update dntrn forward config
+    let update_dntrn_forward_config_function = AtomicFunctionBuilder::new()
+        .with_contract_address(ls_token_forwader_library.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "update_config".to_string(),
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "new_config".to_string(),
+                ])]),
+            },
+        })
+        .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(update_dntrn_forward_config_function)
+        .build();
+    let authorization = AuthorizationBuilder::new()
+        .with_label("update_dntrn_forward_config")
+        .with_mode(
+            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
                 ),
             ),
         )

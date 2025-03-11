@@ -307,11 +307,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceAstroportWithdrawer(usdc_dntrn_withdrawer_config.clone()),
     ));
 
-    builder.add_link(
-        &lib_usdc_dntrn_withdrawer,
-        vec![&acc_unlock],
-        EMPTY_VEC,
-    );
+    builder.add_link(&lib_usdc_dntrn_withdrawer, vec![&acc_unlock], EMPTY_VEC);
 
     // Authorizations
 
@@ -376,7 +372,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "process_function".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "process_function".to_string(),
-                    "forward".to_string(),
+                    // "forward".to_string(),
                 ])]),
             },
         })
@@ -588,6 +584,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 name: "update_config".to_string(),
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "update_config".to_string(),
+                    "new_config".to_string(),
                 ])]),
             },
         })
@@ -645,7 +642,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: None,
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "update_config".to_string(),
+                    "new_config".to_string(),
+                ])]),
             },
         })
         .build();
