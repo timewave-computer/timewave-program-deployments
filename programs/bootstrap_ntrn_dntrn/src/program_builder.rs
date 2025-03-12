@@ -136,8 +136,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 valence_astroport_utils::astroport_native_lp_token::PairType::Xyk {},
             ),
             asset_data: valence_library_utils::liquidity_utils::AssetData {
-                asset1: ntrn_denom.clone(),
-                asset2: dntrn_denom.clone(),
+                asset1: dntrn_denom.clone(),
+                asset2: ntrn_denom.clone(),
             },
             max_spread,
         },
@@ -215,8 +215,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 valence_astroport_utils::astroport_native_lp_token::PairType::Xyk {},
             ),
             asset_data: valence_library_utils::liquidity_utils::AssetData {
-                asset1: ntrn_denom.clone(),
-                asset2: dntrn_denom.clone(),
+                asset1: dntrn_denom.clone(),
+                asset2: ntrn_denom.clone(),
             },
         },
     };

@@ -2,8 +2,8 @@
 
 [chains.neutron]
 name = "neutron"
-rpc  = "http://37.27.55.217:26657"
-grpc = "http://37.27.55.217:8090"
+rpc  = "http://78.46.172.253:26657"
+grpc = "http://78.46.172.253:9090"
 prefix    = "neutron"
 gas_price = "0.0053"
 gas_denom = "untrn"

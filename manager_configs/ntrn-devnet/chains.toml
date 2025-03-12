@@ -2,7 +2,7 @@
 
 [chains.neutron]
 name = "neutron"
-rpc  = "https://rpc-orion.test-1.ntrn.tech/"
+rpc  = "https://rpc-orion.test-1.ntrn.tech:443"
 grpc = "https://grpc-orion.test-1.ntrn.tech:80"
 prefix    = "neutron"
 gas_price = "0.0053"
