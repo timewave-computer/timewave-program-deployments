@@ -2,7 +2,7 @@
 
 [chains.neutron]
 name = "neutron"
-rpc  = "http://78.46.172.253:26657"
+rpc  = "https://rpc-karnigon-1.rehearsal-1.neutron.org"
 grpc = "http://78.46.172.253:9090"
 prefix    = "neutron"
 gas_price = "0.0053"
