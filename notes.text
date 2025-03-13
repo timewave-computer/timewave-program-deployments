@@ -1,3 +1,10 @@
 // provide liquidty to astroport
 neutrond tx wasm execute neutron1fwlnsqt2vv3xhg96cy76avgwpa402zy2g49uwy2u7c2gshkp8hnqer9wgm '{"provide_liquidity": {"assets": [{"info": {"native_token": {"denom": "untrn"}}, "amount": "1000000"}, {"info": {"native_token": {"denom":"factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"}}, "amount": "1000000"}]}}' --amount 1000000untrn,1000000factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn --from=dev1 --gas=auto --gas-adjustment=2.0 --gas-prices=0.0057untrn --node=https://rpc-orion.test-1.ntrn.tech:443 --chain-id=test-1
 
+// Simulate tx directly on a lib to get meaningful error or success
+neutrond tx wasm execute neutron1lrhkt4ceh2msd8vf3dt64mqrdldjzta93j0lew2gxek
+0s2rk87wqlcswn2 '{"update_config":{"new_config":{"output_addr": {"library_account_addr": "neutron1kul0vp92dx32rk8uruhe9k4ef050w27pqmnda8l9pdt7tfy5zh
+ws9xhppe"}, "forwarding_configs":[{"denom":{"native":"factory/neutron1lm6c6g5sm9jgt55x5dca3jlqxxsdal7j4ylemfsa7h6ed725s73ql3hdyx/astroport/share"},"
+max_amount":"1"}],"forwarding_constraints":{"min_interval":null}}}}'  --from=neutron14akkshfvp7czc98x02hrzx7v6cv4pqhmcgl6dfekgc2exsn48ujqz66pux --fe
+es 1000000untrn --gas 1000000untrn --node=https://rpc-karnigon-1.rehearsal-1.neutron.org:443 --chain-id=rehearsal-1 --keyring-backend=pass --account
+-number 110 -s 0 --dry-run

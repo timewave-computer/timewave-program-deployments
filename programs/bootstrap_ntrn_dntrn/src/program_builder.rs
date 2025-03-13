@@ -421,7 +421,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Forward lp tokens to unlock
     let update_lp_forwarder_config_func = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_lp_token_forwarder.clone())
+        .with_contract_address(lib_unlock_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
@@ -434,7 +434,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         })
         .build();
     let forward_lp_to_unlock_func = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_lp_token_forwarder.clone())
+        .with_contract_address(lib_unlock_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
