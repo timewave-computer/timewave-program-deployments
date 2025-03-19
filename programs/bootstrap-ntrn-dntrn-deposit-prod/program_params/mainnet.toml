@@ -1,0 +1,30 @@
+owner = ""
+# ntrn denom
+ntrn_denom = ""
+# ntrn denom
+dntrn_denom = ""
+# astroport pool address to LP
+astroport_pool_addr = ""
+# LP max spread into the pool
+pool_max_spread = ""
+# neutron DAO address
+neutron_dao_addr = ""
+# Security DAO address
+security_dao_addr = ""
+# Minimum ratio of double sided liquidity (ex: 0.5)
+double_sided_min = ""
+# Maximum ratio of double sided liquidity (ex: 2)
+double_sided_max = ""
+# List of address that are allowed to execute low security operations
+authorizations_allowed_list = [
+    "",
+]
+
+# Amount to use in NTRN forwarder
+ntrn_forwarder_amount = ""
+# Time constrain for NTRN forwarder in seconds (0 for no time constrain)
+ntrn_forwarder_time_constrain = ""
+# Amount to use in dNTRN forwarder
+dntrn_forwarder_amount = ""
+# Time constrain for dNTRN forwarder in seconds (0 for no time constrain)
+dntrn_forwarder_time_constrain = ""

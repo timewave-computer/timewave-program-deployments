@@ -39,7 +39,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    let mut builder = ProgramConfigBuilder::new(owner);
+    let mut builder = ProgramConfigBuilder::new("neutron stake drop test", &owner);
 
     // Input for tokens to drip
     let acc_drip = builder.add_account(AccountInfo::new(
