@@ -1,17 +1,43 @@
 owner = ""
+# USDC/NTRN LP token
 usdc_ntrn_lp_denom = ""
+# USDC/DNTRN pool address
 usdc_ntrn_pool_addr = ""
+# NTRN/dNTRN pool address
 usdc_dntrn_pool_addr = ""
+# NTRN denom
 ntrn_denom = ""
+# dNTRN denom
 dntrn_denom = ""
+# USDC denom
 usdc_denom = ""
+# Liquid staker core contract address
 drop_liquid_staker_addr = ""
+# Astroport liquidity providing max spread
 pool_max_spread = ""
+# Neutron DAO address
 neutron_dao_addr = ""
+# Security DAO address
 security_dao_addr = ""
+# Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
 double_sided_min = ""
+# Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
 double_sided_max = ""
+# List of address that are allowed to execute low security operations
 authorizations_allowed_list = [
     "",
     "",
 ]
+
+# Amount to use in USDC/NTRN lp forwarder
+usdc_ntrn_lp_forwarder_amount = ""
+# Time constrain for USDC/NTRN lp forwarder in seconds (0 for no time constrain)
+usdc_ntrn_lp_forwarder_time_constrain = ""
+# Amount to use in USDC forwarder
+usdc_forwarder_amount = ""
+# Time constrain for USDC forwarder in seconds (0 for no time constrain)
+usdc_forwarder_time_constrain = ""
+# Amount to use in NTRN forwarder
+ntrn_forwarder_amount = ""
+# Time constrain for NTRN forwarder in seconds (0 for no time constrain)
+ntrn_forwarder_time_constrain = ""

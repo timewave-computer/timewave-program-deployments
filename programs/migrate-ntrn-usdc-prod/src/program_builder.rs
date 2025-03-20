@@ -29,6 +29,12 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let security_dao_addr = params.get("security_dao_addr");
     let double_sided_min = params.get("double_sided_min");
     let double_sided_max = params.get("double_sided_max");
+    let usdc_ntrn_lp_forwarder_amount = params.get("usdc_ntrn_lp_forwarder_amount");
+    let usdc_ntrn_lp_forwarder_time_constrain = params.get("usdc_ntrn_lp_forwarder_time_constrain");
+    let usdc_forwarder_amount = params.get("usdc_forwarder_amount");
+    let usdc_forwarder_time_constrain = params.get("usdc_forwarder_time_constrain");
+    let ntrn_forwarder_amount = params.get("ntrn_forwarder_amount");
+    let ntrn_forwarder_time_constrain = params.get("ntrn_forwarder_time_constrain");
     let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
 
     let permissioned_all_mode =
@@ -42,7 +48,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    let mut builder = ProgramConfigBuilder::new("migrate ntrn usdc production", &owner);
+    let mut builder = ProgramConfigBuilder::new("Migrate NTRN/USDC to dNTRN/USDC Production V1", &owner);
 
     let acc_ntrn_usdc_lp_receiver = builder.add_account(AccountInfo::new(
         "ntrn_usdc_lp_receiver".to_string(),
@@ -72,19 +78,34 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Libraries
     // lp forwarder
+    let usdc_ntrn_lp_forwarder_constraints = if usdc_ntrn_lp_forwarder_time_constrain.is_empty()
+        || usdc_ntrn_lp_forwarder_time_constrain == "0"
+    {
+        None
+    } else {
+        Some(cw_utils::Duration::Time(
+            usdc_ntrn_lp_forwarder_time_constrain
+                .parse()
+                .expect("usdc_ntrn_lp_forwarder_time_constrain is not a valid number"),
+        ))
+    };
     let ntrn_usdc_lp_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
         input_addr: acc_ntrn_usdc_lp_receiver.clone(),
         output_addr: acc_lp_withdraw.clone(),
         forwarding_configs: vec![(
             cw_denom::UncheckedDenom::Native(usdc_ntrn_lp_denom.clone()),
-            1_000_000_u128,
+            usdc_ntrn_lp_forwarder_amount
+                .parse()
+                .expect("usdc_ntrn_lp_forwarder_amount is not a valid number"),
         )
             .into()],
-        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(None),
+        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(
+            usdc_ntrn_lp_forwarder_constraints,
+        ),
     };
 
     let lib_ntrn_usdc_lp_forwarder = builder.add_library(LibraryInfo::new(
-        "ntrn_usdc_lp_forwarder".to_string(),
+        "usdc_ntrn_lp_forwarder".to_string(),
         &neutron_domain,
         LibraryConfig::ValenceForwarderLibrary(ntrn_usdc_lp_forwarder_config.clone()),
     ));
@@ -124,15 +145,29 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     );
 
     // usdc to ready to lp forwarder
+    let usdc_forwarder_constraints =
+        if usdc_forwarder_time_constrain.is_empty() || usdc_forwarder_time_constrain == "0" {
+            None
+        } else {
+            Some(cw_utils::Duration::Time(
+                usdc_forwarder_time_constrain
+                    .parse()
+                    .expect("usdc_forwarder_time_constrain is not a valid number"),
+            ))
+        };
     let usdc_to_ready_to_lp_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
         input_addr: acc_withdrawn_liquidity.clone(),
         output_addr: acc_ready_to_lp.clone(),
         forwarding_configs: vec![(
             cw_denom::UncheckedDenom::Native(usdc_denom.clone()),
-            1_000_000_u128,
+            usdc_forwarder_amount
+                .parse()
+                .expect("usdc_forwarder_amount is not a valid number"),
         )
             .into()],
-        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(None),
+        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(
+            usdc_forwarder_constraints,
+        ),
     };
 
     let lib_usdc_to_ready_to_lp_forwarder = builder.add_library(LibraryInfo::new(
@@ -148,15 +183,29 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     );
 
     // ntrn to staker forwarder
+    let ntrn_forwarder_constraints =
+        if ntrn_forwarder_time_constrain.is_empty() || ntrn_forwarder_time_constrain == "0" {
+            None
+        } else {
+            Some(cw_utils::Duration::Time(
+                ntrn_forwarder_time_constrain
+                    .parse()
+                    .expect("ntrn_forwarder_time_constrain is not a valid number"),
+            ))
+        };
     let ntrn_to_staker_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
         input_addr: acc_withdrawn_liquidity.clone(),
         output_addr: acc_ready_to_stake.clone(),
         forwarding_configs: vec![(
             cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
-            1_000_000_u128,
+            ntrn_forwarder_amount
+                .parse()
+                .expect("ntrn_forwarder_amount is not a valid number"),
         )
             .into()],
-        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(None),
+        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(
+            ntrn_forwarder_constraints,
+        ),
     };
 
     let lib_ntrn_to_staker_forwarder = builder.add_library(LibraryInfo::new(
@@ -222,11 +271,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceAstroportLper(astroport_lper_config.clone()),
     ));
 
-    builder.add_link(
-        &lib_astroport_lper,
-        vec![&acc_ready_to_lp],
-        EMPTY_VEC,
-    );
+    builder.add_link(&lib_astroport_lper, vec![&acc_ready_to_lp], EMPTY_VEC);
 
     // Authorizations
     // forward usdc/ntrn lp tokens
