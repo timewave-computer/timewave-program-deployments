@@ -1,6 +1,7 @@
 owner = "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68"
 ntrn_denom = "untrn"
-bootstrap_program_receiver=""
+bootstrap_program_drip_receiver=""
+bootstrap_program_lp_receiver=""
 stake_ntrn_program_receiver=""
 # Neutron DAO address
 neutron_dao_addr = "" 
@@ -10,7 +11,9 @@ authorizations_allowed_list = [
     "",
 ]
 
-# The amount to send to the bootstrap program
-ntrn_split_to_bootstrap_program_fixed_amount = ""
+# The amount to send to the bootstrap program to drip over time
+ntrn_split_to_bootstrap_program_to_drip_fixed_amount = ""
+# The amount to send to the bootstrap program to lp directly
+ntrn_split_to_bootstrap_program_to_lp_fixed_amount = ""
 # The amount to send to the stake ntrn program
 ntrn_split_to_stake_program_fixed_amount = ""

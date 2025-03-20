@@ -15,9 +15,11 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // program params
     let owner = params.get("owner");
     let ntrn_denom = params.get("ntrn_denom");
-    let bootstrap_program_receiver = params.get("bootstrap_program_receiver");
+    let bootstrap_program_drip_receiver = params.get("bootstrap_program_drip_receiver");
+    let bootstrap_program_lp_receiver = params.get("bootstrap_program_lp_receiver");
     let stake_ntrn_program_receiver = params.get("stake_ntrn_program_receiver");
-    let ntrn_split_to_bootstrap_program_fixed_amount = params.get("ntrn_split_to_bootstrap_program_fixed_amount");
+    let ntrn_split_to_bootstrap_program_to_drip_fixed_amount = params.get("ntrn_split_to_bootstrap_program_to_drip_fixed_amount");
+    let ntrn_split_to_bootstrap_program_to_lp_fixed_amount = params.get("ntrn_split_to_bootstrap_program_to_lp_fixed_amount");
     let ntrn_split_to_stake_program_fixed_amount = params.get("ntrn_split_to_stake_program_fixed_amount");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
@@ -50,10 +52,19 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         splits: vec![
             valence_splitter_library::msg::UncheckedSplitConfig::new(
                 cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
-                bootstrap_program_receiver.as_str(),
+                bootstrap_program_drip_receiver.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
-                    ntrn_split_to_bootstrap_program_fixed_amount.parse().expect(
-                        "Failed to parse ntrn_split_to_bootstrap_program_fixed_amount as Decimal",
+                    ntrn_split_to_bootstrap_program_to_drip_fixed_amount.parse().expect(
+                        "Failed to parse ntrn_split_to_bootstrap_program_to_drip_fixed_amount as Decimal",
+                    ),
+                ),
+            ),
+            valence_splitter_library::msg::UncheckedSplitConfig::new(
+                cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
+                bootstrap_program_lp_receiver.as_str(),
+                valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
+                    ntrn_split_to_bootstrap_program_to_lp_fixed_amount.parse().expect(
+                        "Failed to parse ntrn_split_to_bootstrap_program_to_lp_fixed_amount as Decimal",
                     ),
                 ),
             ),
