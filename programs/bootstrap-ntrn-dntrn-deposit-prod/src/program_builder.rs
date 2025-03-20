@@ -39,7 +39,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             ),
         );
 
-    let mut builder = ProgramConfigBuilder::new("bootstrap ntrn dntrn deposit production", &owner);
+    let mut builder = ProgramConfigBuilder::new("Bootstrap NTRN-dNTRN Production v1", &owner);
 
     // Domains
     let neutron_domain =
