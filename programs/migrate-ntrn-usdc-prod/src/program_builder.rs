@@ -48,7 +48,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    let mut builder = ProgramConfigBuilder::new("Migrate NTRN/USDC to dNTRN/USDC Production V1", &owner);
+    let mut builder =
+        ProgramConfigBuilder::new("Migrate NTRN/USDC to dNTRN/USDC Production V1", &owner);
 
     let acc_ntrn_usdc_lp_receiver = builder.add_account(AccountInfo::new(
         "ntrn_usdc_lp_receiver".to_string(),
@@ -293,8 +294,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(forward_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_mode(permissioned_all_mode.clone())
         .with_label("forward_lp")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -319,8 +320,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(withdraw_usdc_ntrn_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_mode(permissioned_all_mode.clone())
         .with_label("withdraw_usdc_ntrn")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -345,8 +346,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(forward_usdc_ready_to_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_mode(permissioned_all_mode.clone())
         .with_label("forward_usdc_ready_to_lp")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -371,8 +372,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(forward_ntrn_to_staker_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_mode(permissioned_all_mode.clone())
         .with_label("forward_ntrn_to_staker")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -398,6 +399,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("liquid_stake_ntrn")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
@@ -435,13 +437,14 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_label("double_sided_lp")
+        .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
     // Provide double sided liquidity by DAO
-    let double_sided_lp_func = AtomicFunctionBuilder::new()
+    let secure_double_sided_lp_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_astroport_lper.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -457,9 +460,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(double_sided_lp_func)
+        .with_function(secure_double_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_double_sided_lp_sec_dao")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -467,14 +471,13 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("double_sided_lp_sec_dao")
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
     // Provide single sided liquidity by DAO
-    let single_sided_lp_func = AtomicFunctionBuilder::new()
+    let secure_single_sided_lp_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_astroport_lper.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -490,9 +493,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(single_sided_lp_func)
+        .with_function(secure_single_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_single_sided_lp_sec_dao")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -500,14 +504,13 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("single_sided_lp_sec_dao")
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
     // Update ntrn/usdc lp tokens forward config
-    let update_lp_forward_config_function = AtomicFunctionBuilder::new()
+    let secure_update_lp_forward_config_function = AtomicFunctionBuilder::new()
         .with_contract_address(lib_ntrn_usdc_lp_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -522,9 +525,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_lp_forward_config_function)
+        .with_function(secure_update_lp_forward_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_update_lp_forward_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -532,14 +536,13 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_lp_forward_config")
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
     // Update ntrn forwarder config
-    let update_ntrn_forwarder_config_func = AtomicFunctionBuilder::new()
+    let secure_update_ntrn_forwarder_config_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_ntrn_to_staker_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -554,9 +557,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_ntrn_forwarder_config_func)
+        .with_function(secure_update_ntrn_forwarder_config_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_update_ntrn_forwarder_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -564,14 +568,13 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_ntrn_forwarder_config")
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
     // Update usdc forwarder config
-    let update_usdc_forwarder_config_func = AtomicFunctionBuilder::new()
+    let secure_update_usdc_forwarder_config_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_usdc_to_ready_to_lp_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -586,9 +589,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_usdc_forwarder_config_func)
+        .with_function(secure_update_usdc_forwarder_config_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_update_usdc_forwarder_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -596,7 +600,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_usdc_forwarder_config")
         .with_subroutine(subroutine)
         .build();
 

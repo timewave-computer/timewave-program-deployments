@@ -278,6 +278,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(double_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("double_sided_lp_sec_dao")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -285,7 +286,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("double_sided_lp_sec_dao")
         .with_subroutine(subroutine)
         .build();
 
@@ -311,6 +311,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(single_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("single_sided_lp_sec_dao")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -318,7 +319,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("single_sided_lp_sec_dao")
         .with_subroutine(subroutine)
         .build();
 
@@ -343,6 +343,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_ntrn_forward_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("update_ntrn_forward_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -350,7 +351,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_ntrn_forward_config")
         .with_subroutine(subroutine)
         .build();
 
@@ -375,6 +375,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_dntrn_forward_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("update_dntrn_forward_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -382,7 +383,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_dntrn_forward_config")
         .with_subroutine(subroutine)
         .build();
 

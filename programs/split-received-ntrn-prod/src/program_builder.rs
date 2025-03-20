@@ -18,9 +18,12 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let bootstrap_program_drip_receiver = params.get("bootstrap_program_drip_receiver");
     let bootstrap_program_lp_receiver = params.get("bootstrap_program_lp_receiver");
     let stake_ntrn_program_receiver = params.get("stake_ntrn_program_receiver");
-    let ntrn_split_to_bootstrap_program_to_drip_fixed_amount = params.get("ntrn_split_to_bootstrap_program_to_drip_fixed_amount");
-    let ntrn_split_to_bootstrap_program_to_lp_fixed_amount = params.get("ntrn_split_to_bootstrap_program_to_lp_fixed_amount");
-    let ntrn_split_to_stake_program_fixed_amount = params.get("ntrn_split_to_stake_program_fixed_amount");
+    let ntrn_split_to_bootstrap_program_to_drip_fixed_amount =
+        params.get("ntrn_split_to_bootstrap_program_to_drip_fixed_amount");
+    let ntrn_split_to_bootstrap_program_to_lp_fixed_amount =
+        params.get("ntrn_split_to_bootstrap_program_to_lp_fixed_amount");
+    let ntrn_split_to_stake_program_fixed_amount =
+        params.get("ntrn_split_to_stake_program_fixed_amount");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
     let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
@@ -89,7 +92,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     ));
 
     builder.add_link(&lib_split_ntrn, vec![&acc_receiver], EMPTY_VEC);
-
 
     // Authorizations
     // Split ntrn

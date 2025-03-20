@@ -1,5 +1,7 @@
+use cosmwasm_std::{to_json_binary, Decimal, Timestamp};
 use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
+    authorization::AuthorizationDuration,
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
 };
@@ -26,6 +28,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         params.get("dntrn_split_to_bootstrap_program_fixed_amount");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
+    let init_split_duration_param = params.get("init_split_duration");
+    let forward_to_dao_expiration_time = params.get("forward_to_dao_expiration_time");
     let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
 
     let permissioned_all_mode =
@@ -171,8 +175,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     builder.add_authorization(authorization);
 
-    // Liquid stake and split authorization
-    // Liquid stake function
+    // Liquid stake authorization
     let liquid_stake_function = AtomicFunctionBuilder::new()
         .with_contract_address(lib_drop_liquid_staker.clone())
         .with_message_details(MessageDetails {
@@ -186,6 +189,17 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             },
         })
         .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(liquid_stake_function)
+        .build();
+    let authorization = AuthorizationBuilder::new()
+        .with_label("liquid_stake")
+        .with_mode(permissioned_all_mode.clone())
+        .with_subroutine(subroutine)
+        .build();
+
+    builder.add_authorization(authorization);
 
     // split function
     let split_function = AtomicFunctionBuilder::new()
@@ -203,19 +217,81 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(liquid_stake_function)
         .with_function(split_function)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_label("liquid_stake_and_split")
+        .with_label("split_to_provide")
         .with_mode(permissioned_all_mode.clone())
         .with_subroutine(subroutine)
+        .with_duration(AuthorizationDuration::Seconds(
+            init_split_duration_param
+                .parse()
+                .expect("Failed to parse init_split_duration_param as u64"),
+        ))
+        .build();
+
+    builder.add_authorization(authorization);
+
+    // forward to dao authorization
+    // 100% to dao split
+    let all_to_dao_split = vec![valence_splitter_library::msg::UncheckedSplitConfig::new(
+        cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
+        neutron_dao_addr.as_str(),
+        valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(Decimal::one()),
+    )];
+    let update_split_config_to_dao_func = AtomicFunctionBuilder::new()
+        .with_contract_address(lib_split_ls_token.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "update_config".to_string(),
+                params_restrictions: Some(vec![ParamRestriction::MustBeValue(
+                    vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                        "splits".to_string(),
+                    ],
+                    to_json_binary(&all_to_dao_split)
+                        .expect("expected_pool_ratio_range must parse to binary"),
+                )]),
+            },
+        })
+        .build();
+
+    // forward to dao (split 100% to dao) func
+    let split_to_dao_func = AtomicFunctionBuilder::new()
+        .with_contract_address(lib_split_ls_token.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "process_function".to_string(),
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "process_function".to_string(),
+                    "split".to_string(),
+                ])]),
+            },
+        })
+        .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(update_split_config_to_dao_func)
+        .with_function(split_to_dao_func)
+        .build();
+    let authorization = AuthorizationBuilder::new()
+        .with_label("forward_to_dao")
+        .with_mode(permissioned_all_mode.clone())
+        .with_subroutine(subroutine)
+        .with_not_before(cw_utils::Expiration::AtTime(Timestamp::from_seconds(
+            forward_to_dao_expiration_time
+                .parse()
+                .expect("Failed to parse forward_to_dao_expiration_time as u64"),
+        )))
         .build();
 
     builder.add_authorization(authorization);
 
     // Update split config
-    let update_split_config_function = AtomicFunctionBuilder::new()
+    let secure_update_split_config_function = AtomicFunctionBuilder::new()
         .with_contract_address(lib_split_ls_token.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -230,10 +306,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_split_config_function)
+        .with_function(secure_update_split_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_label("update_split_config")
+        .with_label("secure_update_split_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -247,7 +323,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     builder.add_authorization(authorization);
 
     // Update forward config
-    let update_forward_config_function = AtomicFunctionBuilder::new()
+    let secure_update_forward_config_function = AtomicFunctionBuilder::new()
         .with_contract_address(lib_drip_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -262,10 +338,42 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_forward_config_function)
+        .with_function(secure_update_forward_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_label("update_forward_config")
+        .with_label("secure_update_forward_config")
+        .with_mode(
+            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
+                ),
+            ),
+        )
+        .with_subroutine(subroutine)
+        .build();
+
+    builder.add_authorization(authorization);
+
+    // High security split
+    let secure_split_func = AtomicFunctionBuilder::new()
+        .with_contract_address(lib_split_ls_token.clone())
+        .with_message_details(MessageDetails {
+            message_type: MessageType::CosmwasmExecuteMsg,
+            message: Message {
+                name: "process_function".to_string(),
+                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                    "process_function".to_string(),
+                    "split".to_string(),
+                ])]),
+            },
+        })
+        .build();
+
+    let subroutine = AtomicSubroutineBuilder::new()
+        .with_function(secure_split_func)
+        .build();
+    let authorization = AuthorizationBuilder::new()
+        .with_label("secure_split")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
