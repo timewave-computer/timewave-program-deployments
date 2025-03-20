@@ -1,0 +1,25 @@
+owner = "" 
+# NTRN denom
+ntrn_denom = "untrn" 
+# dNTRN denom
+dntrn_denom = "" 
+# Bootstrap program dNTRN receive address
+bootstrap_ntrn_dntrn_receive_addr = ""
+# Drop staker core contract address
+drop_liquid_staker_addr = "" 
+# Neutron DAO address
+neutron_dao_addr = "" 
+# Security DAO address
+security_dao_addr = ""
+authorizations_allowed_list = [
+    "",
+]
+
+# Amount to use in drip forwarder
+drip_forwarder_amount = ""
+# Time constrain for drip forwarder in seconds (0 for no time constrain)
+drip_forwarder_time_constrain = ""
+# The amount to send to the neutron DAO
+dntrn_split_to_neutron_dao_fixed_amount = ""
+# The amount to send to the bootstrap program
+dntrn_split_to_bootstrap_program_fixed_amount = ""

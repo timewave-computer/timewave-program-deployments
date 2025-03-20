@@ -2981,6 +2981,49 @@ dependencies = [
 ]
 
 [[package]]
+name = "neutron-stake-drop-prod-v1"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "cosmwasm-std 2.2.2",
+ "cw-denom",
+ "cw-utils 2.0.0",
+ "deployer-lib",
+ "serde_json",
+ "tokio",
+ "valence-account-utils",
+ "valence-astroport-lper",
+ "valence-astroport-utils",
+ "valence-astroport-withdrawer",
+ "valence-authorization",
+ "valence-authorization-utils",
+ "valence-base-account",
+ "valence-drop-liquid-staker",
+ "valence-drop-liquid-unstaker",
+ "valence-encoder-broker",
+ "valence-forwarder-library",
+ "valence-generic-ibc-transfer-library",
+ "valence-ibc-utils",
+ "valence-library-base",
+ "valence-library-utils",
+ "valence-macros",
+ "valence-neutron-ibc-transfer-library",
+ "valence-neutron-ic-querier",
+ "valence-osmosis-cl-lper",
+ "valence-osmosis-cl-withdrawer",
+ "valence-osmosis-gamm-lper",
+ "valence-osmosis-gamm-withdrawer",
+ "valence-osmosis-utils",
+ "valence-processor",
+ "valence-processor-utils",
+ "valence-program-manager",
+ "valence-program-registry",
+ "valence-reverse-splitter-library",
+ "valence-splitter-library",
+ "valence-storage-account",
+]
+
+[[package]]
 name = "nom"
 version = "7.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
