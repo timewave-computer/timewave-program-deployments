@@ -28,7 +28,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let double_sided_max = params.get("double_sided_max");
     let ntrn_forwarder_amount = params.get("ntrn_forwarder_amount");
     let ntrn_forwarder_time_constrain = params.get("ntrn_forwarder_time_constrain");
-    let dntrn_forwarder_amount = params.get("double_sidedntrn_forwarder_amountd_max");
+    let dntrn_forwarder_amount = params.get("dntrn_forwarder_amount");
     let dntrn_forwarder_time_constrain = params.get("dntrn_forwarder_time_constrain");
     let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
 
