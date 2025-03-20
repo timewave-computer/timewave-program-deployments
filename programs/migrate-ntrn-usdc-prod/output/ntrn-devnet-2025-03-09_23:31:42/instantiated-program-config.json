@@ -1,0 +1,949 @@
+{
+    "id": 14,
+    "owner": "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+    "links": {
+        "0": {
+            "input_accounts_id": [
+                0
+            ],
+            "output_accounts_id": [
+                1
+            ],
+            "library_id": 0
+        },
+        "1": {
+            "input_accounts_id": [
+                1
+            ],
+            "output_accounts_id": [
+                2
+            ],
+            "library_id": 1
+        },
+        "2": {
+            "input_accounts_id": [
+                2
+            ],
+            "output_accounts_id": [
+                3
+            ],
+            "library_id": 2
+        },
+        "3": {
+            "input_accounts_id": [
+                2
+            ],
+            "output_accounts_id": [
+                4
+            ],
+            "library_id": 3
+        },
+        "4": {
+            "input_accounts_id": [
+                3
+            ],
+            "output_accounts_id": [
+                4
+            ],
+            "library_id": 4
+        },
+        "5": {
+            "input_accounts_id": [
+                4
+            ],
+            "output_accounts_id": [
+                5
+            ],
+            "library_id": 5
+        },
+        "6": {
+            "input_accounts_id": [
+                5
+            ],
+            "output_accounts_id": [],
+            "library_id": 6
+        },
+        "7": {
+            "input_accounts_id": [
+                5
+            ],
+            "output_accounts_id": [
+                6
+            ],
+            "library_id": 7
+        },
+        "8": {
+            "input_accounts_id": [
+                6
+            ],
+            "output_accounts_id": [],
+            "library_id": 8
+        }
+    },
+    "accounts": {
+        "0": {
+            "name": "lp_receiver_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1zwfjnmz3p4ss6tscmuf78grjukc4qep7xramme473akwux0mq7gsrrp5te"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1zwfjnmz3p4ss6tscmuf78grjukc4qep7xramme473akwux0mq7gsrrp5te"
+        },
+        "1": {
+            "name": "lp_withdraw_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1yq2d54yv7668mu6kfmf0vdf6deca8qxgqu6e0vk49sqr8sd0zczqr62rpg"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1yq2d54yv7668mu6kfmf0vdf6deca8qxgqu6e0vk49sqr8sd0zczqr62rpg"
+        },
+        "2": {
+            "name": "withdrawn_liquidity_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1c3yy3zf5hh6dcpcvx2tuhey3cedyvmtn52q4rsl9urvjrtmtep6qh0n32z"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1c3yy3zf5hh6dcpcvx2tuhey3cedyvmtn52q4rsl9urvjrtmtep6qh0n32z"
+        },
+        "3": {
+            "name": "ready_to_stake_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1kz9jzlu2vjdcgtu4v8gukdhpx0qs0fwvhz8rz5wlpkqpw54zwa9q8drm3w"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1kz9jzlu2vjdcgtu4v8gukdhpx0qs0fwvhz8rz5wlpkqpw54zwa9q8drm3w"
+        },
+        "4": {
+            "name": "ready_to_lp_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron17v8lrj8dq742f0d0fp4mtax4ugctwrxyf47zlrn2hmyhn80yea5scutz62"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron17v8lrj8dq742f0d0fp4mtax4ugctwrxyf47zlrn2hmyhn80yea5scutz62"
+        },
+        "5": {
+            "name": "holder_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1vf4gernrwqf2awkaaeyrl6dffj7um0heudcly0jghsueupqp0y7q8f28wx"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1vf4gernrwqf2awkaaeyrl6dffj7um0heudcly0jghsueupqp0y7q8f28wx"
+        },
+        "6": {
+            "name": "unlock_acc",
+            "ty": {
+                "Addr": {
+                    "addr": "neutron1724jszylk48sec3mg6au05afgghftx3v99aggd43mymvumpval4qn8avht"
+                }
+            },
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "addr": "neutron1724jszylk48sec3mg6au05afgghftx3v99aggd43mymvumpval4qn8avht"
+        }
+    },
+    "libraries": {
+        "0": {
+            "name": "lp_token_forwarder",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceForwarderLibrary": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1zwfjnmz3p4ss6tscmuf78grjukc4qep7xramme473akwux0mq7gsrrp5te"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron1yq2d54yv7668mu6kfmf0vdf6deca8qxgqu6e0vk49sqr8sd0zczqr62rpg"
+                    },
+                    "forwarding_configs": [
+                        {
+                            "denom": {
+                                "native": "factory/neutron1vvmfjgax752j55mz0y8eq9y3j9wc8ywxshql73e6wwuyv0ftuuuq5wfr0z/astroport/share"
+                            },
+                            "max_amount": "1000000"
+                        }
+                    ],
+                    "forwarding_constraints": {
+                        "min_interval": null
+                    }
+                }
+            },
+            "addr": "neutron1cqw83uplnn2tq9tt26hptxaqcyt7vap27nr7uzd9lxalwwyck6vsyh6nqc"
+        },
+        "1": {
+            "name": "usdc_ntrn_withdrawer",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceAstroportWithdrawer": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1yq2d54yv7668mu6kfmf0vdf6deca8qxgqu6e0vk49sqr8sd0zczqr62rpg"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron1c3yy3zf5hh6dcpcvx2tuhey3cedyvmtn52q4rsl9urvjrtmtep6qh0n32z"
+                    },
+                    "pool_addr": "neutron1vvmfjgax752j55mz0y8eq9y3j9wc8ywxshql73e6wwuyv0ftuuuq5wfr0z",
+                    "withdrawer_config": {
+                        "pool_type": {
+                            "native_lp_token": {
+                                "xyk": {}
+                            }
+                        },
+                        "asset_data": {
+                            "asset1": "factory/neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2/test-usdc",
+                            "asset2": "untrn"
+                        }
+                    }
+                }
+            },
+            "addr": "neutron1pg3l2yca5rc6ecnvkvyn5da7y0w2kfdr0kdxnyx30jtlml9xscvssprvl0"
+        },
+        "2": {
+            "name": "ntrn_to_staker_forwarder",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceForwarderLibrary": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1c3yy3zf5hh6dcpcvx2tuhey3cedyvmtn52q4rsl9urvjrtmtep6qh0n32z"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron1kz9jzlu2vjdcgtu4v8gukdhpx0qs0fwvhz8rz5wlpkqpw54zwa9q8drm3w"
+                    },
+                    "forwarding_configs": [
+                        {
+                            "denom": {
+                                "native": "untrn"
+                            },
+                            "max_amount": "1000000"
+                        }
+                    ],
+                    "forwarding_constraints": {
+                        "min_interval": null
+                    }
+                }
+            },
+            "addr": "neutron15gj5yupl47yun9kdwjtgjzqfjxwum8akg0j467ktkm7fcuprd9aqsy964q"
+        },
+        "3": {
+            "name": "usdc_to_ready_to_lp_forwarder",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceForwarderLibrary": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1c3yy3zf5hh6dcpcvx2tuhey3cedyvmtn52q4rsl9urvjrtmtep6qh0n32z"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron17v8lrj8dq742f0d0fp4mtax4ugctwrxyf47zlrn2hmyhn80yea5scutz62"
+                    },
+                    "forwarding_configs": [
+                        {
+                            "denom": {
+                                "native": "factory/neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2/test-usdc"
+                            },
+                            "max_amount": "1000000"
+                        }
+                    ],
+                    "forwarding_constraints": {
+                        "min_interval": null
+                    }
+                }
+            },
+            "addr": "neutron1nrljgr0hryrtacqawfmxrp2s4kk0l7ysgat7yrv5n48plg2zxprqsyxvky"
+        },
+        "4": {
+            "name": "drop_liquid_staker",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceDropLiquidStaker": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1kz9jzlu2vjdcgtu4v8gukdhpx0qs0fwvhz8rz5wlpkqpw54zwa9q8drm3w"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron17v8lrj8dq742f0d0fp4mtax4ugctwrxyf47zlrn2hmyhn80yea5scutz62"
+                    },
+                    "liquid_staker_addr": "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9rm95m0ls798cdq",
+                    "denom": "untrn"
+                }
+            },
+            "addr": "neutron1hawr9k0gkl47yntxj5v3ytc39r8atmpkmt82grrq6k5kwzt5sp0qzewntk"
+        },
+        "5": {
+            "name": "astroport_lper",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceAstroportLper": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron17v8lrj8dq742f0d0fp4mtax4ugctwrxyf47zlrn2hmyhn80yea5scutz62"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron1vf4gernrwqf2awkaaeyrl6dffj7um0heudcly0jghsueupqp0y7q8f28wx"
+                    },
+                    "pool_addr": "neutron1ta3dq7jekl77kmlc94ph3hwnahjv4n4u5tkxhfdx7ehrnje3hxaspx3phn",
+                    "lp_config": {
+                        "pool_type": {
+                            "native_lp_token": {
+                                "xyk": {}
+                            }
+                        },
+                        "asset_data": {
+                            "asset1": "factory/neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2/test-usdc",
+                            "asset2": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
+                        },
+                        "max_spread": "0.5"
+                    }
+                }
+            },
+            "addr": "neutron1pu858qvvx49hjgm642m5em82ydq06zv6afvwws0awvhen4jgfxpqxsu2a6"
+        },
+        "6": {
+            "name": "lp_to_dao_forwarder",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceForwarderLibrary": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1vf4gernrwqf2awkaaeyrl6dffj7um0heudcly0jghsueupqp0y7q8f28wx"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    },
+                    "forwarding_configs": [
+                        {
+                            "denom": {
+                                "native": "factory/neutron1ta3dq7jekl77kmlc94ph3hwnahjv4n4u5tkxhfdx7ehrnje3hxaspx3phn/astroport/share"
+                            },
+                            "max_amount": "1000000"
+                        }
+                    ],
+                    "forwarding_constraints": {
+                        "min_interval": null
+                    }
+                }
+            },
+            "addr": "neutron1nvg0jlmtnllru7k80kujvpljvtmauc596z64uyvc8eyx72v823rqdr6ad9"
+        },
+        "7": {
+            "name": "lp_to_unlock_forwarder",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceForwarderLibrary": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1vf4gernrwqf2awkaaeyrl6dffj7um0heudcly0jghsueupqp0y7q8f28wx"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron1724jszylk48sec3mg6au05afgghftx3v99aggd43mymvumpval4qn8avht"
+                    },
+                    "forwarding_configs": [
+                        {
+                            "denom": {
+                                "native": "factory/neutron1ta3dq7jekl77kmlc94ph3hwnahjv4n4u5tkxhfdx7ehrnje3hxaspx3phn/astroport/share"
+                            },
+                            "max_amount": "1000000"
+                        }
+                    ],
+                    "forwarding_constraints": {
+                        "min_interval": null
+                    }
+                }
+            },
+            "addr": "neutron1y7neglzngftkcpzr7frxu7wgzgt3l828j5nzd3ddf3d9lrumfnhsrj5ugp"
+        },
+        "8": {
+            "name": "usdc_dntrn_withdrawer",
+            "domain": {
+                "CosmosCosmwasm": "neutron"
+            },
+            "config": {
+                "ValenceAstroportWithdrawer": {
+                    "input_addr": {
+                        "|library_account_addr|": "neutron1724jszylk48sec3mg6au05afgghftx3v99aggd43mymvumpval4qn8avht"
+                    },
+                    "output_addr": {
+                        "|library_account_addr|": "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    },
+                    "pool_addr": "neutron1ta3dq7jekl77kmlc94ph3hwnahjv4n4u5tkxhfdx7ehrnje3hxaspx3phn",
+                    "withdrawer_config": {
+                        "pool_type": {
+                            "native_lp_token": {
+                                "xyk": {}
+                            }
+                        },
+                        "asset_data": {
+                            "asset1": "factory/neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2/test-usdc",
+                            "asset2": "factory/neutron1lzfk4aj26jz7gd3c4umxah9d22ezy8xfql677kev37vd0mq8y3tsn78saz/udntrn"
+                        }
+                    }
+                }
+            },
+            "addr": "neutron1r7qwkg5q326s3pqsj35ajctpw93cqxcr3cl9m0579zgemd2x6nysadu6yn"
+        }
+    },
+    "authorizations": [
+        {
+            "label": "forward_lp",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
+                        "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "forward"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1cqw83uplnn2tq9tt26hptxaqcyt7vap27nr7uzd9lxalwwyck6vsyh6nqc"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "withdraw_usdc_ntrn",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
+                        "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "withdraw_liquidity"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1pg3l2yca5rc6ecnvkvyn5da7y0w2kfdr0kdxnyx30jtlml9xscvssprvl0"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "forward_usdc_read_to_lp",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
+                        "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "forward"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1nrljgr0hryrtacqawfmxrp2s4kk0l7ysgat7yrv5n48plg2zxprqsyxvky"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "forward_ntrn_to_staker",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf",
+                        "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "forward"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron15gj5yupl47yun9kdwjtgjzqfjxwum8akg0j467ktkm7fcuprd9aqsy964q"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "liquid_stake",
+            "mode": "permissionless",
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "liquid_stake"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1hawr9k0gkl47yntxj5v3ytc39r8atmpkmt82grrq6k5kwzt5sp0qzewntk"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "double_sided_lp",
+            "mode": "permissionless",
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_value": [
+                                                [
+                                                    "process_function",
+                                                    "provide_double_sided_liquidity",
+                                                    "expected_pool_ratio_range"
+                                                ],
+                                                "eyJtaW4iOiIwLjUiLCJtYXgiOiIyIn0="
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1pu858qvvx49hjgm642m5em82ydq06zv6afvwws0awvhen4jgfxpqxsu2a6"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "double_sided_lp_sec_dao",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "provide_double_sided_liquidity",
+                                                "expected_pool_ratio_range"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1pu858qvvx49hjgm642m5em82ydq06zv6afvwws0awvhen4jgfxpqxsu2a6"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "single_sided_lp_sec_dao",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "provide_single_sided_liquidity",
+                                                "asset"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1pu858qvvx49hjgm642m5em82ydq06zv6afvwws0awvhen4jgfxpqxsu2a6"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "forward_lp_to_dao",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "forward"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1nvg0jlmtnllru7k80kujvpljvtmauc596z64uyvc8eyx72v823rqdr6ad9"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "withdraw_lp_token",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "update_config",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "update_config",
+                                                "forwarding_configs"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1y7neglzngftkcpzr7frxu7wgzgt3l828j5nzd3ddf3d9lrumfnhsrj5ugp"
+                            }
+                        },
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "forward"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1y7neglzngftkcpzr7frxu7wgzgt3l828j5nzd3ddf3d9lrumfnhsrj5ugp"
+                            }
+                        },
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "process_function",
+                                    "params_restrictions": [
+                                        {
+                                            "must_be_included": [
+                                                "process_function",
+                                                "withdraw_liquidity"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1r7qwkg5q326s3pqsj35ajctpw93cqxcr3cl9m0579zgemd2x6nysadu6yn"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        },
+        {
+            "label": "update_lp_forward_config",
+            "mode": {
+                "permissioned": {
+                    "without_call_limit": [
+                        "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
+                        "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf"
+                    ]
+                }
+            },
+            "not_before": {
+                "never": {}
+            },
+            "duration": "forever",
+            "max_concurrent_executions": null,
+            "subroutine": {
+                "atomic": {
+                    "functions": [
+                        {
+                            "domain": "main",
+                            "message_details": {
+                                "message_type": "cosmwasm_execute_msg",
+                                "message": {
+                                    "name": "update_config",
+                                    "params_restrictions": null
+                                }
+                            },
+                            "contract_address": {
+                                "|library_account_addr|": "neutron1cqw83uplnn2tq9tt26hptxaqcyt7vap27nr7uzd9lxalwwyck6vsyh6nqc"
+                            }
+                        }
+                    ],
+                    "retry_logic": null,
+                    "expiration_time": null
+                }
+            },
+            "priority": null
+        }
+    ],
+    "authorization_data": {
+        "authorization_addr": "neutron1tkk5rsp5gnwvyphw6fkuzz9wpt4urgkhkp8wzynw0wxv3vfszkvs68ksmk",
+        "processor_addrs": {
+            "CosmosCosmwasm:neutron": "neutron1g8agsvvex8rw3yd4ytzu79cr9n8x607x5edqzncwtr8dfk2mgqgsk6k3v4"
+        },
+        "authorization_bridge_addrs": {},
+        "processor_bridge_addrs": []
+    }
+}
