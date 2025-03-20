@@ -11,9 +11,9 @@ pool_max_spread = ""
 neutron_dao_addr = ""
 # Security DAO address
 security_dao_addr = ""
-# Minimum ratio of double sided liquidity (ex: 0.5)
+# Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
 double_sided_min = ""
-# Maximum ratio of double sided liquidity (ex: 2)
+# Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
 double_sided_max = ""
 # List of address that are allowed to execute low security operations
 authorizations_allowed_list = [
