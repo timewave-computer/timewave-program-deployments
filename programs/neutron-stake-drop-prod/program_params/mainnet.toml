@@ -23,3 +23,8 @@ drip_forwarder_time_constrain = ""
 dntrn_split_to_neutron_dao_fixed_amount = ""
 # The amount to send to the bootstrap program
 dntrn_split_to_bootstrap_program_fixed_amount = ""
+
+# Initial split authorization duration
+init_split_duration = ""
+# Forward to dao expiration time (timestamp)
+forward_to_dao_expiration_time = ""
