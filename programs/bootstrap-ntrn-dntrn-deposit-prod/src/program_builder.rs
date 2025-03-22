@@ -16,26 +16,29 @@ use valence_program_manager::{
 
 /// Write your program using the program builder
 pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
-    // program params
+    // Get program params from params.toml
     let owner = params.get("owner");
+    // denoms
     let ntrn_denom = params.get("ntrn_denom");
     let dntrn_denom = params.get("dntrn_denom");
+    // pool configuration
     let astroport_pool_addr = params.get("astroport_pool_addr");
     let pool_max_spread = params.get("pool_max_spread");
-    let neutron_dao_addr = params.get("neutron_dao_addr");
-    let security_dao_addr = params.get("security_dao_addr");
     let double_sided_min = params.get("double_sided_min");
     let double_sided_max = params.get("double_sided_max");
+    // forwarder configuration
     let ntrn_forwarder_amount = params.get("ntrn_forwarder_amount");
-    let ntrn_forwarder_time_constrain = params.get("ntrn_forwarder_time_constrain");
     let dntrn_forwarder_amount = params.get("dntrn_forwarder_amount");
-    let dntrn_forwarder_time_constrain = params.get("dntrn_forwarder_time_constrain");
-    let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
+    let forwarder_interval_between_calls = params.get("forwarder_interval_between_calls");
+    // allowed addresses
+    let neutron_dao_addr = params.get("neutron_dao_addr");
+    let security_dao_addr = params.get("security_dao_addr");
+    let operator_list = params.get_array("operator_list");
 
     let permissioned_all_mode =
         valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
             valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                authorizations_allowed_list,
+                operator_list,
             ),
         );
 
@@ -45,97 +48,63 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    // Accounts
-    let acc_ntrn_receive = builder.add_account(AccountInfo::new(
-        "receive_ntrn_acc".to_string(),
+    /// Accounts
+    /// We need one account to receive NTRN and dNTRN tokens
+    let acc_receive = builder.add_account(AccountInfo::new(
+        "receive_acc".to_string(),
         &neutron_domain,
         AccountType::default(),
     ));
-    let acc_dntrn_receive = builder.add_account(AccountInfo::new(
-        "receive_dntrn_acc".to_string(),
-        &neutron_domain,
-        AccountType::default(),
-    ));
-    let acc_lp = builder.add_account(AccountInfo::new(
-        "lp_acc".to_string(),
-        &neutron_domain,
-        AccountType::default(),
-    ));
-
-    // Libraries
-    // Ntrn forwarder library
-    let ntrn_forwarder_constraints =
-        if ntrn_forwarder_time_constrain.is_empty() || ntrn_forwarder_time_constrain == "0" {
+ 
+    /// Libraries
+    /// This program requires two libraries:
+    /// 1. A forwarder library to return excess NTRN and dNTRN tokens to the Neutron DAO
+    /// 2. A liquidity provider library to provide liquidity to the pool and send LP tokens to the Neutron DAO
+    
+    // Forwarder library to return excess NTRN and dNTRN tokens to the Neutron DAO
+    let return_forwarder_constraints =
+        if forwarder_interval_between_calls.is_empty() || forwarder_interval_between_calls == "0" {
             None
         } else {
             Some(cw_utils::Duration::Time(
-                ntrn_forwarder_time_constrain
+                forwarder_interval_between_calls
                     .parse()
-                    .expect("ntrn_forwarder_time_constrain is not a valid number"),
+                    .expect("forwarder_interval_between_calls is not a valid number"),
             ))
         };
-    let ntrn_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
-        input_addr: acc_ntrn_receive.clone(),
-        output_addr: acc_lp.clone(),
-        forwarding_configs: vec![(
-            cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
-            ntrn_forwarder_amount
-                .parse()
-                .expect("ntrn_forwarder_amount is not a valid number"),
-        )
-            .into()],
+    let return_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
+        input_addr: acc_receive.clone(),
+        output_addr: LibraryAccountType::Addr(neutron_dao_addr.clone()),
+        forwarding_configs: vec![
+            (
+                cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
+                ntrn_forwarder_amount
+                    .parse()
+                    .expect("ntrn_forwarder_amount is not a valid number"),
+            )
+                .into(),
+            (
+                cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
+                dntrn_forwarder_amount
+                    .parse()
+                    .expect("dntrn_forwarder_amount is not a valid number"),
+            )
+                .into(),
+        ],
         forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(
-            ntrn_forwarder_constraints,
+            return_forwarder_constraints,
         ),
     };
 
-    let lib_ntrn_forwarder = builder.add_library(LibraryInfo::new(
-        "ntrn_forwarder".to_string(),
+    let lib_return_forwarder = builder.add_library(LibraryInfo::new(
+        "return_forwarder".to_string(),
         &neutron_domain,
-        LibraryConfig::ValenceForwarderLibrary(ntrn_forwarder_config.clone()),
+        LibraryConfig::ValenceForwarderLibrary(return_forwarder_config.clone()),
     ));
 
-    builder.add_link(&lib_ntrn_forwarder, vec![&acc_ntrn_receive], vec![&acc_lp]);
+    builder.add_link(&lib_return_forwarder, vec![&acc_receive], EMPTY_VEC);
 
-    // dNtrn forwarder library
-    let dntrn_forwarder_constraints =
-        if dntrn_forwarder_time_constrain.is_empty() || dntrn_forwarder_time_constrain == "0" {
-            None
-        } else {
-            Some(cw_utils::Duration::Time(
-                dntrn_forwarder_time_constrain
-                    .parse()
-                    .expect("ntrn_forwarder_time_constrain is not a valid number"),
-            ))
-        };
-    let dntrn_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
-        input_addr: acc_dntrn_receive.clone(),
-        output_addr: acc_lp.clone(),
-        forwarding_configs: vec![(
-            cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
-            dntrn_forwarder_amount
-                .parse()
-                .expect("dntrn_forwarder_amount is not a valid number"),
-        )
-            .into()],
-        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(
-            dntrn_forwarder_constraints,
-        ),
-    };
-
-    let lib_dntrn_forwarder = builder.add_library(LibraryInfo::new(
-        "dntrn_forwarder".to_string(),
-        &neutron_domain,
-        LibraryConfig::ValenceForwarderLibrary(dntrn_forwarder_config.clone()),
-    ));
-
-    builder.add_link(
-        &lib_dntrn_forwarder,
-        vec![&acc_dntrn_receive],
-        vec![&acc_lp],
-    );
-
-    // astroport lper library
+    // We need a liquidity provider library to provide liquidity to the pool
     let max_spread = if pool_max_spread.is_empty() {
         None
     } else {
@@ -145,7 +114,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         )
     };
     let astroport_lper_config = valence_astroport_lper::msg::LibraryConfig {
-        input_addr: acc_lp.clone(),
+        input_addr: acc_receive.clone(),
         output_addr: LibraryAccountType::Addr(neutron_dao_addr.clone()),
         pool_addr: astroport_pool_addr.clone(),
         lp_config: valence_astroport_lper::msg::LiquidityProviderConfig {
@@ -166,56 +135,44 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceAstroportLper(astroport_lper_config.clone()),
     ));
 
-    builder.add_link(&lib_astroport_lper, vec![&acc_lp], EMPTY_VEC);
+    builder.add_link(&lib_astroport_lper, vec![&acc_receive], EMPTY_VEC);
 
-    // Forward ntrn
-    let forward_ntrn_func = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_ntrn_forwarder.clone())
-        .with_message_details(MessageDetails {
-            message_type: MessageType::CosmwasmExecuteMsg,
-            message: Message {
-                name: "process_function".to_string(),
-                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                    "process_function".to_string(),
-                    "forward".to_string(),
-                ])]),
-            },
-        })
+    /// We need to build the subroutines and create authorizations for them
+    /// 1. Send tokens to DAO
+    /// 2. Provide double sided liquidity
+    /// 3. Provide double sided liquidity by DAO
+    /// 4. Provide single sided liquidity by DAO
+    /// 5. Update return forwarder config
+
+    // Send tokens to DAO
+    let send_tokens_to_dao_subroutine = AtomicSubroutineBuilder::new()
+        .with_function(AtomicFunctionBuilder::new(  )
+            .with_contract_address(lib_return_forwarder.clone())
+            .with_message_details(MessageDetails {
+                message_type: MessageType::CosmwasmExecuteMsg,
+                message: Message {
+                    name: "process_function".to_string(),
+                    params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                        "process_function".to_string(),
+                        "forward".to_string(),
+                    ])]),
+                },
+            })
+            .build()
+        )
         .build();
 
-    let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(forward_ntrn_func)
-        .build();
+    // Tokens can only be sent to the DAO by the security DAO
     let authorization = AuthorizationBuilder::new()
-        .with_label("forward_ntrn")
-        .with_mode(permissioned_all_mode.clone())
-        .with_subroutine(subroutine)
-        .build();
-
-    builder.add_authorization(authorization);
-
-    // Forward dntrn
-    let forward_dntrn_func = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_dntrn_forwarder.clone())
-        .with_message_details(MessageDetails {
-            message_type: MessageType::CosmwasmExecuteMsg,
-            message: Message {
-                name: "process_function".to_string(),
-                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                    "process_function".to_string(),
-                    "forward".to_string(),
-                ])]),
-            },
-        })
-        .build();
-
-    let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(forward_dntrn_func)
-        .build();
-    let authorization = AuthorizationBuilder::new()
-        .with_label("forward_dntrn")
-        .with_mode(permissioned_all_mode.clone())
-        .with_subroutine(subroutine)
+        .with_label("secure_send_tokens_to_dao")
+        .with_mode(
+            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
+                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
+                    vec![security_dao_addr.clone()],
+                ),
+            ),
+        )
+        .with_subroutine(send_tokens_to_dao_subroutine)
         .build();
 
     builder.add_authorization(authorization);
@@ -247,7 +204,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         })
         .build();
 
-    let subroutine = AtomicSubroutineBuilder::new()
+    let double_sided_lp_subroutine = AtomicSubroutineBuilder::new()
         .with_function(double_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
@@ -258,8 +215,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     builder.add_authorization(authorization);
 
-    // Provide double sided liquidity by DAO
-    let double_sided_lp_func = AtomicFunctionBuilder::new()
+    // Provide double sided liquidity by security DAO
+    let secure_double_sided_lp_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_astroport_lper.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
@@ -285,7 +242,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("double_sided_lp_sec_dao")
+        .with_label("secure_double_sided_lp")
         .with_subroutine(subroutine)
         .build();
 
@@ -318,15 +275,15 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("single_sided_lp_sec_dao")
+        .with_label("secure_single_sided_lp")
         .with_subroutine(subroutine)
         .build();
 
     builder.add_authorization(authorization);
 
-    // Update ntrn forward config
-    let update_ntrn_forward_config_function = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_ntrn_forwarder.clone())
+    // Update return forwarder config
+    let update_return_forwarder_config_function = AtomicFunctionBuilder::new()
+        .with_contract_address(lib_return_forwarder.clone())
         .with_message_details(MessageDetails {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
@@ -340,7 +297,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_ntrn_forward_config_function)
+        .with_function(update_return_forwarder_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_mode(
@@ -350,39 +307,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("update_ntrn_forward_config")
-        .with_subroutine(subroutine)
-        .build();
-
-    builder.add_authorization(authorization);
-
-    // Update dntrn forward config
-    let update_dntrn_forward_config_function = AtomicFunctionBuilder::new()
-        .with_contract_address(lib_dntrn_forwarder.clone())
-        .with_message_details(MessageDetails {
-            message_type: MessageType::CosmwasmExecuteMsg,
-            message: Message {
-                name: "update_config".to_string(),
-                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                    "update_config".to_string(),
-                    "new_config".to_string(),
-                ])]),
-            },
-        })
-        .build();
-
-    let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(update_dntrn_forward_config_function)
-        .build();
-    let authorization = AuthorizationBuilder::new()
-        .with_mode(
-            valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
-                valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
-                ),
-            ),
-        )
-        .with_label("update_dntrn_forward_config")
+        .with_label("secure_update_return_forwarder_config")
         .with_subroutine(subroutine)
         .build();
 
