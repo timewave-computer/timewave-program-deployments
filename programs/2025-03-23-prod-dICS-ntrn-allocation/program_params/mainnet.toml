@@ -1,1 +1,27 @@
 owner = "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68"
+
+# Token denomination
+ntrn_denom = "untrn"
+
+# Valence Program 2: Instant liquid stake
+vp2_instant_ls_receiver_address=""
+vp2_instant_ls_amount = ""
+
+# Valence Program 3: Gradual liquid stake
+vp3_gradual_ls_receiver_address = ""
+vp3_gradual_ls_receiver_amount = ""
+
+
+# Valence Program 4: Bootstrap NTRN-dNTRN liquidity
+vp4_bootstrap_liquidity_receiver_address = ""
+vp4_bootstrap_liquidity_receiver_amount = ""
+
+## Actors
+neutron_dao_addr = ""
+
+security_dao_addr = ""
+
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "",
+]
