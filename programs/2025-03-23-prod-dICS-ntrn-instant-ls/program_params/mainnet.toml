@@ -1,0 +1,30 @@
+owner = "" 
+
+# Denoms
+# NTRN denom
+ntrn_denom = "untrn" 
+# dNTRN denom
+dntrn_denom = "" 
+
+# Bootstrap program dNTRN receive address
+vp4_bootstrap_liquidity_receiver_addr = ""
+
+# Drop staker core contract address
+drop_liquid_staker_addr = "" 
+
+# Split ratios
+## To send to Neutron DAO (100M dNTRN)
+ntrn_dao_split_normalized_fraction = "0.8"
+## To send to vp4 to bootstrap liquidity (25M dNTRN)
+vp4_receiver_split_normalized_fraction = "0.2"
+
+
+# Actor addresses
+## Neutron DAO address
+neutron_dao_addr = "" 
+## Security DAO address
+security_dao_addr = ""
+## Addresses allowed to execute low security actions 
+operator_list = [
+    "",
+]
