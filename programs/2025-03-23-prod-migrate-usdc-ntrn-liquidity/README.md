@@ -98,7 +98,7 @@ The program includes the following subroutines:
 
 6. `secure_provide_double_sided_liquidity`
    - Purpose: Provides liquidity to the USDC-dNTRN pool in secure mode
-   - Authorization: Neutron DAO and Security DAO only
+   - Authorization: Either Neutron DAO or Security DAO
    - Function: Calls the liquidity provider library's process_function
    - Message Restrictions: Must include "process_function" and "provide_double_sided_liquidity" parameters
    - Asset Order: USDC (asset1) and dNTRN (asset2)
@@ -106,26 +106,26 @@ The program includes the following subroutines:
 
 7. `secure_provide_single_sided_liquidity`
    - Purpose: Provides single-sided liquidity to the USDC-dNTRN pool in secure mode
-   - Authorization: Neutron DAO and Security DAO only
+   - Authorization: Either Neutron DAO or Security DAO
    - Function: Calls the liquidity provider library's process_function
    - Message Restrictions: Must include "process_function" and "provide_single_sided_liquidity" parameters
    - Additional Parameters: asset (specifies which asset to provide)
 
 8. `secure_return_unspent_tokens`
    - Purpose: Returns unspent tokens to the Neutron DAO
-   - Authorization: Neutron DAO and Security DAO only
+   - Authorization: Either Neutron DAO or Security DAO
    - Function: Calls the return forwarder's process_function
    - Message Restrictions: Must include "process_function" and "forward" parameters
 
 9. `secure_update_lp_forward_config`
    - Purpose: Updates the LP token forwarder configuration
-   - Authorization: Neutron DAO and Security DAO only
+   - Authorization: Either Neutron DAO or Security DAO
    - Function: Updates critical program parameters
    - Message Restrictions: Must include "update_config" and "new_config" parameters
 
 10. `secure_update_usdc_forwarder_config`
     - Purpose: Updates the USDC forwarder configuration
-    - Authorization: Neutron DAO and Security DAO only
+    - Authorization: Either Neutron DAO or Security DAO
     - Function: Updates critical program parameters
     - Message Restrictions: Must include "update_config" and "new_config" parameters
 
