@@ -3,11 +3,7 @@ mod manager_config;
 mod program_config;
 mod program_params;
 
-use std::{
-    error::Error,
-    io::Write,
-    path::{Path, PathBuf},
-};
+use std::{error::Error, fmt::Display, io::Write, path::PathBuf};
 
 use chrono::Utc;
 use clap::{command, Parser};
@@ -23,10 +19,21 @@ use valence_program_manager::program_config::ProgramConfig;
 pub use helpers::EMPTY_VEC;
 pub use program_params::ProgramParams;
 
-#[derive(clap::ValueEnum, Clone, Debug, PartialEq)]
-enum Mode {
-    Deploy,
-    Debug,
+#[derive(Debug, PartialEq)]
+enum Status {
+    Process,
+    Success,
+    Fail,
+}
+
+impl Display for Status {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Status::Process => write!(f, "process"),
+            Status::Success => write!(f, "success"),
+            Status::Fail => write!(f, "fail"),
+        }
+    }
 }
 
 #[derive(Parser, Debug)]
@@ -69,6 +76,10 @@ where
     info!("Verifying program path");
     verify_path(program_path.clone())?;
 
+    let output_path = program_path
+        .join("output")
+        .join(format!("{}-{}", args.target_env, timestamp));
+
     // Set manager config for the chosen environment
     info!("Setting manager config for the chosen environment");
     set_manager_config(&args.target_env).await?;
@@ -84,31 +95,18 @@ where
 
         builder(program_params)
     };
-
+    
     // Write the raw program config to file
     info!("Writing raw program config to file");
-    write_to_output(
-        &program_config,
-        &program_path,
-        &timestamp,
-        &args.target_env,
-        "",
-        "raw",
-    )?;
+    write_to_output(&program_config, output_path.clone(), Status::Process, "raw")?;
 
+    
     // Use program manager to deploy the program
     println!("Instantiating program...");
     match valence_program_manager::init_program(&mut program_config).await {
         Ok(_) => (),
         Err(e) => {
-            write_to_output(
-                &program_config,
-                &program_path,
-                &timestamp,
-                &args.target_env,
-                "failed",
-                "debug",
-            )?;
+            write_to_output(&program_config, output_path.clone(), Status::Fail, "debug")?;
 
             return Err(Box::new(e));
         }
@@ -117,10 +115,8 @@ where
     // Write instantiated program to file
     write_to_output(
         &program_config,
-        &program_path,
-        &timestamp,
-        &args.target_env,
-        "",
+        output_path,
+        Status::Success,
         "instantiated",
     )?;
 
@@ -131,18 +127,16 @@ where
 
 fn write_to_output(
     program_config: &ProgramConfig,
-    program_path: &Path,
-    time: &str,
-    env: &str,
-    status: &str,
+    mut path: PathBuf,
+    status: Status,
     prefix: &str,
 ) -> Result<(), Box<dyn Error>> {
-    let path = program_path
-        .join("output")
-        .join(format!("{}-{}-{}", env, time, status));
-
     if !path.exists() {
         std::fs::create_dir_all(path.clone())?;
+    } else if status != Status::Process {
+        let new_path = PathBuf::from(format!("{}-{}", path.to_str().unwrap(), status));
+        std::fs::rename(path, new_path.clone())?;
+        path = new_path;
     }
 
     // Construct the full file path
