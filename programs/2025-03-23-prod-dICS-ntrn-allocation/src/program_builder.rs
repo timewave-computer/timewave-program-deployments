@@ -17,12 +17,12 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let ntrn_denom = params.get("ntrn_denom");
 
     // Valence Program 2: Instant liquid stake
-    let vp2_instant_ls_receiver_address = params.get("vp1_instant_ls_receiver_address");
-    let vp2_instant_ls_amount = params.get("vp1_instant_ls_amount");
+    let vp2_instant_ls_receiver_address = params.get("vp2_instant_ls_receiver_address");
+    let vp2_instant_ls_amount = params.get("vp2_instant_ls_amount");
 
     // Valence Program 3: Gradual liquid stake
-    let vp3_gradual_ls_receiver_address = params.get("vp2_gradual_ls_receiver_address");
-    let vp3_gradual_ls_amount = params.get("vp2_gradual_ls_amount");
+    let vp3_gradual_ls_receiver_address = params.get("vp3_gradual_ls_receiver_address");
+    let vp3_gradual_ls_amount = params.get("vp3_gradual_ls_amount");
 
     // Valence Program 4: Bootstrap NTRN-dNTRN liquidity
     let vp4_bootstrap_liquidity_receiver_address =
