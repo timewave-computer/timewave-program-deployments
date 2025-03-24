@@ -1,0 +1,32 @@
+# Owner can make arbitrary changes to the program. In production, this must be the Neutron DAO address
+owner = ""
+
+# Token denoms of various tokens
+ntrn_denom = ""
+dntrn_denom = ""
+
+# Pool configuration
+# astroport pool address to LP
+astroport_pool_addr = ""
+# Minimum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 0.5)
+expected_pool_ratio_min = ""
+# Maximum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 2)
+expected_pool_ratio_max = ""
+pool_max_spread = ""
+
+# Amount to use in NTRN forwarder
+ntrn_forwarder_amount = ""
+# Amount to use in dNTRN forwarder
+dntrn_forwarder_amount = ""
+# Time constrain for dNTRN forwarder in seconds (0 for no time constrain)
+forwarder_interval_between_calls = ""
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = ""
+# Security DAO address
+security_dao_addr = ""
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "",
+]

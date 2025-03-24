@@ -1,0 +1,18 @@
+owner = ""
+init_lp_token_denom = ""
+usdc_dntrn_lp_token_denom = ""
+usdc_ntrn_pool_addr = ""
+usdc_dntrn_pool_addr = ""
+ntrn_denom = ""
+dntrn_denom = ""
+usdc_denom = ""
+drop_liquid_staker_addr = ""
+pool_max_spread = ""
+neutron_dao_addr = ""
+security_dao_addr = ""
+expected_pool_ratio_min = ""
+expected_pool_ratio_max = ""
+authorizations_allowed_list = [
+    "",
+    "",
+]

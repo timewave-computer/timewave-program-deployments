@@ -1,5 +1,5 @@
 [package]
-name       = "program-template"
+name       = "prod-dics-bootstrap-ntrn-dntrn"
 authors    = ["Timewave Labs"]
 edition    = "2021"
 license    = "Apache-2.0"

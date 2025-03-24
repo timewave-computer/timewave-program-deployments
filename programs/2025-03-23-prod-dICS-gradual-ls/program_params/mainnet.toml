@@ -1,0 +1,25 @@
+owner = "" 
+
+# Denoms
+# NTRN denom
+ntrn_denom = "untrn"
+
+# Drop staker core contract address
+drop_liquid_staker_addr = "" 
+
+# Forwarding configuration
+## Max size of batch
+max_amount_to_forward = ""
+## Interval in seconds between batches
+interval_seconds_between_batches = ""
+
+
+# Actor addresses
+## Neutron DAO address
+neutron_dao_addr = "" 
+## Security DAO address
+security_dao_addr = ""
+## Addresses allowed to execute low security actions 
+operator_list = [
+    "",
+]

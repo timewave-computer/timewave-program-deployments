@@ -1,0 +1,46 @@
+# Owner can make arbitrary changes to the program. In production, this must be the Neutron DAO address
+owner = ""
+
+# Token denoms of various tokens
+ntrn_denom = ""
+dntrn_denom = ""
+usdc_denom = ""
+usdc_ntrn_lp_denom = ""
+
+# USDC-NTRN lp tokens are batched and forwarded. 
+# The batch size and interval needs to be configured
+usdc_ntrn_lp_max_batch_size = ""
+usdc_ntrn_lp_batch_interval_seconds = ""
+
+# USDC-NTRN pool configuration
+# The program will withdraw liquidity from this pool
+usdc_ntrn_pool_addr = ""
+
+# Drop Staking configuration
+drop_liquid_staker_addr = ""
+
+# Liquidity provisioning configuration
+usdc_dntrn_pool_addr = ""
+# Minimum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 0.9)
+expected_pool_ratio_min = ""
+# Maximum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 1.1)
+expected_pool_ratio_max = ""
+# If we are providing single sided liquidity, half the tokens will be swapped for the other denomination.
+# Pool max spread is the acceptable spread in the pool while swapping tokens.
+pool_max_spread = ""
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = ""
+# Security DAO address
+security_dao_addr = ""
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "",
+] 
+
+# You should not need to modify below. These should be set to very large values so all tokens are forwarded/returned.
+# USDC forwarder max amount configuration
+usdc_forwarder_max_amount = ""
+# Return forwarder max amount configuration
+return_forwarder_max_amount = ""

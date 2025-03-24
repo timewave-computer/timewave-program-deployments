@@ -91,10 +91,16 @@ where
         Ok(_) => (),
         Err(e) => {
             if args.mode == Mode::Debug {
-                write_to_output(program_config, &program_path, &timestamp, &args.target_env, "debug")?;
+                write_to_output(
+                    program_config,
+                    &program_path,
+                    &timestamp,
+                    &args.target_env,
+                    "debug",
+                )?;
             }
             return Err(Box::new(e));
-        },
+        }
     };
 
     // Write instantiated program to file
