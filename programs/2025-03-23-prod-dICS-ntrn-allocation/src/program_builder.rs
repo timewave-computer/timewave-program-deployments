@@ -22,7 +22,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Valence Program 3: Gradual liquid stake
     let vp3_gradual_ls_receiver_address = params.get("vp3_gradual_ls_receiver_address");
-    let vp3_gradual_ls_amount = params.get("vp3_gradual_ls_amount");
+    let vp3_gradual_ls_receiver_amount = params.get("vp3_gradual_ls_receiver_amount");
 
     // Valence Program 4: Bootstrap NTRN-dNTRN liquidity
     let vp4_bootstrap_liquidity_receiver_address =
@@ -75,7 +75,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
                 vp3_gradual_ls_receiver_address.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
-                    vp3_gradual_ls_amount
+                    vp3_gradual_ls_receiver_amount
                         .parse()
                         .expect("Failed to parse vp3_gradual_ls_amount as Uint128"),
                 ),
@@ -146,7 +146,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_split_config_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_label("update_split_config")
+        .with_label("secure_update_split_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
