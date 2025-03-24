@@ -50,3 +50,71 @@ graph TD;
     class P1,P2,P3,P4,P5 program;
     class N1,N2 dao;
 ```
+
+## Security Model
+
+Each program implements a two-tier security model:
+
+1. **Low Security Operations**
+   - Authorized by addresses in the `operator_list`
+   - Includes routine operations like:
+     - Splitting NTRN
+     - Liquid staking NTRN
+     - Providing liquidity
+     - Withdrawing liquidity
+   - No call limits on authorized functions
+
+2. **High Security Operations**
+   - Requires authorization from BOTH Neutron DAO AND Security DAO
+   - Includes critical operations like:
+     - Updating program configurations
+     - Returning unspent tokens
+     - Modifying security parameters
+   - No call limits on authorized functions
+
+Each program maintains its own set of authorized operators and security parameters, but follows this consistent security model across all programs in the dICS initiative.
+
+## Program Deployment Order
+
+Due to dependencies in the programs, programs should be deployed in reverse order. The `program_param` TOML files will need to be updated with addresses from the programs.
+- Program 5 is independent of programs 1-4
+- Program 2 needs the receiver address for Program 4
+- Program 1 needs receiver addresses for Programs 1, 2, and 3
+
+## Testing and Rehearsals
+Before using in production, please do the following:
+1. Make a copy of `mainnet.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `<test_date>_<chain_name>_<label>.toml`.
+2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+
+### Subroutine Authorization Matrix
+
+| Program | Subroutine | Authorization | Parameter Restrictions | Test Status |
+|---------|------------|---------------|------------------------|-------------|
+| **Program 1: NTRN Allocation** |
+| | `split_ntrn` | Operators | Must include "process_function" and "liquid_stake" parameters | |
+| | `update_split_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| **Program 2: Instant Liquid Stake** |
+| | `liquid_stake` | Operators | Must include "process_function" and "liquid_stake" parameters | |
+| | `split_to_provide` | Operators | Must include "process_function" and "split" parameters | |
+| | `secure_update_split_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| **Program 3: Gradual Liquid Stake** |
+| | `liquid_stake_batch` | Operators | Must include "process_function" and "liquid_stake" parameters | |
+| | `forward_batch` | Operators | Must include "process_function" and "forward" parameters | |
+| | `secure_update_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| **Program 4: Bootstrap NTRN-dNTRN** |
+| | `secure_send_tokens_to_dao` | Security DAO | Controlled by forwarder config parameters | |
+| | `double_sided_lp` | Operators | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
+| | `secure_double_sided_lp` | Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
+| | `secure_single_sided_lp` | Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` and respect `max_spread` | |
+| | `secure_update_return_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| **Program 5: Migrate USDC-NTRN** |
+| | `forward_usdc_ntrn_lp_batch` | Operators | Must include "process_function" and "forward" parameters | |
+| | `withdraw_usdc_ntrn_liquidity` | Operators | Must include "process_function" and "withdraw_liquidity" parameters | |
+| | `forward_usdc_to_provide_ready_account` | Operators | Must include "process_function" and "forward" parameters | |
+| | `liquid_stake_ntrn` | Operators | Must include "process_function" and "liquid_stake" parameters | |
+| | `provide_double_sided_liquidity` | Operators | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
+| | `secure_provide_double_sided_liquidity` | Neutron DAO + Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
+| | `secure_provide_single_sided_liquidity` | Neutron DAO + Security DAO | Must specify which asset to provide | |
+| | `secure_return_unspent_tokens` | Neutron DAO + Security DAO | Must include "process_function" and "forward" parameters | |
+| | `secure_update_lp_forward_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| | `secure_update_usdc_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
