@@ -1,1 +1,3 @@
 owner = "neutron1phx0sz708k3t6xdnyc98hgkyhra4tp44et5s68"
+denom = "untrn"
+max_forward_amount = "1000"

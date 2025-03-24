@@ -16,7 +16,6 @@ pub fn get_manager_config(
 
     if !config_path.exists() {
         clone_config_from_repo(path, &config_path)?;
-        return Err(format!("Manager config for {} environment does not exist", path).into());
     }
 
     if let Ok(cfg) = ConfigHelper::builder()
