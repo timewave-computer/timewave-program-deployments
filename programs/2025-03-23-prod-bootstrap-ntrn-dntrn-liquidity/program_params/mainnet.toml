@@ -8,10 +8,10 @@ dntrn_denom = ""
 # Pool configuration
 # astroport pool address to LP
 astroport_pool_addr = ""
-# Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
-double_sided_min = ""
-# Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
-double_sided_max = ""
+# Minimum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 0.5)
+expected_pool_ratio_min = ""
+# Maximum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 2)
+expected_pool_ratio_max = ""
 pool_max_spread = ""
 
 # Amount to use in NTRN forwarder

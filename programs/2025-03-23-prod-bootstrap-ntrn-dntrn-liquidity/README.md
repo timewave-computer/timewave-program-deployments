@@ -40,8 +40,8 @@ These configurations apply to the forwarder that returns tokens to the Neutron D
 
 ### Pool Configuration
 - `pool_max_spread`: Maximum spread allowed when swapping one asset for another to provide single sided liquidity
-- `double_sided_min`: Minimum pool ratio (AssetA/AssetB) for double-sided liquidity provision
-- `double_sided_max`: Maximum pool ratio (AssetA/AssetB) for double-sided liquidity provision
+- `expected_pool_ratio_min`: Minimum pool ratio (AssetA/AssetB) for liquidity provision
+- `expected_pool_ratio_max`: Maximum pool ratio (AssetA/AssetB) for liquidity provision
 - `astroport_pool_addr`: Address of the Astroport pool contract for NTRN-dNTRN
 
 ### Authorized Actors
@@ -58,17 +58,17 @@ These configurations apply to the forwarder that returns tokens to the Neutron D
 
 - **double_sided_lp**
     - Provides double-sided liquidity and sends LP tokens directly to the Neutron DAO
-    - Can only provide liquidity if the pool ratio is between `double_sided_min` and `double_sided_max`
+    - Can only provide liquidity if the pool ratio is between `expected_pool_ratio_min` and `expected_pool_ratio_max`
     - Authority: operators or security DAO
 
 - **secure_double_sided_lp**
     - Provides double-sided liquidity and sends LP tokens directly to the Neutron DAO
-    - Can only provide liquidity if the pool ratio is between `double_sided_min` and `double_sided_max`
+    - Can only provide liquidity if the pool ratio is between `expected_pool_ratio_min` and `expected_pool_ratio_max`
     - Authority: security DAO
 
 - **secure_single_sided_lp**
     - Provides single-sided liquidity and sends LP tokens directly to the Neutron DAO
-    - Can only provide liquidity if the pool ratio is between `double_sided_min` and `double_sided_max` as well as the `max_spread` is respected.
+    - Can only provide liquidity if the pool ratio is between `expected_pool_ratio_min` and `expected_pool_ratio_max` as well as the `max_spread` is respected.
     - Authority: security DAO
 
 - **secure_update_return_forwarder_config**

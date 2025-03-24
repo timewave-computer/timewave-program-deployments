@@ -53,8 +53,8 @@ The program accepts the following configuration parameters:
 - `operator_list`: Array of addresses authorized for low-security operations
 - `usdc_ntrn_lp_max_batch_size`: Maximum amount of LP tokens to process in each batch
 - `usdc_ntrn_lp_batch_interval_seconds`: Time between processing batches of LP tokens
-- `double_sided_min`: Minimum pool ratio (AssetA/AssetB) for double-sided liquidity
-- `double_sided_max`: Maximum pool ratio (AssetA/AssetB) for double-sided liquidity
+- `expected_pool_ratio_min`: Minimum pool ratio (AssetA/AssetB) for double-sided liquidity
+- `expected_pool_ratio_max`: Maximum pool ratio (AssetA/AssetB) for double-sided liquidity
 - `pool_max_spread`: Maximum acceptable spread when swapping tokens
 - `usdc_forwarder_max_amount`: Maximum amount of USDC to forward in a single call
 - `return_forwarder_max_amount`: Maximum amount of tokens to return in a single call

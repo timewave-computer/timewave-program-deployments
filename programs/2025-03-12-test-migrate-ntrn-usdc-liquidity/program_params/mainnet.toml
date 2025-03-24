@@ -10,8 +10,8 @@ drop_liquid_staker_addr = ""
 pool_max_spread = ""
 neutron_dao_addr = ""
 security_dao_addr = ""
-double_sided_min = ""
-double_sided_max = ""
+expected_pool_ratio_min = ""
+expected_pool_ratio_max = ""
 authorizations_allowed_list = [
     "",
     "",
