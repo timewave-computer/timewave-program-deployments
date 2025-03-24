@@ -225,7 +225,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "process_function".to_string(),
                     "provide_double_sided_liquidity".to_string(),
-                    "expected_pool_ratio_range".to_string(),
                 ])]),
             },
         })
