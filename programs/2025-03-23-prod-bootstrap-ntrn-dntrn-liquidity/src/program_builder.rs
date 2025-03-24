@@ -235,6 +235,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(secure_double_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_double_sided_lp")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -242,7 +243,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("secure_double_sided_lp")
         .with_subroutine(subroutine)
         .build();
 
@@ -268,6 +268,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(single_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_single_sided_lp")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -275,7 +276,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("secure_single_sided_lp")
         .with_subroutine(subroutine)
         .build();
 
@@ -300,6 +300,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_return_forwarder_config_function)
         .build();
     let authorization = AuthorizationBuilder::new()
+        .with_label("secure_update_return_forwarder_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
@@ -307,7 +308,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 ),
             ),
         )
-        .with_label("secure_update_return_forwarder_config")
         .with_subroutine(subroutine)
         .build();
 

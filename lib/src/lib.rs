@@ -95,12 +95,11 @@ where
 
         builder(program_params)
     };
-    
+
     // Write the raw program config to file
     info!("Writing raw program config to file");
     write_to_output(&program_config, output_path.clone(), Status::Process, "raw")?;
 
-    
     // Use program manager to deploy the program
     println!("Instantiating program...");
     match valence_program_manager::init_program(&mut program_config).await {
