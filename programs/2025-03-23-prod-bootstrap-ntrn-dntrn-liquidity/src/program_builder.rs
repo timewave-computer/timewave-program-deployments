@@ -48,20 +48,19 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    /// Accounts
-    /// We need one account to receive NTRN and dNTRN tokens
+    // Accounts
+    // We need one account to receive NTRN and dNTRN tokens
     let acc_receive = builder.add_account(AccountInfo::new(
         "receive_acc".to_string(),
         &neutron_domain,
         AccountType::default(),
     ));
- 
-    /// Libraries
-    /// This program requires two libraries:
-    /// 1. A forwarder library to return excess NTRN and dNTRN tokens to the Neutron DAO
-    /// 2. A liquidity provider library to provide liquidity to the pool and send LP tokens to the Neutron DAO
-    
-    // Configure the return forwarder library. It takes NTRN and dNTRN tokens from the receive account and sends them to the Neutron DAO    
+
+    // Libraries
+    // This program requires two libraries:
+    // 1. A forwarder library to return excess NTRN and dNTRN tokens to the Neutron DAO
+    // 2. A liquidity provider library to provide liquidity to the pool and send LP tokens to the Neutron DAO
+    // Configure the return forwarder library. It takes NTRN and dNTRN tokens from the receive account and sends them to the Neutron DAO
     let return_forwarder_constraints =
         if forwarder_interval_between_calls.is_empty() || forwarder_interval_between_calls == "0" {
             None
@@ -138,28 +137,28 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     builder.add_link(&lib_astroport_lper, vec![&acc_receive], EMPTY_VEC);
 
-    /// This program has the following subroutines:
-    /// 1. Send tokens to DAO
-    /// 2. Provide double sided liquidity
-    /// 3. Provide double sided liquidity by DAO
-    /// 4. Provide single sided liquidity by DAO
-    /// 5. Update return forwarder config
-
+    // This program has the following subroutines:
+    // 1. Send tokens to DAO
+    // 2. Provide double sided liquidity
+    // 3. Provide double sided liquidity by DAO
+    // 4. Provide single sided liquidity by DAO
+    // 5. Update return forwarder config
     // Send tokens to DAO
     let send_tokens_to_dao_subroutine = AtomicSubroutineBuilder::new()
-        .with_function(AtomicFunctionBuilder::new(  )
-            .with_contract_address(lib_return_forwarder.clone())
-            .with_message_details(MessageDetails {
-                message_type: MessageType::CosmwasmExecuteMsg,
-                message: Message {
-                    name: "process_function".to_string(),
-                    params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                        "process_function".to_string(),
-                        "forward".to_string(),
-                    ])]),
-                },
-            })
-            .build()
+        .with_function(
+            AtomicFunctionBuilder::new()
+                .with_contract_address(lib_return_forwarder.clone())
+                .with_message_details(MessageDetails {
+                    message_type: MessageType::CosmwasmExecuteMsg,
+                    message: Message {
+                        name: "process_function".to_string(),
+                        params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
+                            "process_function".to_string(),
+                            "forward".to_string(),
+                        ])]),
+                    },
+                })
+                .build(),
         )
         .build();
 
@@ -170,6 +169,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
                     vec![security_dao_addr.clone(), neutron_dao_addr.clone()],
+                ),
             ),
         )
         .with_subroutine(send_tokens_to_dao_subroutine)
@@ -232,7 +232,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .build();
 
     let subroutine = AtomicSubroutineBuilder::new()
-        .with_function(double_sided_lp_func)
+        .with_function(secure_double_sided_lp_func)
         .build();
     let authorization = AuthorizationBuilder::new()
         .with_mode(

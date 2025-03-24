@@ -1,5 +1,5 @@
 [package]
-name       = "prod-dICS-ntrn-instant-ls"
+name       = "prod-dics-ntrn-instant-ls"
 authors    = ["Timewave Labs"]
 edition    = "2021"
 license    = "Apache-2.0"
@@ -12,6 +12,11 @@ valence-program-manager = { workspace = true }
 serde_json              = { workspace = true }
 clap                    = { workspace = true }
 tokio                   = { workspace = true }
+
+#CW
+cosmwasm-std = { workspace = true }
+cw-utils     = { workspace = true }
+cw-denom     = { workspace = true }
 
 # Libraries
 valence-authorization                = { workspace = true }

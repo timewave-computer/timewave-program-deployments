@@ -22,7 +22,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let ntrn_denom = params.get("ntrn_denom");
     let dntrn_denom = params.get("dntrn_denom");
     let usdc_ntrn_lp_denom = params.get("usdc_ntrn_lp_denom");
-    let usdc_dntrn_lp_denom = params.get("usdc_dntrn_lp_denom");
     // Get USDC-NTRN lp token batching params
     let usdc_ntrn_lp_max_batch_size = params.get("usdc_ntrn_lp_max_batch_size");
     let usdc_ntrn_lp_batch_interval_seconds = params.get("usdc_ntrn_lp_batch_interval_seconds");
@@ -56,8 +55,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
     // Get a program config builder
-    let mut builder =
-        ProgramConfigBuilder::new("Valence Program dICS 5: Migrate NTRN/USDC to dNTRN/USDC Production V1", &owner);
+    let mut builder = ProgramConfigBuilder::new(
+        "Valence Program dICS 5: Migrate NTRN/USDC to dNTRN/USDC Production V1",
+        &owner,
+    );
 
     // Configure the accounts
     let acc_ntrn_usdc_lp_receiver = builder.add_account(AccountInfo::new(
@@ -161,6 +162,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 .expect("usdc_forwarder_max_amount is not a valid number"),
         )
             .into()],
+        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(None),
     };
 
     let lib_usdc_to_provide_ready_forwarder = builder.add_library(LibraryInfo::new(
@@ -240,21 +242,23 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let return_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
         input_addr: acc_provide_ready.clone(),
         output_addr: valence_library_utils::LibraryAccountType::Addr(neutron_dao_addr.clone()),
-        forwarding_configs: vec![(
-            cw_denom::UncheckedDenom::Native(usdc_denom.clone()),
-            return_forwarder_max_amount
-                .parse()
-                .expect("return_forwarder_max_amount is not a valid number"),
+        forwarding_configs: vec![
+            (
+                cw_denom::UncheckedDenom::Native(usdc_denom.clone()),
+                return_forwarder_max_amount
+                    .parse()
+                    .expect("return_forwarder_max_amount is not a valid number"),
             )
-            .into(),
+                .into(),
             (
                 cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
                 return_forwarder_max_amount
                     .parse()
                     .expect("return_forwarder_max_amount is not a valid number"),
             )
-            .into(),
-        ],  
+                .into(),
+        ],
+        forwarding_constraints: valence_forwarder_library::msg::ForwardingConstraints::new(None),
     };
 
     let lib_return_forwarder = builder.add_library(LibraryInfo::new(
@@ -474,7 +478,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     builder.add_authorization(authorization);
 
-    // Create an authorization to return unspent tokens from the provide ready account back to the Neutron DAO. 
+    // Create an authorization to return unspent tokens from the provide ready account back to the Neutron DAO.
     // This authorization is in secure mode
     let secure_return_unspent_tokens_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_return_forwarder.clone())

@@ -6,7 +6,6 @@ ntrn_denom = ""
 dntrn_denom = ""
 usdc_denom = ""
 usdc_ntrn_lp_denom = ""
-usdc_dntrn_lp_denom = ""
 
 # USDC-NTRN lp tokens are batched and forwarded. 
 # The batch size and interval needs to be configured

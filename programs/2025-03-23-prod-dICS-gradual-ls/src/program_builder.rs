@@ -1,7 +1,5 @@
-use cosmwasm_std::{to_json_binary, Decimal, Timestamp};
 use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
-    authorization::AuthorizationDuration,
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
 };
@@ -17,7 +15,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     let owner = params.get("owner");
     let ntrn_denom = params.get("ntrn_denom");
-    let dntrn_denom = params.get("dntrn_denom");
+    let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
     let max_amount_to_forward = params.get("max_amount_to_forward");
     let interval_seconds_between_batches = params.get("interval_seconds_between_batches");
     let neutron_dao_addr = params.get("neutron_dao_addr");
@@ -52,7 +50,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Add the drip forwarder library
     let drip_forwarder_constraints =
-        if drip_forwarder_time_constrain.is_empty() || drip_forwarder_time_constrain == "0" {
+        if interval_seconds_between_batches.is_empty() || interval_seconds_between_batches == "0" {
             None
         } else {
             Some(cw_utils::Duration::Time(
@@ -62,8 +60,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             ))
         };
     let drip_forwarder_config = valence_forwarder_library::msg::LibraryConfig {
-        input_addr: acc_receiver.clone(),
-        output_addr: acc_interim.clone(),
+        input_addr: acc_drip.clone(),
+        output_addr: acc_ls.clone(),
         forwarding_configs: vec![(
             cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
             max_amount_to_forward
@@ -82,12 +80,12 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceForwarderLibrary(drip_forwarder_config.clone()),
     ));
 
-    builder.add_link(&lib_drip_forwarder, vec![&acc_receiver], vec![&acc_interim]);
+    builder.add_link(&lib_drip_forwarder, vec![&acc_drip], vec![&acc_ls]);
 
     // Add the drop liquid staker library
     let drop_liquid_staker_config = valence_drop_liquid_staker::msg::LibraryConfig {
-        input_addr: acc_interim.clone(),
-        output_addr: neutron_domain.to_string(),
+        input_addr: acc_ls.clone(),
+        output_addr: neutron_dao_addr.as_str().into(),
         liquid_staker_addr: drop_liquid_staker_addr,
         denom: ntrn_denom,
     };
@@ -98,7 +96,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceDropLiquidStaker(drop_liquid_staker_config.clone()),
     ));
 
-    builder.add_link(&lib_drop_liquid_staker, vec![&acc_interim], vec![EMPTY_VEC]);
+    builder.add_link(&lib_drop_liquid_staker, vec![&acc_ls], EMPTY_VEC);
 
     // Authorizations
     // Drip forwarder authorization

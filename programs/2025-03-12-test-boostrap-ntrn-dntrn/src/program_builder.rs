@@ -36,7 +36,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             ),
         );
 
-    let mut builder = ProgramConfigBuilder::new(owner);
+    let mut builder = ProgramConfigBuilder::new("test-bootstrap", &owner);
 
     // Domains
     let neutron_domain =

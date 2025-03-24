@@ -44,7 +44,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    let mut builder = ProgramConfigBuilder::new(owner);
+    let mut builder = ProgramConfigBuilder::new("test-migrate-ntrn", &owner);
 
     let acc_lp_receiver = builder.add_account(AccountInfo::new(
         "lp_receiver_acc".to_string(),

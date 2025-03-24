@@ -1,4 +1,4 @@
-se deployer_lib::EMPTY_VEC;
+use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
@@ -25,8 +25,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let vp3_gradual_ls_amount = params.get("vp2_gradual_ls_amount");
 
     // Valence Program 4: Bootstrap NTRN-dNTRN liquidity
-    let vp4_bootstrap_liquidity_receiver_address = params.get("vp4_bootstrap_liquidity_receiver_address");
-    let vp4_bootstrap_liquidity_receiver_amount = params.get("vp4_bootstrap_liquidity_receiver_amount");
+    let vp4_bootstrap_liquidity_receiver_address =
+        params.get("vp4_bootstrap_liquidity_receiver_address");
+    let vp4_bootstrap_liquidity_receiver_amount =
+        params.get("vp4_bootstrap_liquidity_receiver_amount");
 
     // Neutron DAO address
     let neutron_dao_addr = params.get("neutron_dao_addr");
@@ -42,7 +44,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             ),
         );
 
-    // Domains  
+    // Domains
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
@@ -64,27 +66,25 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
                 vp2_instant_ls_receiver_address.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
-                    vp2_instant_ls_amount.parse().expect(
-                        "Failed to parse vp2_instant_ls_amount as Decimal",
-                    ),
+                    vp2_instant_ls_amount
+                        .parse()
+                        .expect("Failed to parse vp2_instant_ls_amount as Decimal"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
                 cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
                 vp3_gradual_ls_receiver_address.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
-                    vp3_gradual_ls_amount.parse().expect(
-                        "Failed to parse vp3_gradual_ls_amount as Decimal",
-                    ),
+                    vp3_gradual_ls_amount
+                        .parse()
+                        .expect("Failed to parse vp3_gradual_ls_amount as Decimal"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
                 cw_denom::UncheckedDenom::Native(ntrn_denom.clone()),
                 vp4_bootstrap_liquidity_receiver_address.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
-                    vp4_bootstrap_liquidity_receiver_amount
-                        .parse()
-                        .expect(
+                    vp4_bootstrap_liquidity_receiver_amount.parse().expect(
                         "Failed to parse vp4_bootstrap_liquidity_receiver_amount as Decimal",
                     ),
                 ),
@@ -99,7 +99,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     ));
 
     builder.add_link(&lib_split_ntrn, vec![&acc_receiver], EMPTY_VEC);
-
 
     // Authorizations
     // Split ntrn

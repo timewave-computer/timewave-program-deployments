@@ -2,9 +2,7 @@ owner = ""
 
 # Denoms
 # NTRN denom
-ntrn_denom = "untrn" 
-# dNTRN denom
-dntrn_denom = "" 
+ntrn_denom = "untrn"
 
 # Drop staker core contract address
 drop_liquid_staker_addr = "" 

@@ -1,7 +1,5 @@
-use cosmwasm_std::{to_json_binary, Decimal, Timestamp};
 use deployer_lib::EMPTY_VEC;
 use valence_authorization_utils::{
-    authorization::AuthorizationDuration,
     authorization_message::{Message, MessageDetails, MessageType, ParamRestriction},
     builders::{AtomicFunctionBuilder, AtomicSubroutineBuilder, AuthorizationBuilder},
 };
@@ -22,9 +20,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Split ratios
     let ntrn_dao_split_normalized_fraction = params.get("ntrn_dao_split_normalized_fraction");
-    let vp4_receiver_split_normalized_fraction = params.get("vp4_receiver_split_normalized_fraction");
+    let vp4_receiver_split_normalized_fraction =
+        params.get("vp4_receiver_split_normalized_fraction");
 
-    // Addresses    
+    // Addresses
     let vp4_bootstrap_liquidity_receiver_addr = params.get("vp4_bootstrap_liquidity_receiver_addr");
     let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
     let security_dao_addr = params.get("security_dao_addr");
@@ -41,7 +40,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let neutron_domain =
         valence_program_manager::domain::Domain::CosmosCosmwasm("neutron".to_string());
 
-    let mut builder = ProgramConfigBuilder::new("Valence dICS Program 2: Instant Liquid Stake NTRN", &owner);
+    let mut builder =
+        ProgramConfigBuilder::new("Valence dICS Program 2: Instant Liquid Stake NTRN", &owner);
 
     // Receiver account of the program
     let acc_receiver = builder.add_account(AccountInfo::new(
@@ -69,7 +69,11 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         LibraryConfig::ValenceDropLiquidStaker(drop_liquid_staker_config.clone()),
     ));
 
-    builder.add_link(&lib_drop_liquid_staker, vec![&acc_receiver], vec![&acc_interim]);
+    builder.add_link(
+        &lib_drop_liquid_staker,
+        vec![&acc_receiver],
+        vec![&acc_interim],
+    );
 
     // Liquid staked token splitter
     let split_ls_token_config = valence_splitter_library::msg::LibraryConfig {
@@ -79,9 +83,9 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
                 neutron_dao_addr.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
-                    ntrn_dao_split_normalized_fraction.parse().expect(
-                        "Failed to parse ntrn_dao_split_normalized_fraction as Decimal",
-                    ),
+                    ntrn_dao_split_normalized_fraction
+                        .parse()
+                        .expect("Failed to parse ntrn_dao_split_normalized_fraction as Decimal"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
