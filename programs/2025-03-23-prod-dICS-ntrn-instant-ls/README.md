@@ -40,8 +40,8 @@ The program accepts the following configuration parameters:
 - `drop_liquid_staker_addr`: Address of the Drop protocol contract
 - `security_dao_addr`: Address of the Security DAO
 - `operator_list`: Array of addresses authorized for low-security operations
-- `ntrn_dao_split_normalized_fraction`: String representation of decimal (e.g., "0.8")
-- `vp4_receiver_split_normalized_fraction`: String representation of decimal (e.g., "0.2")
+- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.8" = 80%)
+- `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "0.2" = 20%)
 
 ## Subroutines
 
