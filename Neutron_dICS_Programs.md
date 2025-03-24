@@ -65,7 +65,7 @@ Each program implements a two-tier security model:
    - No call limits on authorized functions
 
 2. **High Security Operations**
-   - Requires authorization from BOTH Neutron DAO AND Security DAO
+   - Requires authorization from either the Neutron DAO or the Security DAO
    - Includes critical operations like:
      - Updating program configurations
      - Returning unspent tokens
