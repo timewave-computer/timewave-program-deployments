@@ -5,7 +5,7 @@ owner = "neutron1g3knxghpmhunj86nrcnef0fakll9yfh0hue9uf"
 ntrn_denom = "untrn"
 dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn"
 usdc_denom = "ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81"
-usdc_ntrn_lp_denom = "factory/neutron15lvcaa6qad0zrgxwltcmkrcxhx3ssp4qn3rkjh37jke5rf3t9zlsuyccmy/astroport/share"
+usdc_ntrn_lp_denom = "factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share"
 
 # USDC-NTRN lp tokens are batched and forwarded. 
 # The batch size and interval needs to be configured
