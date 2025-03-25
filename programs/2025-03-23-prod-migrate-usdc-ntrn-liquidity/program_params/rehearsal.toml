@@ -1,0 +1,47 @@
+# Owner can make arbitrary changes to the program. In production, this must be the Neutron DAO address
+owner = "neutron1g3knxghpmhunj86nrcnef0fakll9yfh0hue9uf"
+
+# Token denoms of various tokens
+ntrn_denom = "untrn"
+dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn"
+usdc_denom = "ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81"
+usdc_ntrn_lp_denom = "factory/neutron15lvcaa6qad0zrgxwltcmkrcxhx3ssp4qn3rkjh37jke5rf3t9zlsuyccmy/astroport/share"
+
+# USDC-NTRN lp tokens are batched and forwarded. 
+# The batch size and interval needs to be configured
+usdc_ntrn_lp_max_batch_size = "10000"
+usdc_ntrn_lp_batch_interval_seconds = "1"
+
+# USDC-NTRN pool configuration
+# The program will withdraw liquidity from this pool
+usdc_ntrn_pool_addr = "neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv"
+
+# Drop Staking configuration
+drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex2luhgrsugu0h8"
+
+# Liquidity provisioning configuration
+usdc_dntrn_pool_addr = "neutron15lvcaa6qad0zrgxwltcmkrcxhx3ssp4qn3rkjh37jke5rf3t9zlsuyccmy"
+# Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.9)
+double_sided_min = "0.5"
+# Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 1.1)
+double_sided_max = "2"
+# If we are providing single sided liquidity, half the tokens will be swapped for the other denomination.
+# Pool max spread is the acceptable spread in the pool while swapping tokens.
+pool_max_spread = "0.5"
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = "neutron1g3knxghpmhunj86nrcnef0fakll9yfh0hue9uf"
+# Security DAO address
+security_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+    "neutron1g3knxghpmhunj86nrcnef0fakll9yfh0hue9uf",
+] 
+
+# You should not need to modify below. These should be set to very large values so all tokens are forwarded/returned.
+# USDC forwarder max amount configuration
+usdc_forwarder_max_amount = "10000"
+# Return forwarder max amount configuration
+return_forwarder_max_amount = "10000"

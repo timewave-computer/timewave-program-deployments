@@ -1,0 +1,25 @@
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" 
+
+# Denoms
+# NTRN denom
+ntrn_denom = "untrn"
+
+# Drop staker core contract address
+drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex2luhgrsugu0h8" 
+
+# Forwarding configuration
+## Max size of batch
+max_amount_to_forward = "10000"
+## Interval in seconds between batches
+interval_seconds_between_batches = "1"
+
+
+# Actor addresses
+## Neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" 
+## Security DAO address
+security_dao_addr = "neutron13j84x6gyv2n7kcpcy59g9xz3efy375wr4tjywp"
+## Addresses allowed to execute low security actions 
+operator_list = [
+    "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+]

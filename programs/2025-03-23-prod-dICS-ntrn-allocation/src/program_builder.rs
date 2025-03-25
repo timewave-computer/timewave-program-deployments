@@ -77,7 +77,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
                     vp3_gradual_ls_receiver_amount
                         .parse()
-                        .expect("Failed to parse vp3_gradual_ls_amount as Uint128"),
+                        .expect("Failed to parse vp3_gradual_ls_receiver_amount as Uint128"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
