@@ -1,0 +1,10 @@
+[chains]
+
+[chains.neutron]
+name = "neutron"
+rpc  = "https://rpc-karnigon-1.rehearsal-1.neutron.org"
+grpc = "https://grpc-karnigon-1.rehearsal-1.neutron.org:80"
+prefix    = "neutron"
+gas_price = "0.0053"
+gas_denom = "untrn"
+coin_type = "118"
