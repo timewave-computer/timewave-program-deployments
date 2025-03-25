@@ -1,0 +1,27 @@
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+
+# Token denomination
+ntrn_denom = "untrn"
+
+# Valence Program 2: Instant liquid stake
+vp2_instant_ls_receiver_address="neutron1zsw8kl43kkqmt7utcfpw63uyj70z5ukxevn8mzsgpawknh3s2uhqfhaawl"
+vp2_instant_ls_amount = "10000"
+
+# Valence Program 3: Gradual liquid stake
+vp3_gradual_ls_receiver_address = "neutron1gc3lctu25062xuhyxhje5whmdgcwvpyj2p9yn4q349v8770uctdsd6qzj5"
+vp3_gradual_ls_receiver_amount = "10000"
+
+
+# Valence Program 4: Bootstrap NTRN-dNTRN liquidity
+vp4_bootstrap_liquidity_receiver_address = "neutron1hrmh83zhash3yll59x53t6nn7mrms6s0ltxhcd8z8ngu3hppwveqfhlahh"
+vp4_bootstrap_liquidity_receiver_amount = "10000"
+
+## Actors
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+
+security_dao_addr = "neutron13j84x6gyv2n7kcpcy59g9xz3efy375wr4tjywp"
+
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2",
+]
