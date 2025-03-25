@@ -1,5 +1,5 @@
 [package]
-name       = "migrate-usdc-ntrn"
+name       = "migrate-usdc-ntrn-prod"
 authors    = ["Timewave Labs"]
 edition    = "2021"
 license    = "Apache-2.0"
