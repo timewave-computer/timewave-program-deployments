@@ -89,8 +89,8 @@ Before using in production, please do the following:
 Mainnet fork deployment checklist
 1
 2
-3
-4
+3. Deployed. Program ID 10
+4. Deployed. Program ID 8
 5. Deployed. Program ID 7
 
 ### Subroutine Authorization Matrix

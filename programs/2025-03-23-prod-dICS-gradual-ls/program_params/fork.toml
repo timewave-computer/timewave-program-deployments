@@ -1,4 +1,4 @@
-owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" 
+owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit's dev wallet
 
 # Denoms
 # NTRN denom
@@ -12,7 +12,6 @@ drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex
 max_amount_to_forward = "10000000000000"
 ## Interval in seconds between batches
 interval_seconds_between_batches = "1"
-
 
 # Actor addresses
 # neutron DAO address
