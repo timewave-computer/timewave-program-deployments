@@ -9,9 +9,9 @@ dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv
 # astroport pool address to LP
 astroport_pool_addr = "neutron1ss9rksteumsa036uzzsvkpwj4paj7naju4vwws4ky64t5q26wa0s8gvtmg"
 # Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
-double_sided_min = "0.5"
+expected_pool_ratio_min = "0.5"
 # Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
-double_sided_max = "2"
+expected_pool_ratio_max = "2"
 pool_max_spread = "0.5"
 
 # Amount to use in NTRN forwarder

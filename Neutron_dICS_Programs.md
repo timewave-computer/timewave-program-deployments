@@ -86,6 +86,13 @@ Before using in production, please do the following:
 1. Make a copy of `mainnet.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `<test_date>_<chain_name>_<label>.toml`.
 2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
 
+Mainnet fork deployment checklist
+1
+2
+3
+4
+5. Deployed. Program ID 7
+
 ### Subroutine Authorization Matrix
 
 | Program | Subroutine | Authorization | Parameter Restrictions | Test Status |
