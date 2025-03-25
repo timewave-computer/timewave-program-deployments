@@ -22,9 +22,9 @@ drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex
 # Liquidity provisioning configuration
 usdc_dntrn_pool_addr = "neutron15lvcaa6qad0zrgxwltcmkrcxhx3ssp4qn3rkjh37jke5rf3t9zlsuyccmy"
 # Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.9)
-double_sided_min = "0.5"
+expected_pool_ratio_min = "0.5"
 # Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 1.1)
-double_sided_max = "2"
+expected_pool_ratio_max = "2"
 # If we are providing single sided liquidity, half the tokens will be swapped for the other denomination.
 # Pool max spread is the acceptable spread in the pool while swapping tokens.
 pool_max_spread = "0.5"
