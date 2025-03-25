@@ -6,8 +6,8 @@ astroport_lp_denom = "factory/neutron1lm6c6g5sm9jgt55x5dca3jlqxxsdal7j4ylemfsa7h
 pool_max_spread = "0.5" # Unchanged
 neutron_dao_addr = "neutron1yw4xvtc43me9scqfr2jr2gzvcxd3a9y4eq7gaukreugw2yd2f8ts8g30fq" # Neutron Main DAO
 security_dao_addr = "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf"
-double_sided_min = "0.5" # Unchanged
-double_sided_max = "2" # Unchanged
+expected_pool_ratio_min = "0.5" # Unchanged
+expected_pool_ratio_max = "2" # Unchanged
 authorizations_allowed_list = [ # Unchanged
     "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
     "neutron1hl9vrr0k0l2pz62v343f50v0djm87dzhvxjtca",

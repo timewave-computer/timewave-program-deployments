@@ -68,7 +68,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
                     vp2_instant_ls_amount
                         .parse()
-                        .expect("Failed to parse vp2_instant_ls_amount as Decimal"),
+                        .expect("Failed to parse vp2_instant_ls_amount as Uint128"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
@@ -77,7 +77,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
                     vp3_gradual_ls_receiver_amount
                         .parse()
-                        .expect("Failed to parse vp3_gradual_ls_receiver_amount as Decimal"),
+                        .expect("Failed to parse vp3_gradual_ls_receiver_amount as Uint128"),
                 ),
             ),
             valence_splitter_library::msg::UncheckedSplitConfig::new(
@@ -85,7 +85,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 vp4_bootstrap_liquidity_receiver_address.as_str(),
                 valence_splitter_library::msg::UncheckedSplitAmount::FixedAmount(
                     vp4_bootstrap_liquidity_receiver_amount.parse().expect(
-                        "Failed to parse vp4_bootstrap_liquidity_receiver_amount as Decimal",
+                        "Failed to parse vp4_bootstrap_liquidity_receiver_amount as Uint128",
                     ),
                 ),
             ),
@@ -146,7 +146,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_function(update_split_config_func)
         .build();
     let authorization = AuthorizationBuilder::new()
-        .with_label("update_split_config")
+        .with_label("secure_update_split_config")
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(

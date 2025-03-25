@@ -24,8 +24,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // pool configuration
     let astroport_pool_addr = params.get("astroport_pool_addr");
     let pool_max_spread = params.get("pool_max_spread");
-    let double_sided_min = params.get("double_sided_min");
-    let double_sided_max = params.get("double_sided_max");
+    let expected_pool_ratio_min = params.get("expected_pool_ratio_min");
+    let expected_pool_ratio_max = params.get("expected_pool_ratio_max");
     // forwarder configuration
     let ntrn_forwarder_amount = params.get("ntrn_forwarder_amount");
     let dntrn_forwarder_amount = params.get("dntrn_forwarder_amount");
@@ -180,10 +180,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // Provide double sided liquidity
     let expected_pool_ratio_range =
         Some(valence_library_utils::liquidity_utils::DecimalRange::new(
-            Decimal::from_str(double_sided_min.as_str())
-                .expect("double_sided_min must be parsed into Decimal"),
-            Decimal::from_str(double_sided_max.as_str())
-                .expect("double_sided_max must be parsed into Decimal"),
+            Decimal::from_str(expected_pool_ratio_min.as_str())
+                .expect("expected_pool_ratio_min must be parsed into Decimal"),
+            Decimal::from_str(expected_pool_ratio_max.as_str())
+                .expect("expected_pool_ratio_max must be parsed into Decimal"),
         ));
     let double_sided_lp_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_astroport_lper.clone())
@@ -225,7 +225,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
                 params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
                     "process_function".to_string(),
                     "provide_double_sided_liquidity".to_string(),
-                    "expected_pool_ratio_range".to_string(),
                 ])]),
             },
         })

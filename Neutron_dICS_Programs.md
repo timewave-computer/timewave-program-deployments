@@ -103,17 +103,17 @@ Before using in production, please do the following:
 | | `secure_update_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
 | **Program 4: Bootstrap NTRN-dNTRN** |
 | | `secure_send_tokens_to_dao` | Security DAO | Controlled by forwarder config parameters | |
-| | `double_sided_lp` | Operators | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
-| | `secure_double_sided_lp` | Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
-| | `secure_single_sided_lp` | Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` and respect `max_spread` | |
+| | `double_sided_lp` | Operators | Pool ratio must be between constrained `expected_pool_ratio_min` and `expected_pool_ratio_max` | |
+| | `secure_double_sided_lp` | Security DAO | Can set the `expected_pool_ratio_min` and `expected_pool_ratio_max` while providing liquidity | |
+| | `secure_single_sided_lp` | Security DAO | Can set the `expected_pool_ratio_min` and `expected_pool_ratio_max` and `max_spread` | |
 | | `secure_update_return_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
 | **Program 5: Migrate USDC-NTRN** |
 | | `forward_usdc_ntrn_lp_batch` | Operators | Must include "process_function" and "forward" parameters | |
 | | `withdraw_usdc_ntrn_liquidity` | Operators | Must include "process_function" and "withdraw_liquidity" parameters | |
 | | `forward_usdc_to_provide_ready_account` | Operators | Must include "process_function" and "forward" parameters | |
 | | `liquid_stake_ntrn` | Operators | Must include "process_function" and "liquid_stake" parameters | |
-| | `provide_double_sided_liquidity` | Operators | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
-| | `secure_provide_double_sided_liquidity` | Neutron DAO + Security DAO | Pool ratio must be between `double_sided_min` and `double_sided_max` | |
+| | `provide_double_sided_liquidity` | Operators | Pool ratio must be between `expected_pool_ratio_min` and `expected_pool_ratio_max` | |
+| | `secure_provide_double_sided_liquidity` | Neutron DAO + Security DAO | Can set the expected pool ration with `expected_pool_ratio_min` and `expected_pool_ratio_max` | |
 | | `secure_provide_single_sided_liquidity` | Neutron DAO + Security DAO | Must specify which asset to provide | |
 | | `secure_return_unspent_tokens` | Neutron DAO + Security DAO | Must include "process_function" and "forward" parameters | |
 | | `secure_update_lp_forward_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |

@@ -25,8 +25,8 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let pool_max_spread = params.get("pool_max_spread");
     let neutron_dao_addr = params.get("neutron_dao_addr");
     let security_dao_addr = params.get("security_dao_addr");
-    let double_sided_min = params.get("double_sided_min");
-    let double_sided_max = params.get("double_sided_max");
+    let expected_pool_ratio_min = params.get("expected_pool_ratio_min");
+    let expected_pool_ratio_max = params.get("expected_pool_ratio_max");
     let authorizations_allowed_list = params.get_array("authorizations_allowed_list");
 
     let permissioned_all_mode =
@@ -286,10 +286,10 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // Provide double sided liquidity
     let expected_pool_ratio_range =
         Some(valence_library_utils::liquidity_utils::DecimalRange::new(
-            Decimal::from_str(double_sided_min.as_str())
-                .expect("double_sided_min must be parsed into Decimal"),
-            Decimal::from_str(double_sided_max.as_str())
-                .expect("double_sided_max must be parsed into Decimal"),
+            Decimal::from_str(expected_pool_ratio_min.as_str())
+                .expect("expected_pool_ratio_min must be parsed into Decimal"),
+            Decimal::from_str(expected_pool_ratio_max.as_str())
+                .expect("expected_pool_ratio_max must be parsed into Decimal"),
         ));
     let double_sided_lp_func = AtomicFunctionBuilder::new()
         .with_contract_address(lib_astroport_lper.clone())

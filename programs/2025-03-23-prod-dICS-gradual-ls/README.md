@@ -31,11 +31,11 @@ The program accepts the following configuration parameters:
 - `ntrn_denom`: The denomination of NTRN tokens (e.g., "untrn")
 - `dntrn_denom`: The denomination of dNTRN tokens
 - `neutron_dao_addr`: Address to receive dNTRN tokens
-- `drop_liquid_staker_addr`: Address of the Drop protocol contract
+- `drop_liquid_staker_addr`: Address of the Drop protocol core contract
 - `security_dao_addr`: Address of the Security DAO
 - `operator_list`: Array of addresses authorized for low-security operations
 - `interval_seconds_between_batches`: Duration between batches (in seconds)
-- `max_amount_to_forward`: Amount of NTRN to liquid stake in each batch
+- `max_amount_to_forward`: Amount of NTRN to forward in each batch
 
 ## Subroutines
 

@@ -10,8 +10,8 @@ drop_liquid_staker_addr = "neutron18ecx6f2ywwnfxsql2l98jscw97lezczx8ax0g5wp8uj9r
 pool_max_spread = "0.5" # 
 neutron_dao_addr = "neutron1yw4xvtc43me9scqfr2jr2gzvcxd3a9y4eq7gaukreugw2yd2f8ts8g30fq" # Neutron Main DAO
 security_dao_addr = "neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf" # Unchanged
-double_sided_min = "0.5" #
-double_sided_max = "2" #
+expected_pool_ratio_min = "0.5" #
+expected_pool_ratio_max = "2" #
 authorizations_allowed_list = [
     "neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf",
     "neutron1hl9vrr0k0l2pz62v343f50v0djm87dzhvxjtca",
