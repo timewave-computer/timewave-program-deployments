@@ -22,10 +22,10 @@ graph TB;
     end
     N1[Neutron DAO]
     P4[[Program 4<br>Bootstrap NTRN-dNTRN]]
-    P1 --125M NTRN--> RA
+    P1 --77.5M NTRN--> RA
     RA --> LS --> IA --> S
-    S --100M dNTRN--> N1
-    S --25M dNTRN--> P4
+    S --0.6775/1 dNTRN--> N1
+    S --0.3225/1 dNTRN--> P4
 ```
 
 ## Configuration Parameters
