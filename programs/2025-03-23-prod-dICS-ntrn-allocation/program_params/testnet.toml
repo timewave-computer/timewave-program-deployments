@@ -1,0 +1,26 @@
+owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit's dev wallet
+
+# Token denomination
+ntrn_denom = "untrn"
+
+# Valence Program 2: Instant liquid stake
+vp2_instant_ls_receiver_address="neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat" # Updated
+vp2_instant_ls_amount = "77500000000000" # 77.5M NTRN
+
+# Valence Program 3: Gradual liquid stake
+vp3_gradual_ls_receiver_address = "neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2" # Updated
+vp3_gradual_ls_receiver_amount = "100000000000000" # 100M NTRN
+
+# Valence Program 4: Bootstrap NTRN-dNTRN liquidity
+vp4_bootstrap_liquidity_receiver_address = "neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd" # Updated
+vp4_bootstrap_liquidity_receiver_amount = "25000000000000" # 25M NTRN
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Updated this Keyne's dev wallet
+    "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8", # Updated this to Udit's dev wallet
+]

@@ -32,8 +32,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
 
     // Neutron DAO address
     let neutron_dao_addr = params.get("neutron_dao_addr");
-    // Security DAO address
-    let security_dao_addr = params.get("security_dao_addr");
     // List of address that are allowed to execute low security operations
     let operator_list = params.get_array("operator_list");
 
@@ -150,7 +148,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
+                    vec![neutron_dao_addr.clone()],
                 ),
             ),
         )
