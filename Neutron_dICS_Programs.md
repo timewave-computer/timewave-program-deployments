@@ -3,8 +3,8 @@
 There are five programs Timewave is deploying to support Neutron's monetary policy as they become a sovereign Proof of Stake chain.
 These include the following.
 
-1. **NTRN Allocation Program**: This program receives 250M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
-2. **Instant liquid-stake NTRN Program**: This program receives 125M NTRN which is liquid staked using the Drop protocol immediately. 100M dNTRN is returned to the DAO. 25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
+1. **NTRN Allocation Program**: This program receives 202.5M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
+2. **Instant liquid-stake NTRN Program**: This program receives 77.5M NTRN which is liquid staked using the Drop protocol immediately. A fraction of 0.6775, ~100M dNTRN is returned to the DAO. A fraction of 0.3225, ~25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
 3. **Gradual liquid-stake NTRN program**: This program receives 100M NTRN and it liquid stakes these gradually over three months. See [program details](programs/2025-03-23-prod-dICS-gradual-ls/README.md).
 4. **Bootstrap NTRN and dNTRN liquidity program**: This program receives NTRN from program 1 and dNTRN from program 2. It provides liquidity to the Astroport pool and returns the LP share tokens to the Neutron DAO. See [program details](programs/2025-03-23-prod-bootstrap-ntrn-dntrn-liquidity/README.md).
 5. **Migrate USDC-NTRN liquidity program**: This program receives the USDC-NTRN liquidity LP tokens from the Neutron DAO. It withdraws the liquidity, liquid stakes the NTRN, and enters the USDC-dNTRN liquidity pool. Liquidity tokens are sent back to the Neutron DAO. See [program details](programs/2025-03-23-prod-migrate-usdc-ntrn-liquidity/README.md).
@@ -29,14 +29,14 @@ graph TD;
     end
 
     %% Main NTRN flow
-    N1 --250M NTRN--> P1
-    P1 --125M NTRN--> P2
+    N1 --202.5M NTRN--> P1
+    P1 --77.5M NTRN--> P2
     P1 --100M NTRN--> P3
     P1 --25M NTRN--> P4
 
     %% Liquid staking flows
-    P2 --100M dNTRN--> N2
-    P2 --25M dNTRN--> P4
+    P2 --0.6775/1 dNTRN--> N2
+    P2 --0.3225/1 dNTRN--> P4
     P3 --100M dNTRN--> N2
 
     %% Liquidity flows
@@ -85,6 +85,19 @@ Due to dependencies in the programs, programs should be deployed in reverse orde
 Before using in production, please do the following:
 1. Make a copy of `mainnet.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `<test_date>_<chain_name>_<label>.toml`.
 2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+
+Mainnet fork deployment checklist
+1. Deployed. Program ID 12
+  - Receiver address is `neutron1u3fsk7ycfmp8dpxdtxyrc8lgpqjk0w5xc82vqn9hdxnrru8jt3ssj7majv`
+2. Deployed. Program ID 11
+ - Receiver address is `neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat`
+3. Deployed. Program ID 10
+  - Receiver address is 
+  `neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2`
+4. Deployed. Program ID 8
+  - Receiver address for dNTRN and NTRN `neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd`
+5. Deployed. Program ID 7
+  - Receiver address for USDC-NTRN-LP shares `neutron12eawpnrularsa84fr5yz6jj4w9tq2jj23fck7ye7m0vxkl9elu4qy7rshm`
 
 ### Subroutine Authorization Matrix
 
