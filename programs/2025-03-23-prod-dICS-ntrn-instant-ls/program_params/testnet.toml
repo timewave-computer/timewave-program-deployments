@@ -4,24 +4,25 @@ owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit'
 # NTRN denom
 ntrn_denom = "untrn" 
 # dNTRN denom
-dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn" 
+dntrn_denom = "factory/neutron1ytalpjvxz7njekfep97sss2s83ezw6q8lt9spsvnd2d43ygys9gssy7ept/udntrn" # changed
 
 # Bootstrap program dNTRN receive address
-vp4_bootstrap_liquidity_receiver_addr = "neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd"
+vp4_bootstrap_liquidity_receiver_addr = "neutron1wwyrj5nh8z4jvc36yugpy9f7sdx3d694faknkln673sf4xcs4apsvmwmz0" # changed
 
 # Drop staker core contract address
-drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex2luhgrsugu0h8" 
+drop_liquid_staker_addr = "neutron1wu9ng2pphg4g0a9d7ptq9ufqpcc7glhay33nhj79z4xs97qstj4q6un25a" # changed
 
 # Split ratios
-## To send to Neutron DAO (100M dNTRN)
-ntrn_dao_split_normalized_fraction = "0.6775"
-## To send to vp4 to bootstrap liquidity (25M dNTRN)
-vp4_receiver_split_normalized_fraction = "0.3225"
+# TOTAL RECEIVED = 30M NTRN
+## To send to Neutron DAO (20M dNTRN)
+ntrn_dao_split_normalized_fraction = "0.6666" # changed
+## To send to vp4 to bootstrap liquidity (10M dNTRN)
+vp4_receiver_split_normalized_fraction = "0.3334" # changed
 
 
 # Actor addresses
 # neutron DAO address
-neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy" # changed
 
 # List of address that are allowed to execute low security operations
 operator_list = [

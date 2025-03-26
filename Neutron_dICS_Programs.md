@@ -122,7 +122,7 @@ Values different from mainnet fork deployment:
   AMOUNTS: 500000000 udntrn, 500000000 untrn
 
 Values:
-Valence receieves 50M NTRN:
+Valence recieves 50M NTRN:
 * 30M NTRN to be staked immediately [Valence];
 * 10M NTRN staked over time [Valence];
 * 10M NTRN + 10M dNTRN pool bootstrap;
