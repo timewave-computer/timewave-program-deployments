@@ -3,21 +3,23 @@ owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit'
 # Token denomination
 ntrn_denom = "untrn"
 
+# We are receiving a total of 50M NTRN from the neutron DAO
+
 # Valence Program 2: Instant liquid stake
-vp2_instant_ls_receiver_address="neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat" # Updated
-vp2_instant_ls_amount = "77500000000000" # 77.5M NTRN
+vp2_instant_ls_receiver_address="neutron1pdkwssx28zp93p4pucfgy05dvrvcsttpktgphrwxqvlxw3chxcksuuejr8" # Updated
+vp2_instant_ls_amount = "30000000000000" # 30M NTRN - UPDATED
 
 # Valence Program 3: Gradual liquid stake
-vp3_gradual_ls_receiver_address = "neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2" # Updated
-vp3_gradual_ls_receiver_amount = "100000000000000" # 100M NTRN
+vp3_gradual_ls_receiver_address = "neutron1lr8pdcr3kgvljjt689a36a0pf6u92r223dy9nk84ks8fpkjw5fhqvfxep6" # Updated
+vp3_gradual_ls_receiver_amount = "10000000000000" # 10M NTRN - UPDATED
 
 # Valence Program 4: Bootstrap NTRN-dNTRN liquidity
-vp4_bootstrap_liquidity_receiver_address = "neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd" # Updated
-vp4_bootstrap_liquidity_receiver_amount = "25000000000000" # 25M NTRN
+vp4_bootstrap_liquidity_receiver_address = "neutron1wwyrj5nh8z4jvc36yugpy9f7sdx3d694faknkln673sf4xcs4apsvmwmz0" # Updated
+vp4_bootstrap_liquidity_receiver_amount = "10000000000000" # 10M NTRN - UPDATED
 
 # Actor addresses
 # neutron DAO address
-neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy" # Updated
 
 # List of address that are allowed to execute low security operations
 operator_list = [
