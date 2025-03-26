@@ -3,16 +3,16 @@ owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit'
 
 # Token denoms of various tokens
 ntrn_denom = "untrn"
-dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn"
+dntrn_denom = "factory/neutron1ytalpjvxz7njekfep97sss2s83ezw6q8lt9spsvnd2d43ygys9gssy7ept/udntrn" # changed
 
 # Pool configuration
 # astroport pool address to LP
-astroport_pool_addr = "neutron1ss9rksteumsa036uzzsvkpwj4paj7naju4vwws4ky64t5q26wa0s8gvtmg"
+astroport_pool_addr = "neutron1y80nv0gw08q37vltcx9kh2zmh0c4m45u7ts8t4tm0axtvv7jllhsasc0en" # changed
 # Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
-expected_pool_ratio_min = "0.5"
+expected_pool_ratio_min = "0.8" # changed
 # Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
-expected_pool_ratio_max = "2"
-pool_max_spread = "0.5"
+expected_pool_ratio_max = "1.2" # changed
+pool_max_spread = "0.05" # changed
 
 # Amount to use in NTRN forwarder
 ntrn_forwarder_amount = "1000000000000"
@@ -23,7 +23,7 @@ forwarder_interval_between_calls = "1"
 
 # Actor addresses
 # neutron DAO address
-neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy" # changed
 # Security DAO address
 security_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
 # List of address that are allowed to execute low security operations

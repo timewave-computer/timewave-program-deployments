@@ -3,9 +3,9 @@ owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit'
 
 # Token denoms of various tokens
 ntrn_denom = "untrn"
-dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn"
-usdc_denom = "ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81"
-usdc_ntrn_lp_denom = "factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share"
+dntrn_denom = "factory/neutron1ytalpjvxz7njekfep97sss2s83ezw6q8lt9spsvnd2d43ygys9gssy7ept/udntrn" # changed
+usdc_denom = "factory/neutron19glux3jzdfyyz6ylmuksgxfj5phdaxfr2uhy86/usdc" # changed
+usdc_ntrn_lp_denom = "factory/neutron16puus9vjwq4xq0pkl59x30qwn5t48t7r90zqcgc5g8qsyu0u0fnskraxld/astroport/share" # changed
 
 # USDC-NTRN lp tokens are batched and forwarded. 
 # The batch size and interval needs to be configured
@@ -14,24 +14,24 @@ usdc_ntrn_lp_batch_interval_seconds = "1"
 
 # USDC-NTRN pool configuration
 # The program will withdraw liquidity from this pool
-usdc_ntrn_pool_addr = "neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv"
+usdc_ntrn_pool_addr = "neutron16puus9vjwq4xq0pkl59x30qwn5t48t7r90zqcgc5g8qsyu0u0fnskraxld" # changed
 
 # Drop Staking configuration
-drop_liquid_staker_addr = "neutron1l8s4xge4s0hkvd8y7a8tkejakjmdcg0mhpst5sdufwfex2luhgrsugu0h8"
+drop_liquid_staker_addr = "neutron1wu9ng2pphg4g0a9d7ptq9ufqpcc7glhay33nhj79z4xs97qstj4q6un25a" # changed
 
 # Liquidity provisioning configuration
-usdc_dntrn_pool_addr = "neutron15lvcaa6qad0zrgxwltcmkrcxhx3ssp4qn3rkjh37jke5rf3t9zlsuyccmy"
+usdc_dntrn_pool_addr = "neutron1faz0e5wugx23c03pa85alslvhyge8xk9hxwlyltjhn7zttng4n2qqpjl4m" # changed
 # Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.9)
-expected_pool_ratio_min = "0.5"
+expected_pool_ratio_min = "0.015" # changed
 # Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 1.1)
-expected_pool_ratio_max = "2"
+expected_pool_ratio_max = "0.030" # changed
 # If we are providing single sided liquidity, half the tokens will be swapped for the other denomination.
 # Pool max spread is the acceptable spread in the pool while swapping tokens.
-pool_max_spread = "0.5"
+pool_max_spread = "0.05" # changed
 
 # Actor addresses
 # neutron DAO address
-neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy" # changed
 # Security DAO address
 security_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
 # List of address that are allowed to execute low security operations
@@ -44,4 +44,4 @@ operator_list = [
 # USDC forwarder max amount configuration
 usdc_forwarder_max_amount = "1000000000000" # Set this to 1 million usdc
 # Return forwarder max amount configuration
-return_forwarder_max_amount = "1000000000000" #
+return_forwarder_max_amount = "1000000000000" # Set this to 1 million
