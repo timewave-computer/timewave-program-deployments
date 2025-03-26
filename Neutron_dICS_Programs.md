@@ -82,9 +82,50 @@ Due to dependencies in the programs, programs should be deployed in reverse orde
 - Program 1 needs receiver addresses for Programs 1, 2, and 3
 
 ## Testing and Rehearsals
+
+## Mainnet Fork Deployment
 Before using in production, please do the following:
 1. Make a copy of `mainnet.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `<test_date>_<chain_name>_<label>.toml`.
 2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+
+Mainnet fork deployment checklist
+1. Deployed. Program ID 12
+  - Receiver address is `neutron1u3fsk7ycfmp8dpxdtxyrc8lgpqjk0w5xc82vqn9hdxnrru8jt3ssj7majv`
+2. Deployed. Program ID 11
+ - Receiver address is `neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat`
+3. Deployed. Program ID 10
+  - Receiver address is 
+  `neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2`
+4. Deployed. Program ID 8
+  - Receiver address for dNTRN and NTRN `neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd`
+5. Deployed. Program ID 7
+  - Receiver address for USDC-NTRN-LP shares `neutron12eawpnrularsa84fr5yz6jj4w9tq2jj23fck7ye7m0vxkl9elu4qy7rshm`
+
+## Testnet (pion-1) Deployment
+Before using in production, please do the following:
+1. Make a copy of `fork.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `testnet.toml`.
+2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+
+Values different from mainnet fork deployment:
+- DAO address: `neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy`
+- USDC token: `factory/neutron19glux3jzdfyyz6ylmuksgxfj5phdaxfr2uhy86/usdc`
+- dNTRN token: `factory/neutron1ytalpjvxz7njekfep97sss2s83ezw6q8lt9spsvnd2d43ygys9gssy7ept/udntrn`
+- Drop core addresses: `neutron1wu9ng2pphg4g0a9d7ptq9ufqpcc7glhay33nhj79z4xs97qstj4q6un25a`
+- USDC-NTRN pool (testnet): `neutron16puus9vjwq4xq0pkl59x30qwn5t48t7r90zqcgc5g8qsyu0u0fnskraxld`
+  ASSET1: uusdc, ASSET2: untrn
+  AMOUNTS: 4762380976 uusdc, 105000000 uuntrn
+- USDC-dNTRN pool: `neutron1faz0e5wugx23c03pa85alslvhyge8xk9hxwlyltjhn7zttng4n2qqpjl4m`
+  ASSET1: dNTRN, ASSET2: uusdc
+  AMOUNTS: 5000000 dNTRN, 226750000 uusdc
+- dNTRN-NTRN pool: `neutron1y80nv0gw08q37vltcx9kh2zmh0c4m45u7ts8t4tm0axtvv7jllhsasc0en`
+  ASSET1: dNTRN, ASSET2: untrn
+  AMOUNTS: 500000000 udntrn, 500000000 untrn
+
+Values:
+Valence receieves 50M NTRN:
+* 30M NTRN to be staked immediately [Valence];
+* 10M NTRN staked over time [Valence];
+* 10M NTRN + 10M dNTRN pool bootstrap;
 
 Mainnet fork deployment checklist
 1. Deployed. Program ID 12

@@ -1,0 +1,33 @@
+# Owner can make arbitrary changes to the program. In production, this must be the Neutron DAO address
+owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit's dev wallet
+
+# Token denoms of various tokens
+ntrn_denom = "untrn"
+dntrn_denom = "factory/neutron1jz90vam2a4glwll770psh5tyg72k0kcvwtfrx4ysx2mac9ynv8rq0uevh9/udntrn"
+
+# Pool configuration
+# astroport pool address to LP
+astroport_pool_addr = "neutron1ss9rksteumsa036uzzsvkpwj4paj7naju4vwws4ky64t5q26wa0s8gvtmg"
+# Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.5)
+expected_pool_ratio_min = "0.5"
+# Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 2)
+expected_pool_ratio_max = "2"
+pool_max_spread = "0.5"
+
+# Amount to use in NTRN forwarder
+ntrn_forwarder_amount = "1000000000000"
+# Amount to use in dNTRN forwarder
+dntrn_forwarder_amount = "1000000000000"
+# Time constrain for dNTRN forwarder in seconds (0 for no time constrain)
+forwarder_interval_between_calls = "1"
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff"
+# Security DAO address
+security_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Updated this Keyne's dev wallet
+    "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8", # Updated this to Udit's dev wallet
+] 
