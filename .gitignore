@@ -27,3 +27,5 @@ manager_configs/**
 !manager_configs/ntrn-devnet-2/**/*
 !manager_configs/rehearsal/
 !manager_configs/rehearsal/**/*
+!manager_configs/fork/
+!manager_configs/fork/**/*
