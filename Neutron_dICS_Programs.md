@@ -127,18 +127,18 @@ Valence recieves 50M NTRN:
 * 10M NTRN staked over time [Valence];
 * 10M NTRN + 10M dNTRN pool bootstrap;
 
-Mainnet fork deployment checklist
-1. Deployed. Program ID 12
-  - Receiver address is `neutron1u3fsk7ycfmp8dpxdtxyrc8lgpqjk0w5xc82vqn9hdxnrru8jt3ssj7majv`
-2. Deployed. Program ID 11
- - Receiver address is `neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat`
-3. Deployed. Program ID 10
+Testnet pion-1 deployment checklist
+1. Deployed. Program ID 5
+  - Receiver address is `neutron137kcd226g24frg3pczal4ux72k6lrk5pnfl482zceceyyldzjmqsrmgsrv`
+2. Deployed. Program ID 4
+ - Receiver address is `neutron1pdkwssx28zp93p4pucfgy05dvrvcsttpktgphrwxqvlxw3chxcksuuejr8`
+3. Deployed. Program ID 2
   - Receiver address is 
-  `neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2`
-4. Deployed. Program ID 8
-  - Receiver address for dNTRN and NTRN `neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd`
-5. Deployed. Program ID 7
-  - Receiver address for USDC-NTRN-LP shares `neutron12eawpnrularsa84fr5yz6jj4w9tq2jj23fck7ye7m0vxkl9elu4qy7rshm`
+  `neutron1lr8pdcr3kgvljjt689a36a0pf6u92r223dy9nk84ks8fpkjw5fhqvfxep6`
+4. Deployed. Program ID 3
+  - Receiver address for dNTRN and NTRN `neutron1wwyrj5nh8z4jvc36yugpy9f7sdx3d694faknkln673sf4xcs4apsvmwmz0`
+5. Deployed. Program ID 1
+  - Receiver address for USDC-NTRN-LP shares `neutron1qaaf9lv99pwyeaf7ktw37wetyzpper28j6cltqgw600g3gtsac4s64wtx2`
 
 ### Subroutine Authorization Matrix
 
