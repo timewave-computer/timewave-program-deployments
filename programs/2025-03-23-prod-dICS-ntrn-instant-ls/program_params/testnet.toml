@@ -1,0 +1,31 @@
+owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit's dev wallet 
+
+# Denoms
+# NTRN denom
+ntrn_denom = "untrn" 
+# dNTRN denom
+dntrn_denom = "factory/neutron1ytalpjvxz7njekfep97sss2s83ezw6q8lt9spsvnd2d43ygys9gssy7ept/udntrn" # changed
+
+# Bootstrap program dNTRN receive address
+vp4_bootstrap_liquidity_receiver_addr = "neutron1wwyrj5nh8z4jvc36yugpy9f7sdx3d694faknkln673sf4xcs4apsvmwmz0" # changed
+
+# Drop staker core contract address
+drop_liquid_staker_addr = "neutron1wu9ng2pphg4g0a9d7ptq9ufqpcc7glhay33nhj79z4xs97qstj4q6un25a" # changed
+
+# Split ratios
+# TOTAL RECEIVED = 30M NTRN
+## To send to Neutron DAO (20M dNTRN)
+ntrn_dao_split_normalized_fraction = "0.6666" # changed
+## To send to vp4 to bootstrap liquidity (10M dNTRN)
+vp4_receiver_split_normalized_fraction = "0.3334" # changed
+
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy" # changed
+
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Updated this Keyne's dev wallet
+    "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8", # Updated this to Udit's dev wallet
+]

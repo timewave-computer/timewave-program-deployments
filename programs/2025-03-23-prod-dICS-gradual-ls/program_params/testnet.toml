@@ -1,0 +1,25 @@
+owner = "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8" # Updated this to Udit's dev wallet
+
+# Denoms
+# NTRN denom
+ntrn_denom = "untrn"
+
+# Drop staker core contract address
+drop_liquid_staker_addr = "neutron1wu9ng2pphg4g0a9d7ptq9ufqpcc7glhay33nhj79z4xs97qstj4q6un25a" # Changed
+
+# Forwarding configuration
+## Max size of batch
+max_amount_to_forward = "2500000000000" # changed from 10M to 2.5M
+## Interval in seconds between batches
+interval_seconds_between_batches = "1"
+
+# Actor addresses
+# neutron DAO address
+neutron_dao_addr = "neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy"
+# Security DAO address
+security_dao_addr = "neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2"
+# List of address that are allowed to execute low security operations
+operator_list = [
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Updated this Keyne's dev wallet
+    "neutron1ayw8xtxkty5cfzx44z6vxpevmtudg2n3d2sfz8", # Updated this to Udit's dev wallet
+]

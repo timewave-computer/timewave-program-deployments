@@ -517,10 +517,22 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                    "update_config".to_string(),
-                    "new_config".to_string(),
-                ])]),
+                params_restrictions: Some(vec![
+                    ParamRestriction::MustBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                    ]),
+                    ParamRestriction::CannotBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                        "input_addr".to_string(),
+                    ]),
+                    ParamRestriction::CannotBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                        "output_addr".to_string(),
+                    ]),
+                ]),
             },
         })
         .build();
@@ -549,10 +561,22 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
             message_type: MessageType::CosmwasmExecuteMsg,
             message: Message {
                 name: "update_config".to_string(),
-                params_restrictions: Some(vec![ParamRestriction::MustBeIncluded(vec![
-                    "update_config".to_string(),
-                    "new_config".to_string(),
-                ])]),
+                params_restrictions: Some(vec![
+                    ParamRestriction::MustBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                    ]),
+                    ParamRestriction::CannotBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                        "input_addr".to_string(),
+                    ]),
+                    ParamRestriction::CannotBeIncluded(vec![
+                        "update_config".to_string(),
+                        "new_config".to_string(),
+                        "output_addr".to_string(),
+                    ]),
+                ]),
             },
         })
         .build();

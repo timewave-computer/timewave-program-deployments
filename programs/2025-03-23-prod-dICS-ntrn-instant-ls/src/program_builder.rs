@@ -26,7 +26,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // Addresses
     let vp4_bootstrap_liquidity_receiver_addr = params.get("vp4_bootstrap_liquidity_receiver_addr");
     let drop_liquid_staker_addr = params.get("drop_liquid_staker_addr");
-    let security_dao_addr = params.get("security_dao_addr");
     let operator_list = params.get_array("operator_list");
 
     let permissioned_all_mode =
@@ -185,7 +184,7 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         .with_mode(
             valence_authorization_utils::authorization::AuthorizationModeInfo::Permissioned(
                 valence_authorization_utils::authorization::PermissionTypeInfo::WithoutCallLimit(
-                    vec![neutron_dao_addr.clone(), security_dao_addr.clone()],
+                    vec![neutron_dao_addr.clone()],
                 ),
             ),
         )
