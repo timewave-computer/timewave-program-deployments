@@ -3,12 +3,14 @@
 Please see Neutron [dICS Programs](../../Neutron_dICS_Programs.md) for background. This program is dICS Program 2.
 
 This directory provides support for building and deploying a program that performs instant liquid staking of NTRN tokens as part of Neutron's dICS initiative:
-- The program receives 125M NTRN from Program 1
+- The program receives NTRN from Program 1. Note that the Neutron DAO is expected to deposit 77.5M NTRN 
 - The program uses the Drop protocol to instantly liquid stake the NTRN
 - The program uses a splitter to distribute the resulting dNTRN per the following configuration:
-    - 100M dNTRN is returned to the Neutron DAO
-    - 25M dNTRN is sent to Program 4 for bootstrap liquidity
-- The split is performed using a ratio (0.8:0.2) rather than with fixed amounts
+    - ~52.5M dNTRN is returned to the Neutron DAO
+    - ~25M dNTRN is sent to Program 4 for bootstrap liquidity
+- The split is performed using a ratio (0.6775:0.3225) rather than with fixed amounts
+
+> Note: The testnet configuration in `testnet.toml` uses different split ratios (0.6666:0.3334) for testing purposes.
 
 ## Program structure
 ```mermaid
@@ -35,13 +37,12 @@ The program accepts the following configuration parameters:
 - `owner`: The owner address of the program
 - `ntrn_denom`: The denomination of NTRN tokens (e.g., "untrn")
 - `dntrn_denom`: The denomination of dNTRN tokens
-- `neutron_dao_addr`: Address to receive 100M dNTRN
-- `vp4_bootstrap_liquidity_receiver_addr`: Address to receive 25M dNTRN
+- `neutron_dao_addr`: Address of the Neutron DAO. Expected to receive ~52.5M NTRN
+- `vp4_bootstrap_liquidity_receiver_addr`: Address to receive ~25M dNTRN
 - `drop_liquid_staker_addr`: Address of the Drop protocol contract
-- `security_dao_addr`: Address of the Security DAO
 - `operator_list`: Array of addresses authorized for low-security operations
-- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.8" = 80%)
-- `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "0.2" = 20%)
+- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.6775" = 67.75%)
+- `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "0.3225" = 32.25%)
 
 ## Subroutines
 
@@ -61,7 +62,7 @@ The program includes the following subroutines:
 
 3. `secure_update_split_config`
    - Purpose: Updates the splitter configuration
-   - Authorization: Neutron DAO and Security DAO only
+   - Authorization: Neutron DAO only
    - Function: Updates critical program parameters
    - Message Restrictions: Must include "update_config" and "new_config" parameters
 
@@ -75,7 +76,7 @@ The program implements a two-tier security model:
    - No call limits on authorized functions
 
 2. High Security Operations
-   - Requires authorization from either Neutron DAO or Security DAO
+   - Requires authorization from the Neutron DAO
    - Includes critical operations like updating program configuration
    - No call limits on authorized functions
 
@@ -89,6 +90,7 @@ This is a single program builder with the following structure:
     - `program_builder.rs` - Program builder code that defines the program configuration
 - `program_params/` - Program parameters for different environments
     - `mainnet.toml` - Production configuration
+    - `testnet.toml` - Testnet configuration
 
 ## Version History
 
