@@ -4,7 +4,7 @@ There are five programs Timewave is deploying to support Neutron's monetary poli
 These include the following.
 
 1. **NTRN Allocation Program**: This program receives 202.5M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
-2. **Instant liquid-stake NTRN Program**: This program receives 77.5M NTRN which is liquid staked using the Drop protocol immediately. A fraction of 0.6775, ~100M dNTRN is returned to the DAO. A fraction of 0.3225, ~25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
+2. **Instant liquid-stake NTRN Program**: This program receives 77.5M NTRN which is liquid staked using the Drop protocol immediately. A fraction of 0.6775, ~52.5M dNTRN is returned to the DAO. A fraction of 0.3225, ~25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
 3. **Gradual liquid-stake NTRN program**: This program receives 100M NTRN and it liquid stakes these gradually over three months. See [program details](programs/2025-03-23-prod-dICS-gradual-ls/README.md).
 4. **Bootstrap NTRN and dNTRN liquidity program**: This program receives NTRN from program 1 and dNTRN from program 2. It provides liquidity to the Astroport pool and returns the LP share tokens to the Neutron DAO. See [program details](programs/2025-03-23-prod-bootstrap-ntrn-dntrn-liquidity/README.md).
 5. **Migrate USDC-NTRN liquidity program**: This program receives the USDC-NTRN liquidity LP tokens from the Neutron DAO. It withdraws the liquidity, liquid stakes the NTRN, and enters the USDC-dNTRN liquidity pool. Liquidity tokens are sent back to the Neutron DAO. See [program details](programs/2025-03-23-prod-migrate-usdc-ntrn-liquidity/README.md).
@@ -150,17 +150,17 @@ Testnet pion-1 deployment checklist
 |---------|------------|---------------|------------------------|-------------|
 | **Program 1: NTRN Allocation** |
 | | `split_ntrn` | Operators | Must include "process_function" and "liquid_stake" parameters | |
-| | `update_split_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| | `update_split_config` | Neutron DAO only | Must include "update_config" and "new_config" parameters | |
 | **Program 2: Instant Liquid Stake** |
 | | `liquid_stake` | Operators | Must include "process_function" and "liquid_stake" parameters | |
 | | `split_to_provide` | Operators | Must include "process_function" and "split" parameters | |
-| | `secure_update_split_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+| | `secure_update_split_config` | Neutron DAO only | Must include "update_config" and "new_config" parameters | |
 | **Program 3: Gradual Liquid Stake** |
 | | `liquid_stake_batch` | Operators | Must include "process_function" and "liquid_stake" parameters | |
 | | `forward_batch` | Operators | Must include "process_function" and "forward" parameters | |
 | | `secure_update_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
 | **Program 4: Bootstrap NTRN-dNTRN** |
-| | `secure_send_tokens_to_dao` | Security DAO | Controlled by forwarder config parameters | |
+| | `secure_send_tokens_to_dao` | Neutron DAO + Security DAO | Controlled by forwarder config parameters | |
 | | `double_sided_lp` | Operators | Pool ratio must be between constrained `expected_pool_ratio_min` and `expected_pool_ratio_max` | |
 | | `secure_double_sided_lp` | Security DAO | Can set the `expected_pool_ratio_min` and `expected_pool_ratio_max` while providing liquidity | |
 | | `secure_single_sided_lp` | Security DAO | Can set the `expected_pool_ratio_min` and `expected_pool_ratio_max` and `max_spread` | |
