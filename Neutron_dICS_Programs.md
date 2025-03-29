@@ -83,12 +83,13 @@ Due to dependencies in the programs, programs should be deployed in reverse orde
 
 ## Testing and Rehearsals
 
-## Mainnet Fork Deployment
-Before using in production, please do the following:
-1. Make a copy of `mainnet.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `<test_date>_<chain_name>_<label>.toml`.
-2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+For detailed information about each program's configuration parameters, subroutines, and security model, please refer to the individual program READMEs linked above.
 
-Mainnet fork deployment checklist
+Programs have been deployed in the following environments:
+<details>
+<summary>Mainnet Fork Deployment</summary>
+
+#### Mainnet fork deployment
 1. Deployed. Program ID 12
   - Receiver address is `neutron1u3fsk7ycfmp8dpxdtxyrc8lgpqjk0w5xc82vqn9hdxnrru8jt3ssj7majv`
 2. Deployed. Program ID 11
@@ -101,10 +102,12 @@ Mainnet fork deployment checklist
 5. Deployed. Program ID 7
   - Receiver address for USDC-NTRN-LP shares `neutron12eawpnrularsa84fr5yz6jj4w9tq2jj23fck7ye7m0vxkl9elu4qy7rshm`
 
-## Testnet (pion-1) Deployment
-Before using in production, please do the following:
-1. Make a copy of `fork.toml` files in each program's `program_param` folder and give it a suitable name. A good name is `testnet.toml`.
-2. Ensure every subroutine from every program has been executed in the tests. Use the Subroutine Authorization Matrix to confirm test results.
+</details>
+
+<details>
+<summary> Testnet (pion-1) Deployment</summary>
+
+#### Pion-1 deployment
 
 Values different from mainnet fork deployment:
 - DAO address: `neutron1kvxlf27r0h7mzjqgdydqdf76dtlyvwz6u9q8tysfae53ajv8urtq4fdkvy`
@@ -139,8 +142,9 @@ Testnet pion-1 deployment checklist
   - Receiver address for dNTRN and NTRN `neutron1wwyrj5nh8z4jvc36yugpy9f7sdx3d694faknkln673sf4xcs4apsvmwmz0`
 5. Deployed. Program ID 1
   - Receiver address for USDC-NTRN-LP shares `neutron1qaaf9lv99pwyeaf7ktw37wetyzpper28j6cltqgw600g3gtsac4s64wtx2`
+</details>
 
-### Subroutine Authorization Matrix
+## Subroutine Authorization Matrix
 
 | Program | Subroutine | Authorization | Parameter Restrictions | Test Status |
 |---------|------------|---------------|------------------------|-------------|
