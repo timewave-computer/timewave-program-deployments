@@ -176,3 +176,97 @@ Testnet pion-1 deployment checklist
 | | `secure_return_unspent_tokens` | Neutron DAO + Security DAO | Must include "process_function" and "forward" parameters | |
 | | `secure_update_lp_forward_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
 | | `secure_update_usdc_forwarder_config` | Neutron DAO + Security DAO | Must include "update_config" and "new_config" parameters | |
+
+## Mainnet Parameters
+
+Each program requires specific parameters for deployment. The following tables list the required parameters for each program.
+
+### Program 1: NTRN Allocation
+| Parameter | Description | Value |
+|-----------|-------------|--------|
+| `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `ntrn_denom` | NTRN token denomination | "untrn" |
+| `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake | TODO Program 2's receiver address |
+| `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "77500000000000" (77.5M NTRN) |
+| `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | TODO Program 3's receiver address |
+| `vp3_gradual_ls_amount` | Amount of NTRN for gradual liquid stake | "100000000000000" (100M NTRN) |
+| `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | TODO Program 4's receiver address |
+| `vp4_bootstrap_liquidity_amount` | Amount of NTRN for bootstrap liquidity | "25000000000000" (25M NTRN) |
+| `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
+
+### Program 2: Instant Liquid Stake
+| Parameter | Description | Value |
+|-----------|-------------|--------|
+| `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `ntrn_denom` | NTRN token denomination | "untrn" |
+| `dntrn_denom` | dNTRN token denomination | TODO |
+| `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | TODO Program 4's receiver address |
+| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
+| `ntrn_dao_split_normalized_fraction` | Fraction of dNTRN to send to Neutron DAO | "0.6775" |
+| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "0.3225" |
+| `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
+
+### Program 3: Gradual Liquid Stake
+| Parameter | Description | Value |
+|-----------|-------------|--------|
+| `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `ntrn_denom` | NTRN token denomination | "untrn" |
+| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
+| `max_amount_to_forward` | Maximum amount to forward in each batch | "6500000000000" (6.5M NTRN) |
+| `interval_seconds_between_batches` | Time between batches. Use 1 week | "604800" |
+| `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `security_dao_addr` | Security DAO address | `neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy` |
+| `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
+
+### Program 4: Bootstrap NTRN-dNTRN
+| Parameter | Description | Value |
+|-----------|-------------|--------|
+| `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `ntrn_denom` | NTRN token denomination | "untrn" |
+| `dntrn_denom` | dNTRN token denomination | TODO |
+| `astroport_pool_addr` | Astroport pool address | TODO Mainnet NTRN-dNTRN pool address |
+| `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | "0.98" |
+| `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | "1.02" |
+| `pool_max_spread` | Maximum acceptable spread when swapping | "0.02" |
+| `ntrn_forwarder_amount` | Maximum NTRN amount to forward | "100000000000000" |
+| `dntrn_forwarder_amount` | Maximum dNTRN amount to forward | "100000000000000" |
+| `forwarder_interval_between_calls` | Time between forward operations | "1" |
+| `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `security_dao_addr` | Security DAO address | `neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy` |
+| `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
+
+### Program 5: Migrate USDC-NTRN
+| Parameter | Description | Value |
+|-----------|-------------|--------|
+| `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `ntrn_denom` | NTRN token denomination | "untrn" |
+| `dntrn_denom` | dNTRN token denomination | TODO |
+| `usdc_denom` | USDC token denomination | `ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81` |
+| `usdc_ntrn_lp_denom` | USDC-NTRN LP token denomination | `factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share` |
+| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | "100000000000" |
+| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | "1" |
+| `usdc_ntrn_pool_addr` | USDC-NTRN pool address | `neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv` |
+| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
+| `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | TODO Mainnet USDC-dNTRN pool address |
+| `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | TODO -10% |
+| `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | TODO +10% |
+| `pool_max_spread` | Maximum acceptable spread when swapping | "0.10" |
+| `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
+| `security_dao_addr` | Security DAO address | `neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy` |
+| `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
+| `usdc_forwarder_max_amount` | Maximum USDC amount to forward | "100000000000000" |
+| `return_forwarder_max_amount` | Maximum amount to return | "100000000000000" |
+
+## Useful commands
+
+### Querying pools
+
+To query pool information:
+
+```bash
+neutrond q wasm contract-state smart <POOL_ADDRESS> '{"pool":{}}' --chain-id neutron-1 --node https://neutron-rpc.polkachu.com:443 --output json | jq
+```
+
+This will return an array of assets. The pool ratio is defined by amount of the first asset divided by the amount of the second asset.
