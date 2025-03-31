@@ -3,11 +3,11 @@ owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # N
 
 # Token denoms of various tokens
 ntrn_denom = "untrn"
-dntrn_denom = "TODO"
+dntrn_denom = "factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn" # Updated
 
 # Pool configuration 
 # astroport NTRN-DNTRN pool address to LP
-astroport_pool_addr = "TODO"
+astroport_pool_addr = "neutron1pd9u7h4vf36vtj5lqlcp4376xf4wktdnhmzqtn8958wyh0nzwsmsavc2dz" # Updated
 # Minimum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 0.5)
 expected_pool_ratio_min = "0.98" # Updated to -2%
 # Maximum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 2)
