@@ -7,15 +7,15 @@ ntrn_denom = "untrn"
 # We are receiving a total of 150M NTRN from the neutron DAO
 
 # Valence Program 2: Instant liquid stake
-vp2_instant_ls_receiver_address = "TODO"
+vp2_instant_ls_receiver_address = "neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9" # Updated
 vp2_instant_ls_amount           = "25000000000000" # 25M NTRN - UPDATED
 
 # Valence Program 3: Gradual liquid stake
-vp3_gradual_ls_receiver_address = "TODO"
+vp3_gradual_ls_receiver_address = "neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0" # Updated
 vp3_gradual_ls_receiver_amount  = "100000000000000" # 100M NTRN - UPDATED
 
 # Valence Program 4: Bootstrap NTRN-dNTRN liquidity
-vp4_bootstrap_liquidity_receiver_address = "TODO"           # Updated
+vp4_bootstrap_liquidity_receiver_address = "neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6"           # Updated
 vp4_bootstrap_liquidity_receiver_amount  = "25000000000000" # 25M NTRN - UPDATED
 
 # Actor addresses
