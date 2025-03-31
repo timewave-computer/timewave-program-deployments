@@ -6,7 +6,7 @@ owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # N
 ntrn_denom = "untrn"
 
 # Drop staker core contract address
-drop_liquid_staker_addr = "TODO"
+drop_liquid_staker_addr = "neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua" # Updated
 
 # Forwarding configuration
 ## Max size of batch
