@@ -1,32 +1,37 @@
-# Owner can make arbitrary changes to the program. In production, this must be the Neutron DAO address
-owner = ""
+# Owner can make arbitrary changes to the program. This must be the Neutron DAO address
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Neutron DAO address - Updated
 
 # Token denoms of various tokens
-ntrn_denom = ""
-dntrn_denom = ""
+ntrn_denom = "untrn"
+dntrn_denom = "factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn" # Updated
 
-# Pool configuration
-# astroport pool address to LP
-astroport_pool_addr = ""
+# Pool configuration 
+# astroport NTRN-DNTRN pool address to LP
+astroport_pool_addr = "neutron1pd9u7h4vf36vtj5lqlcp4376xf4wktdnhmzqtn8958wyh0nzwsmsavc2dz" # Updated
 # Minimum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 0.5)
-expected_pool_ratio_min = ""
+expected_pool_ratio_min = "0.98" # Updated to -2%
 # Maximum pool ratio (AssetA/AssetB) required to provide liquidity (e.g., 2)
-expected_pool_ratio_max = ""
-pool_max_spread = ""
+expected_pool_ratio_max = "1.02" # Updated to 2%
+pool_max_spread = "0.02" # 2%
 
 # Amount to use in NTRN forwarder
-ntrn_forwarder_amount = ""
+ntrn_forwarder_amount = "100000000000000" # Updated to 100M NTRN
 # Amount to use in dNTRN forwarder
-dntrn_forwarder_amount = ""
+dntrn_forwarder_amount = "100000000000000" # Updated to 100M dNTRN
 # Time constrain for dNTRN forwarder in seconds (0 for no time constrain)
-forwarder_interval_between_calls = ""
+forwarder_interval_between_calls = "1" # Updated to 1 second
 
 # Actor addresses
-# neutron DAO address
-neutron_dao_addr = ""
+# Neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Updated
 # Security DAO address
-security_dao_addr = ""
+security_dao_addr = "neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy" # Updated
 # List of address that are allowed to execute low security operations
 operator_list = [
-    "",
-]
+    "neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", # Udit's wallet
+    "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", # Luisqa's wallet
+    "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", # Andre's wallet
+    "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", # Parthiv's wallet
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Keyne's wallet
+    "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7", # Timewave's shared wallet
+] 

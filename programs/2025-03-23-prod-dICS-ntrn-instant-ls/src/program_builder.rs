@@ -18,8 +18,6 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     let dntrn_denom = params.get("dntrn_denom");
     let neutron_dao_addr = params.get("neutron_dao_addr");
 
-    // Split ratios
-    let ntrn_dao_split_normalized_fraction = params.get("ntrn_dao_split_normalized_fraction");
     let vp4_receiver_split_normalized_fraction =
         params.get("vp4_receiver_split_normalized_fraction");
 
@@ -77,26 +75,15 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
     // Liquid staked token splitter
     let split_ls_token_config = valence_splitter_library::msg::LibraryConfig {
         input_addr: acc_interim.clone(),
-        splits: vec![
-            valence_splitter_library::msg::UncheckedSplitConfig::new(
-                cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
-                neutron_dao_addr.as_str(),
-                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
-                    ntrn_dao_split_normalized_fraction
-                        .parse()
-                        .expect("Failed to parse ntrn_dao_split_normalized_fraction as Decimal"),
-                ),
+        splits: vec![valence_splitter_library::msg::UncheckedSplitConfig::new(
+            cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
+            vp4_bootstrap_liquidity_receiver_addr.as_str(),
+            valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
+                vp4_receiver_split_normalized_fraction
+                    .parse()
+                    .expect("Failed to parse vp4_receiver_split_normalized_fraction as Decimal"),
             ),
-            valence_splitter_library::msg::UncheckedSplitConfig::new(
-                cw_denom::UncheckedDenom::Native(dntrn_denom.clone()),
-                vp4_bootstrap_liquidity_receiver_addr.as_str(),
-                valence_splitter_library::msg::UncheckedSplitAmount::FixedRatio(
-                    vp4_receiver_split_normalized_fraction.parse().expect(
-                        "Failed to parse vp4_receiver_split_normalized_fraction as Decimal",
-                    ),
-                ),
-            ),
-        ],
+        )],
     };
 
     let lib_split_ls_token = builder.add_library(LibraryInfo::new(

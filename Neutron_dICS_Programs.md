@@ -3,8 +3,8 @@
 There are five programs Timewave is deploying to support Neutron's monetary policy as they become a sovereign Proof of Stake chain.
 These include the following.
 
-1. **NTRN Allocation Program**: This program receives 202.5M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
-2. **Instant liquid-stake NTRN Program**: This program receives 77.5M NTRN which is liquid staked using the Drop protocol immediately. A fraction of 0.6775, ~52.5M dNTRN is returned to the DAO. A fraction of 0.3225, ~25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
+1. **NTRN Allocation Program**: This program receives 150M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
+2. **Instant liquid-stake NTRN Program**: This program receives 25M NTRN which is liquid staked using the Drop protocol immediately. All dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
 3. **Gradual liquid-stake NTRN program**: This program receives 100M NTRN and it liquid stakes these gradually over three months. See [program details](programs/2025-03-23-prod-dICS-gradual-ls/README.md).
 4. **Bootstrap NTRN and dNTRN liquidity program**: This program receives NTRN from program 1 and dNTRN from program 2. It provides liquidity to the Astroport pool and returns the LP share tokens to the Neutron DAO. See [program details](programs/2025-03-23-prod-bootstrap-ntrn-dntrn-liquidity/README.md).
 5. **Migrate USDC-NTRN liquidity program**: This program receives the USDC-NTRN liquidity LP tokens from the Neutron DAO. It withdraws the liquidity, liquid stakes the NTRN, and enters the USDC-dNTRN liquidity pool. Liquidity tokens are sent back to the Neutron DAO. See [program details](programs/2025-03-23-prod-migrate-usdc-ntrn-liquidity/README.md).
@@ -29,14 +29,13 @@ graph TD;
     end
 
     %% Main NTRN flow
-    N1 --202.5M NTRN--> P1
-    P1 --77.5M NTRN--> P2
+    N1 --150M NTRN--> P1
+    P1 --25M NTRN--> P2
     P1 --100M NTRN--> P3
     P1 --25M NTRN--> P4
 
     %% Liquid staking flows
-    P2 --0.6775/1 dNTRN--> N2
-    P2 --0.3225/1 dNTRN--> P4
+    P2 --1/1 dNTRN--> P4
     P3 --100M dNTRN--> N2
 
     %% Liquidity flows
@@ -74,12 +73,37 @@ Each program implements a two-tier security model:
 
 Each program maintains its own set of authorized operators and security parameters, but follows this consistent security model across all programs in the dICS initiative.
 
-## Program Deployment Order
+## Program Deployment on Mainnet
 
 Due to dependencies in the programs, programs should be deployed in reverse order. The `program_param` TOML files will need to be updated with addresses from the programs.
 - Program 5 is independent of programs 1-4
 - Program 2 needs the receiver address for Program 4
 - Program 1 needs receiver addresses for Programs 1, 2, and 3
+
+#### Mainnet deployment
+Tokens should be sent to the following addresses:
+- 150M NTRN to `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+- USDC-NTRN-LP shares to `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
+
+**Deployment checklist**
+1. ✅ Deployed. Program ID 106
+  - Receiver address is `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+  - [url](https://app.valence.zone/programs/106?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+2. ✅ Deployed. Program ID 105
+ - Receiver address is `neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9`
+ - [url](https://app.valence.zone/programs/105?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+3. ✅ Deployed. Program ID 104
+  - Receiver address is 
+  `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0`
+  - [url](https://app.valence.zone/programs/104?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+4. ✅ Deployed. Program ID 103
+  - Receiver address for dNTRN and NTRN `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6`
+  - [url](https://app.valence.zone/programs/103?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+5. ✅ Deployed. Program ID 102
+  - Receiver address for USDC-NTRN-LP shares `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
+  - [url](https://app.valence.zone/programs/102?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+
+</details>
 
 ## Testing and Rehearsals
 
@@ -186,11 +210,11 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake | TODO Program 2's receiver address |
-| `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "77500000000000" (77.5M NTRN) |
-| `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | TODO Program 3's receiver address |
+| `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake |`neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9` |
+| `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "25000000000000" (25M NTRN) |
+| `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0` |
 | `vp3_gradual_ls_amount` | Amount of NTRN for gradual liquid stake | "100000000000000" (100M NTRN) |
-| `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | TODO Program 4's receiver address |
+| `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6` |
 | `vp4_bootstrap_liquidity_amount` | Amount of NTRN for bootstrap liquidity | "25000000000000" (25M NTRN) |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
@@ -200,12 +224,11 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
-| `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | TODO Program 4's receiver address |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
-| `ntrn_dao_split_normalized_fraction` | Fraction of dNTRN to send to Neutron DAO | "0.6775" |
-| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "0.3225" |
+| `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6` |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
+| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "1" |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
 
 ### Program 3: Gradual Liquid Stake
@@ -213,7 +236,7 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
 | `max_amount_to_forward` | Maximum amount to forward in each batch | "6500000000000" (6.5M NTRN) |
 | `interval_seconds_between_batches` | Time between batches. Use 1 week | "604800" |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
@@ -225,8 +248,8 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
-| `astroport_pool_addr` | Astroport pool address | TODO Mainnet NTRN-dNTRN pool address |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
+| `astroport_pool_addr` | Astroport pool address | `neutron1pd9u7h4vf36vtj5lqlcp4376xf4wktdnhmzqtn8958wyh0nzwsmsavc2dz` |
 | `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | "0.98" |
 | `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | "1.02" |
 | `pool_max_spread` | Maximum acceptable spread when swapping | "0.02" |
@@ -242,22 +265,42 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `usdc_denom` | USDC token denomination | `ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81` |
 | `usdc_ntrn_lp_denom` | USDC-NTRN LP token denomination | `factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share` |
-| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | TODO Should be ~10 batches|
-| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | TODO Should be 1 day |
+| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch (Total received is `2821604380571`) | `564320876115` per batch |
+| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | `86400` |
 | `usdc_ntrn_pool_addr` | USDC-NTRN pool address | `neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv` |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
-| `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | TODO Mainnet USDC-dNTRN pool address |
-| `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | TODO -10% |
-| `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | TODO +10% |
-| `pool_max_spread` | Maximum acceptable spread when swapping | "0.10" |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
+| `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | `neutron1hme8vcsky2xeq4qc4wg3uy9gc47xzga6uqk8plaps8tvutjshuwqajnze6` |
+| `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | `0.115`|
+| `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | `0.145`|
+| `pool_max_spread` | Maximum acceptable spread when swapping | `0.10` |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `security_dao_addr` | Security DAO address | `neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy` |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
-| `usdc_forwarder_max_amount` | Maximum USDC amount to forward | "100000000000000" |
-| `return_forwarder_max_amount` | Maximum amount to return | "100000000000000" |
+| `usdc_forwarder_max_amount` | Maximum USDC amount to forward | `100000000000000` |
+| `return_forwarder_max_amount` | Maximum amount to return | `100000000000000` |
+
+## Code IDs used
+
+The following Code IDS were used on mainnet:
+
+| Contract | Code ID | Hash | Source |
+|----------|---------|------|---------|
+| valence_astroport_lper | 3297 | 6881cf68070e98053882b1e5ac3f6d39be77eb9acf26a526d3cee13399c4386d | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_astroport_withdrawer | 3298 | c9678657c18bc58543faa0bb82942a6f3b7dd902e6a6439a5e0ceb696c3e69c3 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_authorization | 3299 | aae7c5b4058d6027146860097a29e07b8c36a833dbf56a7425748b16efa22aab | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_base_account | 3300 | cfa668dee6d785928d9f9097c1091a0aabb260f74a3fd723893ab0d3862513c6 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_forwarder_library | 3301 | 74f86ed59b7d274a407404b87af985a24c5909162e3d9e0969ac73367bae671f | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_processor | 3302 | 634de9a2c0a05baec9894991ca0d1333a3a7e67086d402421edfb6632c869791 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_program_registry | 3303 | 82d8593dede5c67db801ad19f213ab049a14e4efc29dfa09bcad729453e80741 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_reverse_splitter_library | 3304 | 6b7949414f114ca64f441bce70223ab9890b665fa18390c88f600fb224313881 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_splitter_library | 3305 | 0e414e92b46131d69133a8134927223240ffaffa4499517c40697c56a57e0de9 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_generic_ibc_transfer_library | 3306 | 4ec97203fadaac7eb338bbbad91b004d8a1860d2306ec572dd6147cb2dd7cd77 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_neutron_ibc_transfer_library | 3307 | e3324cb9c01727866a53afe1ad690dd7e32905af70251a0c3f6726d8bd29eb15 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_drop_liquid_staker | 3310 | 0effb769091ad197f2ec3dd6292f962b5d52f17af8e371087f673543aa5713e0 | e24c96566714c6d047f9e8f1e15527dca88314c0 |
+| valence_drop_liquid_unstaker | 3311 | 2b2c3365b51f7d9a0b4d5c2e58733196ca18228386dc292eae70d88e5968048a | e24c96566714c6d047f9e8f1e15527dca88314c0 |
 
 ## Useful commands
 

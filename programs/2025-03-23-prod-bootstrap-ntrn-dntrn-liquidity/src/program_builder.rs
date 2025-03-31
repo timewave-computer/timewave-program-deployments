@@ -119,11 +119,13 @@ pub fn program_builder(params: deployer_lib::ProgramParams) -> ProgramConfig {
         pool_addr: astroport_pool_addr.clone(),
         lp_config: valence_astroport_lper::msg::LiquidityProviderConfig {
             pool_type: valence_astroport_utils::PoolType::NativeLpToken(
-                valence_astroport_utils::astroport_native_lp_token::PairType::Xyk {},
+                valence_astroport_utils::astroport_native_lp_token::PairType::Custom(
+                    "concentrated".to_string(),
+                ),
             ),
             asset_data: valence_library_utils::liquidity_utils::AssetData {
-                asset1: dntrn_denom.clone(),
-                asset2: ntrn_denom.clone(),
+                asset1: ntrn_denom.clone(),
+                asset2: dntrn_denom.clone(),
             },
             max_spread,
         },

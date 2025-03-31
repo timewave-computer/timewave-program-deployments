@@ -7,7 +7,7 @@ version    = "0.1.0"
 repository = "https://github.com/timewave-computer/program_deployer"
 
 [dependencies]
-valence-program-manager = { workspace = true }
+valence-program-manager = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-manager", rev = "9a37fe1" }
 serde_json              = { workspace = true }
 clap                    = { workspace = true }
 config                  = { workspace = true }
@@ -18,4 +18,4 @@ cmd_lib                 = { workspace = true }
 env_logger              = { workspace = true }
 log                     = { workspace = true }
 
-valence-library-utils = { workspace = true }
+valence-library-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-utils", rev = "9a37fe1" }

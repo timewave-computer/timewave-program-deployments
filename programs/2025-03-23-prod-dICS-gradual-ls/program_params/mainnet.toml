@@ -1,25 +1,30 @@
-owner = "" 
+# Owner can make arbitrary changes to the program. This must be the Neutron DAO address
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Neutron DAO address - Updated
 
 # Denoms
 # NTRN denom
 ntrn_denom = "untrn"
 
 # Drop staker core contract address
-drop_liquid_staker_addr = "" 
+drop_liquid_staker_addr = "neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua" # Updated
 
 # Forwarding configuration
 ## Max size of batch
-max_amount_to_forward = ""
+max_amount_to_forward = "6500000000000" # Updated to 6.5M
 ## Interval in seconds between batches
-interval_seconds_between_batches = ""
-
+interval_seconds_between_batches = "604800" # Updated to 7 days
 
 # Actor addresses
-## Neutron DAO address
-neutron_dao_addr = "" 
-## Security DAO address
-security_dao_addr = ""
-## Addresses allowed to execute low security actions 
+# Neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Updated
+# Security DAO address
+security_dao_addr = "neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy" # Updated
+# List of address that are allowed to execute low security operations
 operator_list = [
-    "",
+    "neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", # Udit's wallet
+    "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", # Luisqa's wallet
+    "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", # Andre's wallet
+    "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", # Parthiv's wallet
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Keyne's wallet
+    "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7", # Timewave's shared wallet
 ]
