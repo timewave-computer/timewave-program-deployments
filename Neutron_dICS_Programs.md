@@ -73,12 +73,37 @@ Each program implements a two-tier security model:
 
 Each program maintains its own set of authorized operators and security parameters, but follows this consistent security model across all programs in the dICS initiative.
 
-## Program Deployment Order
+## Program Deployment on Mainnet
 
 Due to dependencies in the programs, programs should be deployed in reverse order. The `program_param` TOML files will need to be updated with addresses from the programs.
 - Program 5 is independent of programs 1-4
 - Program 2 needs the receiver address for Program 4
 - Program 1 needs receiver addresses for Programs 1, 2, and 3
+
+#### Mainnet deployment
+Tokens should be sent to the following addresses:
+- 150M NTRN to `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+- USDC-NTRN-LP shares to `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
+
+**Deployment checklist**
+1. ✅ Deployed. Program ID 106
+  - Receiver address is `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+  - [url](https://app.valence.zone/programs/106?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+2. ✅ Deployed. Program ID 105
+ - Receiver address is `neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9`
+ - [url](https://app.valence.zone/programs/105?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+3. ✅ Deployed. Program ID 104
+  - Receiver address is 
+  `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0`
+  - [url](https://app.valence.zone/programs/104?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+4. ✅ Deployed. Program ID 103
+  - Receiver address for dNTRN and NTRN `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6`
+  - [url](https://app.valence.zone/programs/103?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+5. ✅ Deployed. Program ID 102
+  - Receiver address for USDC-NTRN-LP shares `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
+  - [url](https://app.valence.zone/programs/102?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
+
+</details>
 
 ## Testing and Rehearsals
 
@@ -257,83 +282,25 @@ Each program requires specific parameters for deployment. The following tables l
 | `usdc_forwarder_max_amount` | Maximum USDC amount to forward | `100000000000000` |
 | `return_forwarder_max_amount` | Maximum amount to return | `100000000000000` |
 
-### Code IDs used
+## Code IDs used
 
-valence_astroport_lper:
-  code_id: '3297'
-  hash: 6881cf68070e98053882b1e5ac3f6d39be77eb9acf26a526d3cee13399c4386d
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_astroport_withdrawer:
-  code_id: '3298'
-  hash: c9678657c18bc58543faa0bb82942a6f3b7dd902e6a6439a5e0ceb696c3e69c3
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_authorization:
-  code_id: '3299'
-  hash: aae7c5b4058d6027146860097a29e07b8c36a833dbf56a7425748b16efa22aab
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_base_account:
-  code_id: '3300'
-  hash: cfa668dee6d785928d9f9097c1091a0aabb260f74a3fd723893ab0d3862513c6
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_forwarder_library:
-  code_id: '3301'
-  hash: 74f86ed59b7d274a407404b87af985a24c5909162e3d9e0969ac73367bae671f
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_processor:
-  code_id: '3302'
-  hash: 634de9a2c0a05baec9894991ca0d1333a3a7e67086d402421edfb6632c869791
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_program_registry:
-  code_id: '3303'
-  hash: 82d8593dede5c67db801ad19f213ab049a14e4efc29dfa09bcad729453e80741
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_reverse_splitter_library:
-  code_id: '3304'
-  hash: 6b7949414f114ca64f441bce70223ab9890b665fa18390c88f600fb224313881
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_splitter_library:
-  code_id: '3305'
-  hash: 0e414e92b46131d69133a8134927223240ffaffa4499517c40697c56a57e0de9
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_generic_ibc_transfer_library:
-  code_id: '3306'
-  hash: 4ec97203fadaac7eb338bbbad91b004d8a1860d2306ec572dd6147cb2dd7cd77
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_neutron_ibc_transfer_library:
-  code_id: '3307'
-  hash: e3324cb9c01727866a53afe1ad690dd7e32905af70251a0c3f6726d8bd29eb15
-  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
-valence_drop_liquid_staker:
-  code_id: '3310'
-  hash: 0effb769091ad197f2ec3dd6292f962b5d52f17af8e371087f673543aa5713e0
-  source: e24c96566714c6d047f9e8f1e15527dca88314c0
-valence_drop_liquid_unstaker:
-  code_id: '3311'
-  hash: 2b2c3365b51f7d9a0b4d5c2e58733196ca18228386dc292eae70d88e5968048a
-  source: e24c96566714c6d047f9e8f1e15527dca88314c0
+The following Code IDS were used on mainnet:
 
-<details>
-<summary>Mainnet Deployment</summary>
-
-#### Mainnet deployment
-1. Deployed. Program ID 106
-  - Receiver address is `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
-  - [url](https://app.valence.zone/programs/106?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
-2. Deployed. Program ID 105
- - Receiver address is `neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9`
- - [url](https://app.valence.zone/programs/105?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
-3. Deployed. Program ID 104
-  - Receiver address is 
-  `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0`
-  - [url](https://app.valence.zone/programs/104?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
-4. Deployed. Program ID 103
-  - Receiver address for dNTRN and NTRN `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6`
-  - [url](https://app.valence.zone/programs/103?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
-5. Deployed. Program ID 102
-  - Receiver address for USDC-NTRN-LP shares `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
-  - [url](https://app.valence.zone/programs/102?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
-
-</details>
+| Contract | Code ID | Hash | Source |
+|----------|---------|------|---------|
+| valence_astroport_lper | 3297 | 6881cf68070e98053882b1e5ac3f6d39be77eb9acf26a526d3cee13399c4386d | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_astroport_withdrawer | 3298 | c9678657c18bc58543faa0bb82942a6f3b7dd902e6a6439a5e0ceb696c3e69c3 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_authorization | 3299 | aae7c5b4058d6027146860097a29e07b8c36a833dbf56a7425748b16efa22aab | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_base_account | 3300 | cfa668dee6d785928d9f9097c1091a0aabb260f74a3fd723893ab0d3862513c6 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_forwarder_library | 3301 | 74f86ed59b7d274a407404b87af985a24c5909162e3d9e0969ac73367bae671f | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_processor | 3302 | 634de9a2c0a05baec9894991ca0d1333a3a7e67086d402421edfb6632c869791 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_program_registry | 3303 | 82d8593dede5c67db801ad19f213ab049a14e4efc29dfa09bcad729453e80741 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_reverse_splitter_library | 3304 | 6b7949414f114ca64f441bce70223ab9890b665fa18390c88f600fb224313881 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_splitter_library | 3305 | 0e414e92b46131d69133a8134927223240ffaffa4499517c40697c56a57e0de9 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_generic_ibc_transfer_library | 3306 | 4ec97203fadaac7eb338bbbad91b004d8a1860d2306ec572dd6147cb2dd7cd77 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_neutron_ibc_transfer_library | 3307 | e3324cb9c01727866a53afe1ad690dd7e32905af70251a0c3f6726d8bd29eb15 | 85ecf4974c62bcb6443ac16b9dd7d178eed07841 |
+| valence_drop_liquid_staker | 3310 | 0effb769091ad197f2ec3dd6292f962b5d52f17af8e371087f673543aa5713e0 | e24c96566714c6d047f9e8f1e15527dca88314c0 |
+| valence_drop_liquid_unstaker | 3311 | 2b2c3365b51f7d9a0b4d5c2e58733196ca18228386dc292eae70d88e5968048a | e24c96566714c6d047f9e8f1e15527dca88314c0 |
 
 ## Useful commands
 
