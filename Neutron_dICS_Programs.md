@@ -210,11 +210,11 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake | TODO Program 2's receiver address |
+| `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake |`neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9` |
 | `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "25000000000000" (25M NTRN) |
-| `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | TODO Program 3's receiver address |
+| `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0` |
 | `vp3_gradual_ls_amount` | Amount of NTRN for gradual liquid stake | "100000000000000" (100M NTRN) |
-| `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | TODO Program 4's receiver address |
+| `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6` |
 | `vp4_bootstrap_liquidity_amount` | Amount of NTRN for bootstrap liquidity | "25000000000000" (25M NTRN) |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
@@ -226,7 +226,7 @@ Each program requires specific parameters for deployment. The following tables l
 | `ntrn_denom` | NTRN token denomination | "untrn" |
 | `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
-| `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | TODO Program 4's receiver address |
+| `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6` |
 | `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
 | `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "1" |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
