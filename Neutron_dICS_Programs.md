@@ -245,8 +245,8 @@ Each program requires specific parameters for deployment. The following tables l
 | `dntrn_denom` | dNTRN token denomination | TODO |
 | `usdc_denom` | USDC token denomination | `ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81` |
 | `usdc_ntrn_lp_denom` | USDC-NTRN LP token denomination | `factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share` |
-| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | "100000000000" |
-| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | "1" |
+| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | TODO Should be ~10 batches|
+| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | TODO Should be 1 day |
 | `usdc_ntrn_pool_addr` | USDC-NTRN pool address | `neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv` |
 | `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
 | `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | TODO Mainnet USDC-dNTRN pool address |
