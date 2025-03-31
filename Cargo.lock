@@ -685,35 +685,35 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
 ]
 
 [[package]]
@@ -1528,8 +1528,8 @@ dependencies = [
  "glob",
  "log",
  "serde_json",
- "valence-library-utils",
- "valence-program-manager",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -2819,35 +2819,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -2921,36 +2922,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-drop-liquid-unstaker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
 ]
 
 [[package]]
@@ -2974,35 +2975,35 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
 ]
 
 [[package]]
@@ -3496,35 +3497,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -3538,35 +3540,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -3580,35 +3583,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -3622,35 +3626,36 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -3664,35 +3669,35 @@ dependencies = [
  "deployer-lib",
  "serde_json",
  "tokio",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-utils",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-base-account",
- "valence-drop-liquid-staker",
- "valence-encoder-broker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-neutron-ic-querier",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-osmosis-utils",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-manager",
- "valence-program-registry",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
- "valence-storage-account",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-base-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ic-querier 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-manager 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
 ]
 
 [[package]]
@@ -5223,6 +5228,22 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 [[package]]
 name = "valence-account-utils"
 version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-utils 2.0.0",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.69",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+]
+
+[[package]]
+name = "valence-account-utils"
+version = "0.2.0"
 source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714c6d047f9e8f1e15527dca88314c0"
 dependencies = [
  "cosmwasm-schema 2.2.2",
@@ -5232,8 +5253,22 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 1.0.69",
- "valence-ibc-utils",
- "valence-macros",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-astroport-lper"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5244,10 +5279,20 @@ dependencies = [
  "cosmwasm-schema 2.2.2",
  "cosmwasm-std 2.2.2",
  "cw-ownable",
- "valence-astroport-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-astroport-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5257,7 +5302,22 @@ source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714
 dependencies = [
  "cosmwasm-schema 2.2.2",
  "cosmwasm-std 2.2.2",
- "valence-library-utils",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-astroport-withdrawer"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw20",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5269,10 +5329,32 @@ dependencies = [
  "cosmwasm-std 2.2.2",
  "cw-ownable",
  "cw20",
- "valence-astroport-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-astroport-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-authorization"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmos-sdk-proto 0.20.0",
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "cw2 2.0.0",
+ "neutron-sdk",
+ "serde_json",
+ "thiserror 1.0.69",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-encoder-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5290,11 +5372,25 @@ dependencies = [
  "neutron-sdk",
  "serde_json",
  "thiserror 1.0.69",
- "valence-authorization-utils",
- "valence-encoder-broker",
- "valence-encoder-utils",
- "valence-gmp-utils",
- "valence-processor-utils",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-encoder-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-authorization-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-utils 2.0.0",
+ "serde_json",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5307,8 +5403,24 @@ dependencies = [
  "cw-ownable",
  "cw-utils 2.0.0",
  "serde_json",
- "valence-gmp-utils",
- "valence-library-utils",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-base-account"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5324,7 +5436,25 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-account-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-drop-liquid-staker"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-liquid-staking-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5339,10 +5469,30 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-base",
- "valence-library-utils",
- "valence-liquid-staking-utils",
- "valence-macros",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-liquid-staking-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-drop-liquid-unstaker"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw721 0.20.0",
+ "cw721-base",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-liquid-staking-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5359,10 +5509,24 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-base",
- "valence-library-utils",
- "valence-liquid-staking-utils",
- "valence-macros",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-liquid-staking-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-encoder-broker"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "thiserror 1.0.69",
+ "valence-encoder-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5376,7 +5540,18 @@ dependencies = [
  "cw-storage-plus 2.0.0",
  "cw2 2.0.0",
  "thiserror 1.0.69",
- "valence-encoder-utils",
+ "valence-encoder-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-encoder-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "alloy-sol-types",
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5387,7 +5562,26 @@ dependencies = [
  "alloy-sol-types",
  "cosmwasm-schema 2.2.2",
  "cosmwasm-std 2.2.2",
- "valence-authorization-utils",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-forwarder-library"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "getset",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5404,9 +5598,29 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-generic-ibc-transfer-library"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "getset",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5423,10 +5637,19 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-gmp-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
 ]
 
 [[package]]
@@ -5436,6 +5659,20 @@ source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714
 dependencies = [
  "cosmwasm-schema 2.2.2",
  "cosmwasm-std 2.2.2",
+]
+
+[[package]]
+name = "valence-ibc-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmos-sdk-proto 0.20.0",
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-denom",
+ "cw-storage-plus 2.0.0",
+ "neutron-sdk",
+ "serde",
 ]
 
 [[package]]
@@ -5455,6 +5692,23 @@ dependencies = [
 [[package]]
 name = "valence-library-base"
 version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+]
+
+[[package]]
+name = "valence-library-base"
+version = "0.2.0"
 source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714c6d047f9e8f1e15527dca88314c0"
 dependencies = [
  "cosmwasm-schema 2.2.2",
@@ -5465,8 +5719,27 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-utils",
- "valence-macros",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-library-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-denom",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.69",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5483,9 +5756,18 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 1.0.69",
- "valence-account-utils",
- "valence-ibc-utils",
- "valence-macros",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-liquid-staking-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
 ]
 
 [[package]]
@@ -5500,6 +5782,18 @@ dependencies = [
 [[package]]
 name = "valence-macros"
 version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.100",
+]
+
+[[package]]
+name = "valence-macros"
+version = "0.2.0"
 source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714c6d047f9e8f1e15527dca88314c0"
 dependencies = [
  "cosmwasm-schema 2.2.2",
@@ -5507,6 +5801,26 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.100",
+]
+
+[[package]]
+name = "valence-middleware-broker"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "neutron-sdk",
+ "prost 0.13.5",
+ "prost-types 0.13.5",
+ "semver 1.0.26",
+ "serde-json-wasm 1.0.1",
+ "serde_json",
+ "thiserror 1.0.69",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5526,7 +5840,20 @@ dependencies = [
  "serde-json-wasm 1.0.1",
  "serde_json",
  "thiserror 1.0.69",
- "valence-middleware-utils",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-middleware-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "neutron-sdk",
+ "prost 0.13.5",
+ "semver 1.0.26",
+ "thiserror 1.0.69",
 ]
 
 [[package]]
@@ -5545,6 +5872,28 @@ dependencies = [
 [[package]]
 name = "valence-neutron-ibc-transfer-library"
 version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "getset",
+ "neutron-sdk",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+]
+
+[[package]]
+name = "valence-neutron-ibc-transfer-library"
+version = "0.2.0"
 source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714c6d047f9e8f1e15527dca88314c0"
 dependencies = [
  "cosmwasm-schema 2.2.2",
@@ -5557,11 +5906,31 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-generic-ibc-transfer-library",
- "valence-ibc-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-ibc-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-neutron-ic-querier"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "neutron-sdk",
+ "serde-json-wasm 1.0.1",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-middleware-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5576,12 +5945,34 @@ dependencies = [
  "cw-utils 2.0.0",
  "neutron-sdk",
  "serde-json-wasm 1.0.1",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-middleware-broker",
- "valence-middleware-utils",
- "valence-storage-account",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-middleware-broker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-storage-account 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-osmosis-cl-lper"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "osmosis-std",
+ "osmosis-std-derive",
+ "schemars",
+ "serde",
+ "serde_json",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5599,11 +5990,33 @@ dependencies = [
  "schemars",
  "serde",
  "serde_json",
- "valence-account-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-osmosis-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-osmosis-cl-withdrawer"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "osmosis-std",
+ "osmosis-std-derive",
+ "schemars",
+ "serde",
+ "serde_json",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5621,11 +6034,27 @@ dependencies = [
  "schemars",
  "serde",
  "serde_json",
- "valence-account-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-osmosis-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-osmosis-gamm-lper"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "osmosis-std",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5637,11 +6066,27 @@ dependencies = [
  "cosmwasm-std 2.2.2",
  "cw-ownable",
  "osmosis-std",
- "valence-account-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-osmosis-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-osmosis-gamm-withdrawer"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "osmosis-std",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5653,11 +6098,23 @@ dependencies = [
  "cosmwasm-std 2.2.2",
  "cw-ownable",
  "osmosis-std",
- "valence-account-utils",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-osmosis-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-osmosis-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "osmosis-std",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5668,8 +6125,25 @@ dependencies = [
  "cosmwasm-schema 2.2.2",
  "cosmwasm-std 2.2.2",
  "osmosis-std",
- "valence-account-utils",
- "valence-library-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-processor"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "cw2 2.0.0",
+ "serde_json",
+ "thiserror 1.0.69",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5684,9 +6158,24 @@ dependencies = [
  "cw2 2.0.0",
  "serde_json",
  "thiserror 1.0.69",
- "valence-authorization-utils",
- "valence-gmp-utils",
- "valence-processor-utils",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-processor-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "serde",
+ "serde_json",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5700,8 +6189,67 @@ dependencies = [
  "cw-utils 2.0.0",
  "serde",
  "serde_json",
- "valence-authorization-utils",
- "valence-gmp-utils",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-gmp-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-program-manager"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "aho-corasick",
+ "anyhow",
+ "async-trait",
+ "bech32 0.11.0",
+ "config 0.14.1",
+ "cosmos-grpc-client",
+ "cosmwasm-crypto 2.2.2",
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "dashmap",
+ "dhat",
+ "env_logger 0.11.7",
+ "futures",
+ "glob",
+ "hex",
+ "log",
+ "once_cell",
+ "prost 0.12.6",
+ "prost-types 0.12.6",
+ "rand_core 0.6.4",
+ "serde",
+ "serde_json",
+ "serde_json_any_key",
+ "strum 0.26.3",
+ "thiserror 1.0.69",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-program-registry-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5738,29 +6286,45 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
- "valence-account-utils",
- "valence-astroport-lper",
- "valence-astroport-withdrawer",
- "valence-authorization",
- "valence-authorization-utils",
- "valence-drop-liquid-staker",
- "valence-drop-liquid-unstaker",
- "valence-forwarder-library",
- "valence-generic-ibc-transfer-library",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
- "valence-neutron-ibc-transfer-library",
- "valence-osmosis-cl-lper",
- "valence-osmosis-cl-withdrawer",
- "valence-osmosis-gamm-lper",
- "valence-osmosis-gamm-withdrawer",
- "valence-processor",
- "valence-processor-utils",
- "valence-program-registry",
- "valence-program-registry-utils",
- "valence-reverse-splitter-library",
- "valence-splitter-library",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-astroport-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-authorization-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-staker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-drop-liquid-unstaker 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-forwarder-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-generic-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-neutron-ibc-transfer-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-cl-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-lper 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-osmosis-gamm-withdrawer 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-processor-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-program-registry-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-reverse-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-splitter-library 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-program-registry"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-program-registry-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5776,7 +6340,18 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-program-registry-utils",
+ "valence-program-registry-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-program-registry-utils"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -5793,6 +6368,25 @@ dependencies = [
 [[package]]
 name = "valence-reverse-splitter-library"
 version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "getset",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+]
+
+[[package]]
+name = "valence-reverse-splitter-library"
+version = "0.2.0"
 source = "git+https://github.com/timewave-computer/valence-protocol#e24c96566714c6d047f9e8f1e15527dca88314c0"
 dependencies = [
  "cosmwasm-schema 2.2.2",
@@ -5804,9 +6398,29 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-splitter-library"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw-utils 2.0.0",
+ "getset",
+ "itertools 0.13.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5824,9 +6438,26 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-library-base",
- "valence-library-utils",
- "valence-macros",
+ "valence-library-base 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-library-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-macros 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+]
+
+[[package]]
+name = "valence-storage-account"
+version = "0.2.0"
+source = "git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1#9a37fe1dc2feafb5283879915bf8597776ffb443"
+dependencies = [
+ "cosmwasm-schema 2.2.2",
+ "cosmwasm-std 2.2.2",
+ "cw-ownable",
+ "cw-storage-plus 2.0.0",
+ "cw2 2.0.0",
+ "schemars",
+ "serde",
+ "thiserror 1.0.69",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol?rev=9a37fe1)",
 ]
 
 [[package]]
@@ -5842,8 +6473,8 @@ dependencies = [
  "schemars",
  "serde",
  "thiserror 1.0.69",
- "valence-account-utils",
- "valence-middleware-utils",
+ "valence-account-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
+ "valence-middleware-utils 0.2.0 (git+https://github.com/timewave-computer/valence-protocol)",
 ]
 
 [[package]]

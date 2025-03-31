@@ -17,36 +17,77 @@ cosmwasm-std = { workspace = true }
 cw-utils     = { workspace = true }
 cw-denom     = { workspace = true }
 
-valence-program-manager = { workspace = true, rev = "9a37fe1" }
+valence-program-manager = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-manager", rev = "9a37fe1" }
 
 # Libraries
-valence-authorization                = { workspace = true, rev = "9a37fe1" }
-valence-base-account                 = { workspace = true, rev = "9a37fe1" }
-valence-storage-account              = { workspace = true, rev = "9a37fe1" }
-valence-processor                    = { workspace = true, rev = "9a37fe1" }
-valence-splitter-library             = { workspace = true, rev = "9a37fe1" }
-valence-astroport-lper               = { workspace = true, rev = "9a37fe1" }
-valence-forwarder-library            = { workspace = true, rev = "9a37fe1" }
-valence-astroport-withdrawer         = { workspace = true, rev = "9a37fe1" }
-valence-generic-ibc-transfer-library = { workspace = true, rev = "9a37fe1" }
-valence-neutron-ibc-transfer-library = { workspace = true, rev = "9a37fe1" }
-valence-reverse-splitter-library     = { workspace = true, rev = "9a37fe1" }
-valence-osmosis-gamm-lper            = { workspace = true, rev = "9a37fe1" }
-valence-osmosis-gamm-withdrawer      = { workspace = true, rev = "9a37fe1" }
-valence-osmosis-cl-lper              = { workspace = true, rev = "9a37fe1" }
-valence-osmosis-cl-withdrawer        = { workspace = true, rev = "9a37fe1" }
-valence-encoder-broker               = { workspace = true, rev = "9a37fe1" }
-valence-neutron-ic-querier           = { workspace = true, rev = "9a37fe1" }
-valence-drop-liquid-staker           = { workspace = true, rev = "9a37fe1" }
-valence-program-registry             = { workspace = true, rev = "9a37fe1" }
+valence-authorization = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-base-account = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-base-account", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-storage-account = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-storage-account", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-processor = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-splitter-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-splitter-library", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-astroport-lper = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-lper", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-forwarder-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-forwarder-library", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-astroport-withdrawer = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-withdrawer", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-generic-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-generic-ibc-transfer-library", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-neutron-ibc-transfer-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ibc-transfer-library", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-reverse-splitter-library = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-reverse-splitter-library", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-osmosis-gamm-lper = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-lper", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-osmosis-gamm-withdrawer = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-gamm-withdrawer", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-osmosis-cl-lper = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-lper", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-osmosis-cl-withdrawer = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-cl-withdrawer", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-encoder-broker = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-encoder-broker", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-neutron-ic-querier = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-neutron-ic-querier", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-drop-liquid-staker = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-staker", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-drop-liquid-unstaker = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-drop-liquid-unstaker", features = [
+    "library",
+], rev = "9a37fe1" }
+valence-program-registry = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-program-registry", features = [
+    "library",
+], rev = "9a37fe1" }
 
 # utils
-valence-account-utils       = { workspace = true, rev = "9a37fe1" }
-valence-astroport-utils     = { workspace = true, rev = "9a37fe1" }
-valence-osmosis-utils       = { workspace = true, rev = "9a37fe1" }
-valence-authorization-utils = { workspace = true, rev = "9a37fe1" }
-valence-ibc-utils           = { workspace = true, rev = "9a37fe1" }
-valence-macros              = { workspace = true, rev = "9a37fe1" }
-valence-processor-utils     = { workspace = true, rev = "9a37fe1" }
-valence-library-base        = { workspace = true, rev = "9a37fe1" }
-valence-library-utils       = { workspace = true, rev = "9a37fe1" }
+valence-account-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-account-utils", rev = "9a37fe1" }
+valence-astroport-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-astroport-utils", rev = "9a37fe1" }
+valence-osmosis-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-osmosis-utils", rev = "9a37fe1" }
+valence-authorization-utils = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-authorization-utils", rev = "9a37fe1" }
+valence-ibc-utils           = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-ibc-utils", rev = "9a37fe1" }
+valence-macros              = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-macros", rev = "9a37fe1" }
+valence-processor-utils     = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-processor-utils", rev = "9a37fe1" }
+valence-library-base        = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-base", rev = "9a37fe1" }
+valence-library-utils       = { git = "https://github.com/timewave-computer/valence-protocol", package = "valence-library-utils", rev = "9a37fe1" }
