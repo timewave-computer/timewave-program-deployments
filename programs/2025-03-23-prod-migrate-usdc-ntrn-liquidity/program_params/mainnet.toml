@@ -32,7 +32,7 @@ expected_pool_ratio_max = "TODO"
 pool_max_spread = "0.10" # 10% spread
 
 # Actor addresses
-# neutron DAO address
+# Neutron DAO address
 neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Updated
 # Security DAO address
 security_dao_addr = "neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy" # Updated
