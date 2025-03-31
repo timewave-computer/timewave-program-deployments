@@ -318,15 +318,20 @@ valence_drop_liquid_unstaker:
 #### Mainnet deployment
 1. Deployed. Program ID 106
   - Receiver address is `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+  - [url](https://app.valence.zone/programs/106?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
 2. Deployed. Program ID 105
  - Receiver address is `neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9`
+ - [url](https://app.valence.zone/programs/105?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
 3. Deployed. Program ID 104
   - Receiver address is 
   `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0`
+  - [url](https://app.valence.zone/programs/104?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
 4. Deployed. Program ID 103
   - Receiver address for dNTRN and NTRN `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6`
+  - [url](https://app.valence.zone/programs/103?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
 5. Deployed. Program ID 102
   - Receiver address for USDC-NTRN-LP shares `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
+  - [url](https://app.valence.zone/programs/102?queryConfig={"main":{"registryAddress":"neutron1d8me7p72yq95sqnq5jpk34nn4t2vdl30yff29r05250ef92mr80saqcl2f","name":"neutron","chainId":"neutron-1","rpcUrl":"https://rpc-voidara.neutron-1.neutron.org"},"external":[]})
 
 </details>
 
