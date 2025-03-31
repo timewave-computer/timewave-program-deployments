@@ -1,30 +1,36 @@
-owner = "" 
+# Owner can make arbitrary changes to the program. This must be the Neutron DAO address
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Neutron DAO address - Updated
 
 # Denoms
 # NTRN denom
-ntrn_denom = "untrn" 
+ntrn_denom = "untrn"
 # dNTRN denom
-dntrn_denom = "" 
+dntrn_denom = "TODO"
 
 # Bootstrap program dNTRN receive address
-vp4_bootstrap_liquidity_receiver_addr = ""
+vp4_bootstrap_liquidity_receiver_addr = "TODO"
 
 # Drop staker core contract address
-drop_liquid_staker_addr = "" 
+drop_liquid_staker_addr = "TODO"
 
 # Split ratios
-## To send to Neutron DAO (100M dNTRN)
-ntrn_dao_split_normalized_fraction = "0.8"
-## To send to vp4 to bootstrap liquidity (25M dNTRN)
-vp4_receiver_split_normalized_fraction = "0.2"
+# TOTAL RECEIVED = 77.5M NTRN
+## To send to Neutron DAO (aprox. 52.5M dNTRN)
+ntrn_dao_split_normalized_fraction = "0.6775" # Updated
+## To send to vp4 to bootstrap liquidity (aprox. 25M dNTRN)
+vp4_receiver_split_normalized_fraction = "0.3225" # Updated
 
 
 # Actor addresses
-## Neutron DAO address
-neutron_dao_addr = "" 
-## Security DAO address
-security_dao_addr = ""
-## Addresses allowed to execute low security actions 
+# Neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Updated
+
+# List of address that are allowed to execute low security operations
 operator_list = [
-    "",
+    "neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", # Udit's wallet
+    "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", # Luisqa's wallet
+    "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", # Andre's wallet
+    "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", # Parthiv's wallet
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Keyne's wallet
+    "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7", # Timewave's shared wallet
 ]
