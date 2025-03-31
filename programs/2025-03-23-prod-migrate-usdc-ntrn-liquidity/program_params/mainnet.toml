@@ -3,13 +3,13 @@ owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # N
 
 # Token denoms of various tokens
 ntrn_denom = "untrn"
-dntrn_denom = "TODO"
+dntrn_denom = "factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn" # Updated
 usdc_denom = "ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81" # Updated to mainnet USDC denom
 usdc_ntrn_lp_denom = "factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share" # Updated
 
 # USDC-NTRN lp tokens are batched and forwarded. 
 # The batch size and interval needs to be configured to 10 times - once per day
-usdc_ntrn_lp_max_batch_size = "TODO" # WE NEED TO UPDATE 
+usdc_ntrn_lp_max_batch_size = "564320876115" # Updated
 usdc_ntrn_lp_batch_interval_seconds = "86400" # 1 day
 
 # USDC-NTRN pool configuration
@@ -18,15 +18,16 @@ usdc_ntrn_lp_batch_interval_seconds = "86400" # 1 day
 usdc_ntrn_pool_addr = "neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv" # Updated
 
 # Drop Staking configuration
-drop_liquid_staker_addr = "TODO"
+drop_liquid_staker_addr = "neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua" # Updated
 
 # Liquidity provisioning configuration
 # Verify asset order and therefore recalculate ratios (ratios should be +- 10%)
-usdc_dntrn_pool_addr = "TODO"
+# Usdc is first and current ratio is 0.130620663
+usdc_dntrn_pool_addr = "neutron1hme8vcsky2xeq4qc4wg3uy9gc47xzga6uqk8plaps8tvutjshuwqajnze6" # Updated
 # Minimum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 0.9)
-expected_pool_ratio_min = "TODO"
+expected_pool_ratio_min = "0.115" # 10% lower than current ratio
 # Maximum pool ratio (AssetA/AssetB) required to provide double sided liquidity (e.g., 1.1)
-expected_pool_ratio_max = "TODO"
+expected_pool_ratio_max = "0.145" # 10% higher than current ratio
 # If we are providing single sided liquidity, half the tokens will be swapped for the other denomination.
 # Pool max spread is the acceptable spread in the pool while swapping tokens.
 pool_max_spread = "0.10" # 10% spread

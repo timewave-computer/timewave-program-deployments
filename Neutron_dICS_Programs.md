@@ -250,12 +250,12 @@ Each program requires specific parameters for deployment. The following tables l
 | `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | `neutron1hme8vcsky2xeq4qc4wg3uy9gc47xzga6uqk8plaps8tvutjshuwqajnze6` |
 | `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | `0.115`|
 | `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | `0.145`|
-| `pool_max_spread` | Maximum acceptable spread when swapping | "0.10" |
+| `pool_max_spread` | Maximum acceptable spread when swapping | `0.10` |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `security_dao_addr` | Security DAO address | `neutron1xc95vsacskqcqtyzmwfr5h7qaz60h0z3ksnz65l2ah4s85tyqrns7dyqmy` |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
-| `usdc_forwarder_max_amount` | Maximum USDC amount to forward | "100000000000000" |
-| `return_forwarder_max_amount` | Maximum amount to return | "100000000000000" |
+| `usdc_forwarder_max_amount` | Maximum USDC amount to forward | `100000000000000` |
+| `return_forwarder_max_amount` | Maximum amount to return | `100000000000000` |
 
 ### Code IDs used
 
