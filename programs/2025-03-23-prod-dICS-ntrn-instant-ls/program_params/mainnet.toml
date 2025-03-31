@@ -8,7 +8,7 @@ ntrn_denom = "untrn"
 dntrn_denom = "factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn" # Updated
 
 # Bootstrap program dNTRN receive address
-vp4_bootstrap_liquidity_receiver_addr = "TODO"
+vp4_bootstrap_liquidity_receiver_addr = "neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6" # Updated
 
 # Drop staker core contract address
 drop_liquid_staker_addr = "neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua" # Updated
