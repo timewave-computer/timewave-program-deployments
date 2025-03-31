@@ -3,8 +3,8 @@
 There are five programs Timewave is deploying to support Neutron's monetary policy as they become a sovereign Proof of Stake chain.
 These include the following.
 
-1. **NTRN Allocation Program**: This program receives 202.5M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
-2. **Instant liquid-stake NTRN Program**: This program receives 77.5M NTRN which is liquid staked using the Drop protocol immediately. A fraction of 0.6775, ~52.5M dNTRN is returned to the DAO. A fraction of 0.3225, ~25M dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
+1. **NTRN Allocation Program**: This program receives 150M NTRN and allocates them to the other programs. See [program details](programs/2025-03-23-prod-dICS-ntrn-allocation/README.md).
+2. **Instant liquid-stake NTRN Program**: This program receives 25M NTRN which is liquid staked using the Drop protocol immediately. All dNTRN is sent to bootstrap NTRN and dNTRN liquidity, i.e., program 4. See [program details](programs/2025-03-23-prod-dICS-ntrn-instant-ls/README.md).
 3. **Gradual liquid-stake NTRN program**: This program receives 100M NTRN and it liquid stakes these gradually over three months. See [program details](programs/2025-03-23-prod-dICS-gradual-ls/README.md).
 4. **Bootstrap NTRN and dNTRN liquidity program**: This program receives NTRN from program 1 and dNTRN from program 2. It provides liquidity to the Astroport pool and returns the LP share tokens to the Neutron DAO. See [program details](programs/2025-03-23-prod-bootstrap-ntrn-dntrn-liquidity/README.md).
 5. **Migrate USDC-NTRN liquidity program**: This program receives the USDC-NTRN liquidity LP tokens from the Neutron DAO. It withdraws the liquidity, liquid stakes the NTRN, and enters the USDC-dNTRN liquidity pool. Liquidity tokens are sent back to the Neutron DAO. See [program details](programs/2025-03-23-prod-migrate-usdc-ntrn-liquidity/README.md).
@@ -29,14 +29,13 @@ graph TD;
     end
 
     %% Main NTRN flow
-    N1 --202.5M NTRN--> P1
-    P1 --77.5M NTRN--> P2
+    N1 --150M NTRN--> P1
+    P1 --25M NTRN--> P2
     P1 --100M NTRN--> P3
     P1 --25M NTRN--> P4
 
     %% Liquid staking flows
-    P2 --0.6775/1 dNTRN--> N2
-    P2 --0.3225/1 dNTRN--> P4
+    P2 --1/1 dNTRN--> P4
     P3 --100M dNTRN--> N2
 
     %% Liquidity flows
@@ -187,7 +186,7 @@ Each program requires specific parameters for deployment. The following tables l
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
 | `vp2_instant_ls_receiver_address` | Address to receive NTRN for instant liquid stake | TODO Program 2's receiver address |
-| `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "77500000000000" (77.5M NTRN) |
+| `vp2_instant_ls_amount` | Amount of NTRN for instant liquid stake | "25000000000000" (25M NTRN) |
 | `vp3_gradual_ls_receiver_address` | Address to receive NTRN for gradual liquid stake | TODO Program 3's receiver address |
 | `vp3_gradual_ls_amount` | Amount of NTRN for gradual liquid stake | "100000000000000" (100M NTRN) |
 | `vp4_bootstrap_liquidity_receiver_address` | Address to receive NTRN for bootstrap liquidity | TODO Program 4's receiver address |
@@ -204,8 +203,7 @@ Each program requires specific parameters for deployment. The following tables l
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | TODO Program 4's receiver address |
 | `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
-| `ntrn_dao_split_normalized_fraction` | Fraction of dNTRN to send to Neutron DAO | "0.6775" |
-| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "0.3225" |
+| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "1.0" |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
 
 ### Program 3: Gradual Liquid Stake
@@ -245,7 +243,7 @@ Each program requires specific parameters for deployment. The following tables l
 | `dntrn_denom` | dNTRN token denomination | TODO |
 | `usdc_denom` | USDC token denomination | `ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81` |
 | `usdc_ntrn_lp_denom` | USDC-NTRN LP token denomination | `factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share` |
-| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | TODO Should be ~10 batches|
+| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | TODO Should be ~5 batches|
 | `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | TODO Should be 1 day |
 | `usdc_ntrn_pool_addr` | USDC-NTRN pool address | `neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv` |
 | `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
