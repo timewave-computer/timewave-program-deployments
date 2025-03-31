@@ -1,27 +1,33 @@
-owner = ""
+# Owner can make arbitrary changes to the program. This must be the Neutron DAO address
+owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Neutron DAO address - Updated
 
 # Token denomination
 ntrn_denom = "untrn"
 
+# We are receiving a total of 202.5M NTRN from the neutron DAO
+
 # Valence Program 2: Instant liquid stake
-vp2_instant_ls_receiver_address=""
-vp2_instant_ls_amount = ""
+vp2_instant_ls_receiver_address = "TODO"
+vp2_instant_ls_amount           = "77500000000000" # 77.5M NTRN - UPDATED
 
 # Valence Program 3: Gradual liquid stake
-vp3_gradual_ls_receiver_address = ""
-vp3_gradual_ls_receiver_amount = ""
-
+vp3_gradual_ls_receiver_address = "TODO"
+vp3_gradual_ls_receiver_amount  = "100000000000000" # 100M NTRN - UPDATED
 
 # Valence Program 4: Bootstrap NTRN-dNTRN liquidity
-vp4_bootstrap_liquidity_receiver_address = ""
-vp4_bootstrap_liquidity_receiver_amount = ""
+vp4_bootstrap_liquidity_receiver_address = "TODO"           # Updated
+vp4_bootstrap_liquidity_receiver_amount  = "25000000000000" # 25M NTRN - UPDATED
 
-## Actors
-neutron_dao_addr = ""
-
-security_dao_addr = ""
+# Actor addresses
+# Neutron DAO address
+neutron_dao_addr = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # Updated
 
 # List of address that are allowed to execute low security operations
 operator_list = [
-    "",
+    "neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", # Udit's wallet
+    "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", # Luisqa's wallet
+    "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", # Andre's wallet
+    "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", # Parthiv's wallet
+    "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", # Keyne's wallet
+    "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7", # Timewave's shared wallet
 ]
