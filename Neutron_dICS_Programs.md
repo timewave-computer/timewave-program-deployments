@@ -259,6 +259,61 @@ Each program requires specific parameters for deployment. The following tables l
 | `usdc_forwarder_max_amount` | Maximum USDC amount to forward | "100000000000000" |
 | `return_forwarder_max_amount` | Maximum amount to return | "100000000000000" |
 
+### Code IDs used
+
+valence_astroport_lper:
+  code_id: '3297'
+  hash: 6881cf68070e98053882b1e5ac3f6d39be77eb9acf26a526d3cee13399c4386d
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_astroport_withdrawer:
+  code_id: '3298'
+  hash: c9678657c18bc58543faa0bb82942a6f3b7dd902e6a6439a5e0ceb696c3e69c3
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_authorization:
+  code_id: '3299'
+  hash: aae7c5b4058d6027146860097a29e07b8c36a833dbf56a7425748b16efa22aab
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_base_account:
+  code_id: '3300'
+  hash: cfa668dee6d785928d9f9097c1091a0aabb260f74a3fd723893ab0d3862513c6
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_forwarder_library:
+  code_id: '3301'
+  hash: 74f86ed59b7d274a407404b87af985a24c5909162e3d9e0969ac73367bae671f
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_processor:
+  code_id: '3302'
+  hash: 634de9a2c0a05baec9894991ca0d1333a3a7e67086d402421edfb6632c869791
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_program_registry:
+  code_id: '3303'
+  hash: 82d8593dede5c67db801ad19f213ab049a14e4efc29dfa09bcad729453e80741
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_reverse_splitter_library:
+  code_id: '3304'
+  hash: 6b7949414f114ca64f441bce70223ab9890b665fa18390c88f600fb224313881
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_splitter_library:
+  code_id: '3305'
+  hash: 0e414e92b46131d69133a8134927223240ffaffa4499517c40697c56a57e0de9
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_generic_ibc_transfer_library:
+  code_id: '3306'
+  hash: 4ec97203fadaac7eb338bbbad91b004d8a1860d2306ec572dd6147cb2dd7cd77
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_neutron_ibc_transfer_library:
+  code_id: '3307'
+  hash: e3324cb9c01727866a53afe1ad690dd7e32905af70251a0c3f6726d8bd29eb15
+  source: 85ecf4974c62bcb6443ac16b9dd7d178eed07841
+valence_drop_liquid_staker:
+  code_id: '3310'
+  hash: 0effb769091ad197f2ec3dd6292f962b5d52f17af8e371087f673543aa5713e0
+  source: e24c96566714c6d047f9e8f1e15527dca88314c0
+valence_drop_liquid_unstaker:
+  code_id: '3311'
+  hash: 2b2c3365b51f7d9a0b4d5c2e58733196ca18228386dc292eae70d88e5968048a
+  source: e24c96566714c6d047f9e8f1e15527dca88314c0
+
 ## Useful commands
 
 ### Querying pools
