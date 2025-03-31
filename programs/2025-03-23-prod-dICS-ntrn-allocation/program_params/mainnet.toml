@@ -4,11 +4,11 @@ owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # N
 # Token denomination
 ntrn_denom = "untrn"
 
-# We are receiving a total of 202.5M NTRN from the neutron DAO
+# We are receiving a total of 150M NTRN from the neutron DAO
 
 # Valence Program 2: Instant liquid stake
 vp2_instant_ls_receiver_address = "TODO"
-vp2_instant_ls_amount           = "77500000000000" # 77.5M NTRN - UPDATED
+vp2_instant_ls_amount           = "25000000000000" # 25M NTRN - UPDATED
 
 # Valence Program 3: Gradual liquid stake
 vp3_gradual_ls_receiver_address = "TODO"
