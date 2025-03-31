@@ -14,11 +14,9 @@ vp4_bootstrap_liquidity_receiver_addr = "TODO"
 drop_liquid_staker_addr = "TODO"
 
 # Split ratios
-# TOTAL RECEIVED = 77.5M NTRN
-## To send to Neutron DAO (aprox. 52.5M dNTRN)
-ntrn_dao_split_normalized_fraction = "0.6775" # Updated
-## To send to vp4 to bootstrap liquidity (aprox. 25M dNTRN)
-vp4_receiver_split_normalized_fraction = "0.3225" # Updated
+# TOTAL RECEIVED = 25M NTRN
+## Everything goes to program 4
+vp4_receiver_split_normalized_fraction = "1" # Updated
 
 
 # Actor addresses
