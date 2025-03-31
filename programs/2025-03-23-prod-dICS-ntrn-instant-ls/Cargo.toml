@@ -7,45 +7,46 @@ version    = "0.1.0"
 repository = "https://github.com/timewave-computer/timewave-program-deployments"
 
 [dependencies]
-deployer-lib            = { workspace = true }
-valence-program-manager = { workspace = true }
-serde_json              = { workspace = true }
-clap                    = { workspace = true }
-tokio                   = { workspace = true }
+deployer-lib = { workspace = true }
+serde_json   = { workspace = true }
+clap         = { workspace = true }
+tokio        = { workspace = true }
 
 #CW
 cosmwasm-std = { workspace = true }
 cw-utils     = { workspace = true }
 cw-denom     = { workspace = true }
 
+valence-program-manager = { workspace = true, rev = "9a37fe1" }
+
 # Libraries
-valence-authorization                = { workspace = true }
-valence-base-account                 = { workspace = true }
-valence-storage-account              = { workspace = true }
-valence-processor                    = { workspace = true }
-valence-splitter-library             = { workspace = true }
-valence-astroport-lper               = { workspace = true }
-valence-forwarder-library            = { workspace = true }
-valence-astroport-withdrawer         = { workspace = true }
-valence-generic-ibc-transfer-library = { workspace = true }
-valence-neutron-ibc-transfer-library = { workspace = true }
-valence-reverse-splitter-library     = { workspace = true }
-valence-osmosis-gamm-lper            = { workspace = true }
-valence-osmosis-gamm-withdrawer      = { workspace = true }
-valence-osmosis-cl-lper              = { workspace = true }
-valence-osmosis-cl-withdrawer        = { workspace = true }
-valence-encoder-broker               = { workspace = true }
-valence-neutron-ic-querier           = { workspace = true }
-valence-drop-liquid-staker           = { workspace = true }
-valence-program-registry             = { workspace = true }
+valence-authorization                = { workspace = true, rev = "9a37fe1" }
+valence-base-account                 = { workspace = true, rev = "9a37fe1" }
+valence-storage-account              = { workspace = true, rev = "9a37fe1" }
+valence-processor                    = { workspace = true, rev = "9a37fe1" }
+valence-splitter-library             = { workspace = true, rev = "9a37fe1" }
+valence-astroport-lper               = { workspace = true, rev = "9a37fe1" }
+valence-forwarder-library            = { workspace = true, rev = "9a37fe1" }
+valence-astroport-withdrawer         = { workspace = true, rev = "9a37fe1" }
+valence-generic-ibc-transfer-library = { workspace = true, rev = "9a37fe1" }
+valence-neutron-ibc-transfer-library = { workspace = true, rev = "9a37fe1" }
+valence-reverse-splitter-library     = { workspace = true, rev = "9a37fe1" }
+valence-osmosis-gamm-lper            = { workspace = true, rev = "9a37fe1" }
+valence-osmosis-gamm-withdrawer      = { workspace = true, rev = "9a37fe1" }
+valence-osmosis-cl-lper              = { workspace = true, rev = "9a37fe1" }
+valence-osmosis-cl-withdrawer        = { workspace = true, rev = "9a37fe1" }
+valence-encoder-broker               = { workspace = true, rev = "9a37fe1" }
+valence-neutron-ic-querier           = { workspace = true, rev = "9a37fe1" }
+valence-drop-liquid-staker           = { workspace = true, rev = "9a37fe1" }
+valence-program-registry             = { workspace = true, rev = "9a37fe1" }
 
 # utils
-valence-account-utils       = { workspace = true }
-valence-astroport-utils     = { workspace = true }
-valence-osmosis-utils       = { workspace = true }
-valence-authorization-utils = { workspace = true }
-valence-ibc-utils           = { workspace = true }
-valence-macros              = { workspace = true }
-valence-processor-utils     = { workspace = true }
-valence-library-base        = { workspace = true }
-valence-library-utils       = { workspace = true }
+valence-account-utils       = { workspace = true, rev = "9a37fe1" }
+valence-astroport-utils     = { workspace = true, rev = "9a37fe1" }
+valence-osmosis-utils       = { workspace = true, rev = "9a37fe1" }
+valence-authorization-utils = { workspace = true, rev = "9a37fe1" }
+valence-ibc-utils           = { workspace = true, rev = "9a37fe1" }
+valence-macros              = { workspace = true, rev = "9a37fe1" }
+valence-processor-utils     = { workspace = true, rev = "9a37fe1" }
+valence-library-base        = { workspace = true, rev = "9a37fe1" }
+valence-library-utils       = { workspace = true, rev = "9a37fe1" }
