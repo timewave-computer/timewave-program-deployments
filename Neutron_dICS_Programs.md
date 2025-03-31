@@ -316,15 +316,15 @@ valence_drop_liquid_unstaker:
 <summary>Mainnet Deployment</summary>
 
 #### Mainnet deployment
-1. Deployed. Program ID 
-  - Receiver address is `neutron1u3fsk7ycfmp8dpxdtxyrc8lgpqjk0w5xc82vqn9hdxnrru8jt3ssj7majv`
-2. Deployed. Program ID 
- - Receiver address is `neutron1yr6xedwtmfvqrjspzp2ra5r63jcamt8ezg9ze9pd5s8g4ms5srhsr9rdat`
-3. Deployed. Program ID 
+1. Deployed. Program ID 106
+  - Receiver address is `neutron1d846g3px2u0dhs6r7k46e49nhgwcxzzw9973rau07lp9cpsj0v3q05ahf4`
+2. Deployed. Program ID 105
+ - Receiver address is `neutron104e6l2sw2c5d8d08arvzd44j0wdgqq9yd9yuup2x6x3a0elnf3rq6slea9`
+3. Deployed. Program ID 104
   - Receiver address is 
-  `neutron1x5nwwtk7cez7lt7w6l7uv0shhkk3kz3flgjhlwc2d0cjjx23gsxqn54wf2`
-4. Deployed. Program ID 
-  - Receiver address for dNTRN and NTRN `neutron10994ns22tn2gqur47d5z0pfv4l623t7u7fe6yjv7qf4g53vw047srln2kd`
+  `neutron1960rsvkszezxyns7rlahwu4nrqdxxkdcr4xdacpmgrk80c7jftcqhd0ly0`
+4. Deployed. Program ID 103
+  - Receiver address for dNTRN and NTRN `neutron1vfm4grpedfr3rcgguu5gpnqsv6j4hy89wnzutjlpq6sfv0az895q9gg8f6`
 5. Deployed. Program ID 102
   - Receiver address for USDC-NTRN-LP shares `neutron1d58c25fw3hwpjvg9dzgr2m235qpgtsc7stjt7u08kqg8jd583fgsyr5ytg`
 
