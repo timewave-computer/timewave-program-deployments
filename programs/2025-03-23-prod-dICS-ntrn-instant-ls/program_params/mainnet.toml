@@ -5,13 +5,13 @@ owner = "neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff" # N
 # NTRN denom
 ntrn_denom = "untrn"
 # dNTRN denom
-dntrn_denom = "TODO"
+dntrn_denom = "factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn" # Updated
 
 # Bootstrap program dNTRN receive address
 vp4_bootstrap_liquidity_receiver_addr = "TODO"
 
 # Drop staker core contract address
-drop_liquid_staker_addr = "TODO"
+drop_liquid_staker_addr = "neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua" # Updated
 
 # Split ratios
 # TOTAL RECEIVED = 25M NTRN
