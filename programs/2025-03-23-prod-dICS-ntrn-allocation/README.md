@@ -40,7 +40,6 @@ The program accepts the following configuration parameters:
 - `vp4_bootstrap_liquidity_receiver_address`: Address to receive NTRN for bootstrap liquidity
 - `vp4_bootstrap_liquidity_amount`: Amount of NTRN for bootstrap liquidity
 - `neutron_dao_addr`: Address of the Neutron DAO
-- `security_dao_addr`: Address of the Security DAO
 - `operator_list`: List of addresses authorized for low-security operations
 
 ## Subroutines
@@ -66,7 +65,7 @@ The program implements a two-tier security model:
    - Includes routine operations like splitting NTRN
 
 2. High Security Operations
-   - Requires authorization from either Neutron DAO or Security DAO
+   - Requires authorization from the Neutron DAO
    - Includes critical operations like updating split configuration
 
 ## Directory structure
