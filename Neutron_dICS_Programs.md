@@ -199,11 +199,11 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `vp4_bootstrap_liquidity_receiver_addr` | Address to receive dNTRN for bootstrap liquidity | TODO Program 4's receiver address |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
-| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "1.0" |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
+| `vp4_receiver_split_normalized_fraction` | Fraction of dNTRN to send to Program 4 | "1" |
 | `operator_list` | List of addresses authorized for low-security operations | `["neutron1qxatg2nkmsf26cymcg2saeh9l2cqp0s2xms7xd", "neutron1ze09kc5ackut7wc4pf38lysu45kfz3msr98nru", "neutron1h8vf3ueml7ah7m8z9e6vx09trq5lv2fw9e049f", "neutron1tf0uhd8hs7tqxw2pdrlvzenkugkyfa2jh82ndu", "neutron14mlpd48k5vkeset4x7f78myz3m47jcax3ysjkp", "neutron1v45lnmf3h3ujdh4pyegpt24y60nsh758q2yna7"]` |
 
 ### Program 3: Gradual Liquid Stake
@@ -211,7 +211,7 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
 | `max_amount_to_forward` | Maximum amount to forward in each batch | "6500000000000" (6.5M NTRN) |
 | `interval_seconds_between_batches` | Time between batches. Use 1 week | "604800" |
 | `neutron_dao_addr` | Neutron DAO address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
@@ -223,7 +223,7 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `astroport_pool_addr` | Astroport pool address | TODO Mainnet NTRN-dNTRN pool address |
 | `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | "0.98" |
 | `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | "1.02" |
@@ -240,14 +240,14 @@ Each program requires specific parameters for deployment. The following tables l
 |-----------|-------------|--------|
 | `owner` | Program owner address | `neutron1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrstdxvff` |
 | `ntrn_denom` | NTRN token denomination | "untrn" |
-| `dntrn_denom` | dNTRN token denomination | TODO |
+| `dntrn_denom` | dNTRN token denomination | `factory/neutron1frc0p5czd9uaaymdkug2njz7dc7j65jxukp9apmt9260a8egujkspms2t2/udntrn` |
 | `usdc_denom` | USDC token denomination | `ibc/B559A80D62249C8AA07A380E2A2BEA6E5CA9A6F079C912C3A9E9B494105E4F81` |
 | `usdc_ntrn_lp_denom` | USDC-NTRN LP token denomination | `factory/neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv/astroport/share` |
-| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch | TODO Should be ~5 batches|
-| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | TODO Should be 1 day |
+| `usdc_ntrn_lp_max_batch_size` | Maximum LP tokens to process in each batch (Total received is `2821604380571`) | `564320876115` per batch|
+| `usdc_ntrn_lp_batch_interval_seconds` | Time between processing batches | `86400` |
 | `usdc_ntrn_pool_addr` | USDC-NTRN pool address | `neutron18c8qejysp4hgcfuxdpj4wf29mevzwllz5yh8uayjxamwtrs0n9fshq9vtv` |
-| `drop_liquid_staker_addr` | Drop protocol contract address | TODO Mainnet Drop protocol address |
-| `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | TODO Mainnet USDC-dNTRN pool address |
+| `drop_liquid_staker_addr` | Drop protocol contract address | `neutron1lsxvdyvmexak084wdty2yvsq5gj3wt7wm4jaw34yseat7r4qjffqlxlcua` |
+| `usdc_dntrn_pool_addr` | USDC-dNTRN pool address | `neutron1hme8vcsky2xeq4qc4wg3uy9gc47xzga6uqk8plaps8tvutjshuwqajnze6` |
 | `expected_pool_ratio_min` | Minimum pool ratio for liquidity provision | TODO -10% |
 | `expected_pool_ratio_max` | Maximum pool ratio for liquidity provision | TODO +10% |
 | `pool_max_spread` | Maximum acceptable spread when swapping | "0.10" |
