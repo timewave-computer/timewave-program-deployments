@@ -25,7 +25,6 @@ graph TB;
     P4[[Program 4<br>Bootstrap NTRN-dNTRN]]
     P1 --25M NTRN--> RA
     RA --> LS --> IA --> S
-    S --0.0/1 dNTRN--> N1
     S --1/1 dNTRN--> P4
 ```
 
@@ -40,7 +39,6 @@ The program accepts the following configuration parameters:
 - `vp4_bootstrap_liquidity_receiver_addr`: Address to receive ~25M dNTRN
 - `drop_liquid_staker_addr`: Address of the Drop protocol contract
 - `operator_list`: Array of addresses authorized for low-security operations
-- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.0" = 0%)
 - `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "1" = 100%)
 
 ## Subroutines
