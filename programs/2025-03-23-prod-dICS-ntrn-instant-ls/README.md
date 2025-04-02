@@ -36,7 +36,7 @@ The program accepts the following configuration parameters:
 - `owner`: The owner address of the program
 - `ntrn_denom`: The denomination of NTRN tokens (e.g., "untrn")
 - `dntrn_denom`: The denomination of dNTRN tokens
-- `neutron_dao_addr`: Address of the Neutron DAO. Expected to receive ~25M NTRN
+- `neutron_dao_addr`: Address of the Neutron DAO.
 - `vp4_bootstrap_liquidity_receiver_addr`: Address to receive ~25M dNTRN
 - `drop_liquid_staker_addr`: Address of the Drop protocol contract
 - `operator_list`: Array of addresses authorized for low-security operations
