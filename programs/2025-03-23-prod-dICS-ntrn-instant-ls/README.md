@@ -3,12 +3,11 @@
 Please see Neutron [dICS Programs](../../Neutron_dICS_Programs.md) for background. This program is dICS Program 2.
 
 This directory provides support for building and deploying a program that performs instant liquid staking of NTRN tokens as part of Neutron's dICS initiative:
-- The program receives NTRN from Program 1. Note that the Neutron DAO is expected to deposit 77.5M NTRN 
+- The program receives NTRN from Program 1. Note that the Neutron DAO is expected to deposit 25M NTRN 
 - The program uses the Drop protocol to instantly liquid stake the NTRN
 - The program uses a splitter to distribute the resulting dNTRN per the following configuration:
-    - ~52.5M dNTRN is returned to the Neutron DAO
     - ~25M dNTRN is sent to Program 4 for bootstrap liquidity
-- The split is performed using a ratio (0.6775:0.3225) rather than with fixed amounts
+- The split is performed using a ratio. 1/1 of all dNTRN are sent to program 4
 
 > Note: The testnet configuration in `testnet.toml` uses different split ratios (0.6666:0.3334) for testing purposes.
 
@@ -24,10 +23,10 @@ graph TB;
     end
     N1[Neutron DAO]
     P4[[Program 4<br>Bootstrap NTRN-dNTRN]]
-    P1 --77.5M NTRN--> RA
+    P1 --25M NTRN--> RA
     RA --> LS --> IA --> S
-    S --0.6775/1 dNTRN--> N1
-    S --0.3225/1 dNTRN--> P4
+    S --0.0/1 dNTRN--> N1
+    S --1/1 dNTRN--> P4
 ```
 
 ## Configuration Parameters
@@ -37,12 +36,12 @@ The program accepts the following configuration parameters:
 - `owner`: The owner address of the program
 - `ntrn_denom`: The denomination of NTRN tokens (e.g., "untrn")
 - `dntrn_denom`: The denomination of dNTRN tokens
-- `neutron_dao_addr`: Address of the Neutron DAO. Expected to receive ~52.5M NTRN
+- `neutron_dao_addr`: Address of the Neutron DAO. Expected to receive ~25M NTRN
 - `vp4_bootstrap_liquidity_receiver_addr`: Address to receive ~25M dNTRN
 - `drop_liquid_staker_addr`: Address of the Drop protocol contract
 - `operator_list`: Array of addresses authorized for low-security operations
-- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.6775" = 67.75%)
-- `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "0.3225" = 32.25%)
+- `ntrn_dao_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Neutron DAO (e.g., "0.0" = 0%)
+- `vp4_receiver_split_normalized_fraction`: String representation of the percentage of liquid staked assets to be sent to Program 4 (e.g., "1" = 100%)
 
 ## Subroutines
 
